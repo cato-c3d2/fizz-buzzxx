@@ -7,7 +7,7 @@ all : clean build
 .PHONY : build
 build : build/example-99.exe
 
-build/example-99.exe :
+build/example-99.exe : ./example/example-99.c++
 	$(CXX) ./example/example-99.c++ -o ./build/example-99.exe $(CXXFLAGS)
 
 .PHONY : clean
