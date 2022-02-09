@@ -10,6 +10,8 @@ build : build/example-00.exe  \
         build/example-01a.exe \
         build/example-01b.exe \
         build/example-01c.exe \
+        build/example-02a.exe \
+        build/example-02b.exe \
         build/example-99.exe
 
 build/example-00.exe : ./example/example-00.c++
@@ -24,6 +26,12 @@ build/example-01b.exe : ./example/example-01b.c++
 build/example-01c.exe : ./example/example-01c.c++
 	$(CXX) ./example/example-01c.c++ -o ./build/example-01c.exe $(CXXFLAGS)
 
+build/example-02a.exe : ./example/example-02a.c++
+	$(CXX) ./example/example-02a.c++ -o ./build/example-02a.exe $(CXXFLAGS)
+
+build/example-02b.exe : ./example/example-02b.c++
+	$(CXX) ./example/example-02b.c++ -o ./build/example-02b.exe $(CXXFLAGS)
+
 build/example-99.exe : ./example/example-99.c++
 	$(CXX) ./example/example-99.c++ -o ./build/example-99.exe $(CXXFLAGS)
 
@@ -36,6 +44,8 @@ test-example : test-example-00  \
                test-example-01a \
                test-example-01b \
                test-example-01c \
+               test-example-02a \
+               test-example-02b \
                test-example-99
 
 # サンプルコードの期待結果(テキストファイル)と実行結果(標準出力)を比較し、
@@ -55,6 +65,14 @@ test-example-01b : ./build/example-01b.exe
 .PHONY : test-example-01c
 test-example-01c : ./build/example-01c.exe
 	diff -u ./example/example-01c.output.txt <(./build/example-01c.exe) 1>&2
+
+.PHONY : test-example-02a
+test-example-02a : ./build/example-02a.exe
+	diff -u ./example/example-02a.output.txt <(./build/example-02a.exe) 1>&2
+
+.PHONY : test-example-02b
+test-example-02b : ./build/example-02b.exe
+	diff -u ./example/example-02b.output.txt <(./build/example-02b.exe) 1>&2
 
 .PHONY : test-example-99
 test-example-99 : ./build/example-99.exe
