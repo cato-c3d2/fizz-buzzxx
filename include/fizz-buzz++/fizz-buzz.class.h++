@@ -73,12 +73,17 @@ namespace fizz_buzzxx
 
     auto FizzBuzz::evaluate(int const value) const -> std::string
     {
-        if (value % (this->_fizz_divisor * this->_buzz_divisor) == 0) {
-            return this->_fizz_message + ' ' + this->_buzz_message;
-        } else if (value % this->_fizz_divisor == 0) {
-            return this->_fizz_message;
-        } else if (value % this->_buzz_divisor == 0) {
-            return this->_buzz_message;
+        std::string message   = "";
+        std::string delimiter = "";
+        if (value % this->_fizz_divisor == 0) {
+            message   = this->_fizz_message;
+            delimiter = " ";
+        }
+        if (value % this->_buzz_divisor == 0) {
+            message += delimiter + this->_buzz_message;
+        }
+        if (message != "") {
+            return message;
         }
         return std::to_string(value);
     }
