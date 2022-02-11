@@ -20,5 +20,4 @@ auto main() -> int
             3, 5, "Fizz++", "Buzz++"
         }
     );
-    std::cout << std::endl;
 }

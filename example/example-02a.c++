@@ -19,5 +19,5 @@ auto main() -> int
     );
 
     // 文字列ストリームに出力した FizzBuzz 問題の結果を標準出力に出力する
-    std::cout << out.str() << std::endl;
+    std::cout << out.str();
 }

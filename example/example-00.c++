@@ -15,5 +15,4 @@ auto main() -> int
             std::cout << value << std::endl;
         }
     );
-    std::cout << std::endl;
 }

@@ -18,5 +18,4 @@ auto main() -> int
             std::cout << fizz_buzz(value) << std::endl;
         }
     );
-    std::cout << std::endl;
 }
