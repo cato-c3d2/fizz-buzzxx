@@ -1,3 +1,7 @@
+/*!
+ * @file fizz-buzz.class.h++
+ */
+
 #ifndef FIZZ_BUZZXX__FIZZ_BUZZ_CLASS_HXX
 #define FIZZ_BUZZXX__FIZZ_BUZZ_CLASS_HXX
 
@@ -11,14 +15,32 @@
 
 namespace fizz_buzzxx
 {
+    /*!
+     * FizzBuzz を評価する関数オブジェクト
+     */
     class FizzBuzz
     {
     public :
-        static int         const default_fizz_divisor;
-        static int         const default_buzz_divisor;
+        /*! Fizz の除数のデフォルト値 */
+        static int const default_fizz_divisor;
+
+        /*! Buzz の除数のデフォルト値 */
+        static int const default_buzz_divisor;
+
+        /*! Fizz の文言のデフォルト値 */
         static std::string const default_fizz_message;
+
+        /*! Buzz の文言のデフォルト値 */
         static std::string const default_buzz_message;
 
+        /*!
+         * 関数オブジェクトを生成する
+         *
+         * @param[in] fizz_divisor Fizz の除数
+         * @param[in] buzz_divisor Buzz の除数
+         * @param[in] fizz_message Fizz の文言
+         * @param[in] buzz_message Buzz の文言
+         */
         FizzBuzz(
             int         = FizzBuzz::default_fizz_divisor,
             int         = FizzBuzz::default_buzz_divisor,
@@ -26,8 +48,29 @@ namespace fizz_buzzxx
             std::string = FizzBuzz::default_buzz_message
         );
 
+        /*!
+         * 関数呼び出し演算
+         *
+         * @param[in] value FizzBuzz の値を求める整数
+         * @return FizzBuzz の値を返却する @n
+         *         FizzBuzz の値が整数 @c value の場合は,
+         *         整数 @c value を文字列に変換して返却する
+         *
+         * @see evaluate()
+         */
         auto operator () (int) const -> std::string;
 
+        /*!
+         * 引数として与えられた整数に対する FizzBuzz の値を求める
+         *
+         * @param[in] value FizzBuzz の値を求める整数
+         *
+         * @return FizzBuzz の値を返却する @n
+         *         FizzBuzz の値が整数 @c value の場合は,
+         *         整数 @c value を文字列に変換して返却する
+         *
+         * @see operator()()
+         */
         auto evaluate(int) const -> std::string;
 
     private :

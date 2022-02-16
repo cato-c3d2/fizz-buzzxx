@@ -1,8 +1,26 @@
+/*!
+ * サンプルコード 01(a)
+ *
+ * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
+ *
+ * 入力となるシーケンスコンテナとして,
+ * 固定長のシーケンスコンテナ @c std::array を使用したもの. @n
+ *
+ * @file example-01a.c++
+ * @see  fizz_buzzxx::fizz_buzz
+ */
+
 #include <array>
 #include <iostream>
 #include <iterator>
 #include <fizz-buzz++.h++>
 
+/*!
+ * FizzBuzz 問題の結果を標準出力に出力する
+ *
+ * @return プログラムのリターンコード @n
+ *         常に @c 0 を返却する
+ */
 auto main() -> int
 {
     // 1 ～ 100 の整数を格納した固定長のシーケンスコンテナを生成する
