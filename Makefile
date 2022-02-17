@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -Wall -g3 -I ./include/
 SHELL    = /bin/bash
 
 .PHONY : all
-all : clean build test-example
+all : clean build test-example document
 
 .PHONY : build
 build : build/example-00.exe  \
@@ -113,3 +113,22 @@ test-example-10a : ./build/example-10a.exe
 .PHONY : test-example-99
 test-example-99 : ./build/example-99.exe
 	diff -u ./example/example-99.output.txt <(./build/example-99.exe) 1>&2
+
+################################################################################
+# document (Doxygen)
+################################################################################
+
+.PHONY : document
+document : document-clean document-build
+
+.PHONY : document-build
+document-build :
+	doxygen > /dev/null
+    # NOTE doxygen コマンドの標準出力は量が多いため破棄する.
+    #      無論, 標準エラー出力は破棄しない.
+    #      ドキュメントコメントが不足している場合は,
+    #      doxygen コマンドの warning として標準エラー出力に出力される.
+
+.PHONY : document-clean
+document-clean :
+	$(RM) -r ./document/html/*
