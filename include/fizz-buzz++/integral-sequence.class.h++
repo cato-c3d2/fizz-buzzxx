@@ -38,10 +38,7 @@ namespace fizz_buzzxx
 
         auto operator * () -> reference;
 
-        auto operator -> () -> pointer
-        {
-            return & this->_value;
-        }
+        auto operator -> () -> pointer;
 
         auto operator ++ () -> IntegralSequenceIterator const &;
 
@@ -94,6 +91,11 @@ namespace fizz_buzzxx
     auto IntegralSequenceIterator::operator * () -> reference
     {
         return this->_value;
+    }
+
+    auto IntegralSequenceIterator::operator -> () -> pointer
+    {
+        return & this->_value;
     }
 
     auto IntegralSequenceIterator::operator ++ ()
