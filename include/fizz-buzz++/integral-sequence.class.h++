@@ -34,7 +34,7 @@ namespace fizz_buzzxx
         using reference         = int &;
         using iterator_category = std::input_iterator_tag;
 
-        IntegralSequenceIterator(int);
+        IntegralSequenceIterator(value_type);
 
         auto operator * () -> reference;
 
@@ -84,7 +84,7 @@ namespace fizz_buzzxx
     // IntegralSequenceIterator
     ////////////////////////////////////////////////////////////////////////////
 
-    IntegralSequenceIterator::IntegralSequenceIterator(int const value)
+    IntegralSequenceIterator::IntegralSequenceIterator(value_type const value)
         : _value(value)
     {}
 
