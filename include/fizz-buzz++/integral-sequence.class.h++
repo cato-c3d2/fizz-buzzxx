@@ -34,14 +34,11 @@ namespace fizz_buzzxx
         using reference         = int &;
         using iterator_category = std::input_iterator_tag;
 
-        IntegralSequenceIterator(int);
+        IntegralSequenceIterator(value_type);
 
         auto operator * () -> reference;
 
-        auto operator -> () -> pointer
-        {
-            return & this->_value;
-        }
+        auto operator -> () -> reference;
 
         auto operator ++ () -> IntegralSequenceIterator const &;
 
@@ -87,11 +84,16 @@ namespace fizz_buzzxx
     // IntegralSequenceIterator
     ////////////////////////////////////////////////////////////////////////////
 
-    IntegralSequenceIterator::IntegralSequenceIterator(int const value)
+    IntegralSequenceIterator::IntegralSequenceIterator(value_type const value)
         : _value(value)
     {}
 
     auto IntegralSequenceIterator::operator * () -> reference
+    {
+        return this->_value;
+    }
+
+    auto IntegralSequenceIterator::operator -> () -> reference
     {
         return this->_value;
     }
