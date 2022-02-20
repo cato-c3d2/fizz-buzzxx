@@ -91,7 +91,7 @@ namespace fizz_buzzxx
         /*!
          * メンバアクセス演算
          *
-         * @return このイテレータが指す値を指すポインタを返却する
+         * @return このイテレータが指す値への参照を返却する
          */
         auto operator -> () -> reference;
 
