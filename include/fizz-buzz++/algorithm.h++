@@ -33,7 +33,10 @@ namespace fizz_buzzxx
         typename FizzBuzzEvaluator = FizzBuzz
     >
     auto fizz_buzz(
-        InputIterator, InputIterator, Callback, FizzBuzzEvaluator = {}
+        InputIterator     first,
+        InputIterator     last,
+        Callback          callback,
+        FizzBuzzEvaluator fizz_buzz_evaluator = {}
     ) -> Callback;
 }
 

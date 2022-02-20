@@ -29,7 +29,7 @@ namespace fizz_buzzxx
          * @param[in] final_value 末尾の整数 @n
          *                        この値はシーケンスコンテナの範囲に含まれる
          */
-        IntegralSequence(int, int);
+        IntegralSequence(int first_value, int final_value);
 
         /*!
          * このシーケンスコンテナの開始位置を示す入力イテレータを生成する
@@ -79,7 +79,7 @@ namespace fizz_buzzxx
          *
          * @param[in] value イテレータが指す値
          */
-        IntegralSequenceIterator(value_type);
+        IntegralSequenceIterator(value_type value);
 
         /*!
          * 間接参照演算
@@ -118,7 +118,7 @@ namespace fizz_buzzxx
          * @return このイテレータと @c that が等価である場合は @c true を,
          *         そうではない場合は @c false を返却する
          */
-        auto operator == (IntegralSequenceIterator const &) const -> bool;
+        auto operator == (IntegralSequenceIterator const & that) const -> bool;
 
         /*!
          * 非等価比較演算
@@ -128,7 +128,7 @@ namespace fizz_buzzxx
          * @return このイテレータと @c that が非等価である場合は @c true を,
          *         そうではない場合は @c false を返却する
          */
-        auto operator != (IntegralSequenceIterator const &) const -> bool;
+        auto operator != (IntegralSequenceIterator const & that) const -> bool;
 
     private :
         int _value;

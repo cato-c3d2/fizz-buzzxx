@@ -42,10 +42,10 @@ namespace fizz_buzzxx
          * @param[in] buzz_message Buzz の文言
          */
         FizzBuzz(
-            int         = FizzBuzz::default_fizz_divisor,
-            int         = FizzBuzz::default_buzz_divisor,
-            std::string = FizzBuzz::default_fizz_message,
-            std::string = FizzBuzz::default_buzz_message
+            int         fizz_divisor = FizzBuzz::default_fizz_divisor,
+            int         buzz_divisor = FizzBuzz::default_buzz_divisor,
+            std::string fizz_message = FizzBuzz::default_fizz_message,
+            std::string buzz_message = FizzBuzz::default_buzz_message
         );
 
         /*!
@@ -58,7 +58,7 @@ namespace fizz_buzzxx
          *
          * @see evaluate()
          */
-        auto operator () (int) const -> std::string;
+        auto operator () (int value) const -> std::string;
 
         /*!
          * 引数として与えられた整数に対する FizzBuzz の値を求める
@@ -71,7 +71,7 @@ namespace fizz_buzzxx
          *
          * @see operator()()
          */
-        auto evaluate(int) const -> std::string;
+        auto evaluate(int value) const -> std::string;
 
     private :
         int         const _fizz_divisor;
