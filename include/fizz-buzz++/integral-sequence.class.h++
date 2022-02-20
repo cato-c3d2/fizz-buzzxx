@@ -79,7 +79,7 @@ namespace fizz_buzzxx
          *
          * @param[in] value イテレータが指す値
          */
-        IntegralSequenceIterator(int);
+        IntegralSequenceIterator(value_type);
 
         /*!
          * 間接参照演算
@@ -93,10 +93,7 @@ namespace fizz_buzzxx
          *
          * @return このイテレータが指す値を指すポインタを返却する
          */
-        auto operator -> () -> pointer
-        {
-            return & this->_value;
-        }
+        auto operator -> () -> reference;
 
         /*!
          * 前置インクリメント演算
@@ -169,11 +166,16 @@ namespace fizz_buzzxx
     // IntegralSequenceIterator
     ////////////////////////////////////////////////////////////////////////////
 
-    IntegralSequenceIterator::IntegralSequenceIterator(int const value)
+    IntegralSequenceIterator::IntegralSequenceIterator(value_type const value)
         : _value(value)
     {}
 
     auto IntegralSequenceIterator::operator * () -> reference
+    {
+        return this->_value;
+    }
+
+    auto IntegralSequenceIterator::operator -> () -> reference
     {
         return this->_value;
     }
