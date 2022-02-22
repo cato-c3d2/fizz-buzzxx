@@ -83,7 +83,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html">   21</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html">FizzBuzz</a></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    public :</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae2c0ee0c9d4941bd9de4851c9d76a78f">   25</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae2c0ee0c9d4941bd9de4851c9d76a78f">default_fizz_divisor</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aef3d5432d6c895fd24baff424ee456ac">   28</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">int</span> <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aef3d5432d6c895fd24baff424ee456ac">default_buzz_divisor</a>;</div>
@@ -96,79 +96,77 @@ $(function() {
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordtype">int</span>         fizz_divisor = <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae2c0ee0c9d4941bd9de4851c9d76a78f">FizzBuzz::default_fizz_divisor</a>,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">int</span>         buzz_divisor = <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aef3d5432d6c895fd24baff424ee456ac">FizzBuzz::default_buzz_divisor</a>,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            std::string fizz_message = <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a9562e98ff5ce95c36f7a640727faf031">FizzBuzz::default_fizz_message</a>,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::string buzz_message = <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aaae7006035276c5fd1a23287758ccf5b">FizzBuzz::default_buzz_message</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">operator () </a>(<span class="keywordtype">int</span> value) <span class="keyword">const</span> -&gt; std::string;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">evaluate</a>(<span class="keywordtype">int</span> value) <span class="keyword">const</span> -&gt; std::string;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    private :</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">int</span>         <span class="keyword">const</span> _fizz_divisor;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">int</span>         <span class="keyword">const</span> _buzz_divisor;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::string <span class="keyword">const</span> _fizz_message;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::string <span class="keyword">const</span> _buzz_message;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    };</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// Class member definition</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d8/dfe/namespacefizz__buzzxx.html">fizz_buzzxx</a></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae2c0ee0c9d4941bd9de4851c9d76a78f">FizzBuzz::default_fizz_divisor</a> = 3;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aef3d5432d6c895fd24baff424ee456ac">FizzBuzz::default_buzz_divisor</a> = 5;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::string <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a9562e98ff5ce95c36f7a640727faf031">FizzBuzz::default_fizz_message</a> = <span class="stringliteral">&quot;Fizz&quot;</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::string <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aaae7006035276c5fd1a23287758ccf5b">FizzBuzz::default_buzz_message</a> = <span class="stringliteral">&quot;Buzz&quot;</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae3ee9e201d74dc2400543196ead37ceb">  100</a></span>&#160;    <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae3ee9e201d74dc2400543196ead37ceb">FizzBuzz::FizzBuzz</a>(</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">int</span>         <span class="keyword">const</span> fizz_divisor,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">int</span>         <span class="keyword">const</span> buzz_divisor,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        std::string <span class="keyword">const</span> fizz_message,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        std::string <span class="keyword">const</span> buzz_message</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    )</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        : _fizz_divisor(fizz_divisor)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        , _buzz_divisor(buzz_divisor)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        , _fizz_message(fizz_message)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        , _buzz_message(buzz_message)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    {}</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">  112</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">FizzBuzz::operator () </a>(<span class="keywordtype">int</span> <span class="keyword">const</span> value) <span class="keyword">const</span> -&gt; std::string</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> this-&gt;evaluate(value);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">  117</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">FizzBuzz::evaluate</a>(<span class="keywordtype">int</span> <span class="keyword">const</span> value) <span class="keyword">const</span> -&gt; std::string</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::string message   = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::string delimiter = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (value % this-&gt;_fizz_divisor == 0) {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            message   = this-&gt;_fizz_message;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            delimiter = <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (value % this-&gt;_buzz_divisor == 0) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            message += delimiter + this-&gt;_buzz_message;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (message != <span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> message;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> std::to_string(value);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FIZZ_BUZZXX__FIZZ_BUZZ_CLASS_HXX */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::string buzz_message = <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aaae7006035276c5fd1a23287758ccf5b">FizzBuzz::default_buzz_message</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">operator()</a>(<span class="keywordtype">int</span> value) <span class="keyword">const</span> -&gt; std::string;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">evaluate</a>(<span class="keywordtype">int</span> value) <span class="keyword">const</span> -&gt; std::string;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span>         _fizz_divisor;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span>         _buzz_divisor;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::string <span class="keyword">const</span> _fizz_message;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        std::string <span class="keyword">const</span> _buzz_message;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    };</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// Class member definition</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d8/dfe/namespacefizz__buzzxx.html">fizz_buzzxx</a></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae2c0ee0c9d4941bd9de4851c9d76a78f">FizzBuzz::default_fizz_divisor</a> = 3;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aef3d5432d6c895fd24baff424ee456ac">FizzBuzz::default_buzz_divisor</a> = 5;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::string <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a9562e98ff5ce95c36f7a640727faf031">FizzBuzz::default_fizz_message</a> = <span class="stringliteral">&quot;Fizz&quot;</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::string <span class="keyword">const</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aaae7006035276c5fd1a23287758ccf5b">FizzBuzz::default_buzz_message</a> = <span class="stringliteral">&quot;Buzz&quot;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae3ee9e201d74dc2400543196ead37ceb">   99</a></span>&#160;    <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae3ee9e201d74dc2400543196ead37ceb">FizzBuzz::FizzBuzz</a>(</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span>         fizz_divisor,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span>         buzz_divisor,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::string <span class="keyword">const</span> fizz_message,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        std::string <span class="keyword">const</span> buzz_message)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        : _fizz_divisor(fizz_divisor)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        , _buzz_divisor(buzz_divisor)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        , _fizz_message(fizz_message)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        , _buzz_message(buzz_message)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">  110</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">FizzBuzz::operator()</a>(<span class="keywordtype">int</span> <span class="keyword">const</span> value) <span class="keyword">const</span> -&gt; std::string</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> this-&gt;evaluate(value);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">  115</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">FizzBuzz::evaluate</a>(<span class="keywordtype">int</span> <span class="keyword">const</span> value) <span class="keyword">const</span> -&gt; std::string</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        std::string message   = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        std::string delimiter = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (value % this-&gt;_fizz_divisor == 0) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            message   = this-&gt;_fizz_message;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            delimiter = <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (value % this-&gt;_buzz_divisor == 0) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            message += delimiter + this-&gt;_buzz_message;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (message != <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span> message;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">return</span> std::to_string(value);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FIZZ_BUZZXX__FIZZ_BUZZ_CLASS_HXX */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_aef3d5432d6c895fd24baff424ee456ac"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aef3d5432d6c895fd24baff424ee456ac">fizz_buzzxx::FizzBuzz::default_buzz_divisor</a></div><div class="ttdeci">static const int default_buzz_divisor</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:28</div></div>
-<div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_ae3ee9e201d74dc2400543196ead37ceb"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae3ee9e201d74dc2400543196ead37ceb">fizz_buzzxx::FizzBuzz::FizzBuzz</a></div><div class="ttdeci">FizzBuzz(int fizz_divisor=FizzBuzz::default_fizz_divisor, int buzz_divisor=FizzBuzz::default_buzz_divisor, std::string fizz_message=FizzBuzz::default_fizz_message, std::string buzz_message=FizzBuzz::default_buzz_message)</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:100</div></div>
-<div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_a0559ddebd31c75c2cadc4d1915472e53"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">fizz_buzzxx::FizzBuzz::operator()</a></div><div class="ttdeci">auto operator()(int value) const -&gt; std::string</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:112</div></div>
+<div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_ae3ee9e201d74dc2400543196ead37ceb"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae3ee9e201d74dc2400543196ead37ceb">fizz_buzzxx::FizzBuzz::FizzBuzz</a></div><div class="ttdeci">FizzBuzz(int fizz_divisor=FizzBuzz::default_fizz_divisor, int buzz_divisor=FizzBuzz::default_buzz_divisor, std::string fizz_message=FizzBuzz::default_fizz_message, std::string buzz_message=FizzBuzz::default_buzz_message)</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:99</div></div>
+<div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_a0559ddebd31c75c2cadc4d1915472e53"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a0559ddebd31c75c2cadc4d1915472e53">fizz_buzzxx::FizzBuzz::operator()</a></div><div class="ttdeci">auto operator()(int value) const -&gt; std::string</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:110</div></div>
 <div class="ttc" id="anamespacefizz__buzzxx_html"><div class="ttname"><a href="../../d8/dfe/namespacefizz__buzzxx.html">fizz_buzzxx</a></div><div class="ttdoc">fizz-buzz++ の名前空間</div><div class="ttdef"><b>Definition:</b> algorithm.h++:14</div></div>
 <div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_ae2c0ee0c9d4941bd9de4851c9d76a78f"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#ae2c0ee0c9d4941bd9de4851c9d76a78f">fizz_buzzxx::FizzBuzz::default_fizz_divisor</a></div><div class="ttdeci">static const int default_fizz_divisor</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:25</div></div>
 <div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html">fizz_buzzxx::FizzBuzz</a></div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:21</div></div>
-<div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_a56bffd8b384a9dc6f694b21a6cba7ff1"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">fizz_buzzxx::FizzBuzz::evaluate</a></div><div class="ttdeci">auto evaluate(int value) const -&gt; std::string</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:117</div></div>
+<div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_a56bffd8b384a9dc6f694b21a6cba7ff1"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a56bffd8b384a9dc6f694b21a6cba7ff1">fizz_buzzxx::FizzBuzz::evaluate</a></div><div class="ttdeci">auto evaluate(int value) const -&gt; std::string</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:115</div></div>
 <div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_aaae7006035276c5fd1a23287758ccf5b"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#aaae7006035276c5fd1a23287758ccf5b">fizz_buzzxx::FizzBuzz::default_buzz_message</a></div><div class="ttdeci">static const std::string default_buzz_message</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:34</div></div>
 <div class="ttc" id="aclassfizz__buzzxx_1_1FizzBuzz_html_a9562e98ff5ce95c36f7a640727faf031"><div class="ttname"><a href="../../db/d38/classfizz__buzzxx_1_1FizzBuzz.html#a9562e98ff5ce95c36f7a640727faf031">fizz_buzzxx::FizzBuzz::default_fizz_message</a></div><div class="ttdeci">static const std::string default_fizz_message</div><div class="ttdef"><b>Definition:</b> fizz-buzz.class.h++:31</div></div>
 <!-- start footer part -->
