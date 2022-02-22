@@ -13,9 +13,9 @@
  * @see  fizz_buzzxx::fizz_buzz
  */
 
+#include <fizz-buzz++.h++>
 #include <iostream>
 #include <iterator>
-#include <fizz-buzz++.h++>
 
 /*!
  * FizzBuzz 問題の結果を標準出力に出力する
@@ -37,8 +37,5 @@ auto main() -> int
         },
         // 4 で割り切れる場合に "Fizz++" を出力し,
         // 6 で割り切れる場合に "Buzz++" を出力する
-        fizz_buzzxx::FizzBuzz {
-            4, 6, "Fizz++", "Buzz++"
-        }
-    );
+        fizz_buzzxx::FizzBuzz { 4, 6, "Fizz++", "Buzz++" });
 }

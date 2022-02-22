@@ -11,9 +11,9 @@
  * @see  fizz_buzzxx::FizzBuzz
  */
 
+#include <fizz-buzz++.h++>
 #include <iostream>
 #include <iterator>
-#include <fizz-buzz++.h++>
 
 /*!
  * FizzBuzz 問題の結果を標準出力に出力する
@@ -31,10 +31,7 @@ auto main() -> int
 
     // FizzBuzz 問題の結果を標準出力に出力する
     std::for_each(
-        std::begin(sequence),
-        std::end(sequence),
-        [&](auto const value) {
+        std::begin(sequence), std::end(sequence), [&](auto const value) {
             std::cout << fizz_buzz(value) << std::endl;
-        }
-    );
+        });
 }

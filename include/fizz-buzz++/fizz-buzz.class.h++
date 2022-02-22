@@ -20,7 +20,7 @@ namespace fizz_buzzxx
      */
     class FizzBuzz
     {
-    public :
+    public:
         /*! Fizz の除数のデフォルト値 */
         static int const default_fizz_divisor;
 
@@ -45,8 +45,7 @@ namespace fizz_buzzxx
             int         fizz_divisor = FizzBuzz::default_fizz_divisor,
             int         buzz_divisor = FizzBuzz::default_buzz_divisor,
             std::string fizz_message = FizzBuzz::default_fizz_message,
-            std::string buzz_message = FizzBuzz::default_buzz_message
-        );
+            std::string buzz_message = FizzBuzz::default_buzz_message);
 
         /*!
          * 関数呼び出し演算
@@ -58,7 +57,7 @@ namespace fizz_buzzxx
          *
          * @see evaluate()
          */
-        auto operator () (int value) const -> std::string;
+        auto operator()(int value) const -> std::string;
 
         /*!
          * 引数として与えられた整数に対する FizzBuzz の値を求める
@@ -73,9 +72,9 @@ namespace fizz_buzzxx
          */
         auto evaluate(int value) const -> std::string;
 
-    private :
-        int         const _fizz_divisor;
-        int         const _buzz_divisor;
+    private:
+        int const         _fizz_divisor;
+        int const         _buzz_divisor;
         std::string const _fizz_message;
         std::string const _buzz_message;
     };
@@ -98,18 +97,17 @@ namespace fizz_buzzxx
     std::string const FizzBuzz::default_buzz_message = "Buzz";
 
     FizzBuzz::FizzBuzz(
-        int         const fizz_divisor,
-        int         const buzz_divisor,
+        int const         fizz_divisor,
+        int const         buzz_divisor,
         std::string const fizz_message,
-        std::string const buzz_message
-    )
+        std::string const buzz_message)
         : _fizz_divisor(fizz_divisor)
         , _buzz_divisor(buzz_divisor)
         , _fizz_message(fizz_message)
         , _buzz_message(buzz_message)
     {}
 
-    auto FizzBuzz::operator () (int const value) const -> std::string
+    auto FizzBuzz::operator()(int const value) const -> std::string
     {
         return this->evaluate(value);
     }

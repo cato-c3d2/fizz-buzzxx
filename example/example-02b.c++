@@ -11,10 +11,10 @@
  * @see  fizz_buzzxx::fizz_buzz
  */
 
+#include <fizz-buzz++.h++>
 #include <iostream>
 #include <iterator>
 #include <string>
-#include <fizz-buzz++.h++>
 
 /*!
  * FizzBuzz 問題の結果を標準出力に出力する
@@ -30,13 +30,10 @@ auto main() -> int
     // FizzBuzz 問題の結果を標準出力に出力する
     std::string delimiter = "";
     fizz_buzzxx::fizz_buzz(
-        std::begin(sequence),
-        std::end(sequence),
-        [&](auto const value) {
+        std::begin(sequence), std::end(sequence), [&](auto const value) {
             std::cout << delimiter << value;
             // 要素間の区切りをカンマ(+半角スペース)とする
             delimiter = ", ";
-        }
-    );
+        });
     std::cout << std::endl;
 }
