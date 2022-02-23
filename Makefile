@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -Wall -g3 -I ./include/
 SHELL    = /bin/bash
 
 .PHONY : all
-all : clean build test-example document
+all : clean format build test-example document
 
 .PHONY : build
 build : build/example-00.exe  \
@@ -132,3 +132,11 @@ document-build :
 .PHONY : document-clean
 document-clean :
 	$(RM) -r ./document/html/*
+
+################################################################################
+# format (clang-format)
+################################################################################
+
+.PHONY : format
+format :
+	find -type f -name "*.c++" -o -name "*.h++" | xargs clang-format -i
