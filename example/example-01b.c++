@@ -31,7 +31,7 @@ auto main() -> int
 
     // FizzBuzz 問題の結果を標準出力に出力する
     fizz_buzzxx::fizz_buzz(
-        std::begin(sequence), std::end(sequence), [&](auto const value) {
+        std::begin(sequence), std::end(sequence), [&](const auto value) {
             std::cout << value << std::endl;
         });
 }
