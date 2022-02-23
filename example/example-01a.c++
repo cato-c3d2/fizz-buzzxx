@@ -10,8 +10,9 @@
  * @see  fizz_buzzxx::fizz_buzz
  */
 
-#include <array>
 #include <fizz-buzz++.h++>
+
+#include <array>
 #include <iostream>
 #include <iterator>
 
