@@ -1,7 +1,7 @@
 # Doxygen によるドキュメンテーション
 
-  + OS : Linux ubuntu 5.13.0-28-generic
-  + Doxygen : 1.8.17
+  + Ubuntu 20.04.3 LTS
+  + doxygen 1.8.17
 
 ## doxygen をインストールする
 
