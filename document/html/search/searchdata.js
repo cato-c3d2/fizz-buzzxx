@@ -1,13 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "abdefimoprv",
+  0: "abcdefimoprvé",
   1: "fi",
   2: "f",
   3: "aefi",
   4: "befimo",
   5: "d",
   6: "diprv",
-  7: "dfr"
+  7: "cdfré"
 };
 
 var indexSectionNames =

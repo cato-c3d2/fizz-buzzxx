@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fizz-buzz++: Doxygen によるドキュメンテーション</title>
+<title>fizz-buzz++: 開発ドキュメント</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -62,67 +62,13 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Doxygen によるドキュメンテーション </div>  </div>
+<div class="title">開発ドキュメント </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><ul>
-<li>Ubuntu 20.04.3 LTS</li>
-<li>doxygen 1.8.17</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md1"></a>
-doxygen をインストールする</h1>
-<div class="fragment"><div class="line">sudo apt install doxygen -y</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
-graphviz をインストールする</h1>
-<blockquote class="doxtable">
-<p>Doxygen はグラフの画像ファイルの生成に <code>graphviz</code> (<code>dot</code>) を使用している.<br  />
- <code>graphviz</code> がインストールされていない環境でドキュメントの生成を行うと, 多数のエラーが発生するため, 予め <code>graphviz</code> をインストールしておく.<br  />
- </p>
-</blockquote>
-<div class="fragment"><div class="line">sudo apt install graphviz -y</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
-Doxyfile を生成する</h1>
-<div class="fragment"><div class="line">doxygen -g</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p>プロジェクトのルートディレクトリで上記のコマンドを実行することで, プロジェクトのルートディレクトリに <code>Doxyfile</code> が生成される.<br  />
- </p>
-</blockquote>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Doxyfile を修正する</h1>
-<div class="fragment"><div class="line">PROJECT_NAME           = &quot;fizz-buzz++&quot;</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p>プロジェクト名を設定する.<br  />
- </p>
-</blockquote>
-<div class="fragment"><div class="line">OUTPUT_DIRECTORY       = document</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p>Doxygen によって生成されたファイルを格納するディレクトリを設定する.<br  />
- この場合, <code>HTML</code> のドキュメントは <code>{プロジェクトのルートディレクトリ}/document/html/</code> に出力されるようになる.<br  />
- </p>
-</blockquote>
-<div class="fragment"><div class="line">CREATE_SUBDIRS         = YES</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p>デフォルトでは <code>NO</code> が指定されており, Doxygen によって生成されたファイルは単一階層に格納される.<br  />
- ここでは <code>YES</code> を指定することで, Doxygen によって生成されたファイルが複数階層に分けて格納されるように変更する.<br  />
- </p>
-</blockquote>
-<div class="fragment"><div class="line">RECURSIVE              = YES</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p><code>RECURSIVE</code> に <code>YES</code> を指定しないと, サブディレクトリにあるソースファイルがドキュメンテーションの対象にならない.<br  />
- </p>
-</blockquote>
-<div class="fragment"><div class="line">GENERATE_LATEX         = NO</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p><code>HTML</code> のドキュメントだけで充分なため, <code>LaTeX</code> のドキュメントは生成しない.<br  />
- </p>
-</blockquote>
-<h1><a class="anchor" id="autotoc_md5"></a>
-ドキュメントを生成する</h1>
-<div class="fragment"><div class="line">doxygen</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p>プロジェクトのルートディレクトリで上記のコマンドを実行することで, <code>Doxyfile</code> の設定内容に従ってドキュメントが生成される.<br  />
- </p>
-</blockquote>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md12"></a>
+@ref ./for_doxygen.md "Doxygen によるドキュメンテーション"</h1>
+<h1><a class="anchor" id="autotoc_md13"></a>
+@ref ./for-clang-format.md "clang-format によるソースコードのフォーマット"</h1>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

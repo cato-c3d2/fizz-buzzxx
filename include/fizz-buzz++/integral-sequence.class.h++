@@ -20,8 +20,7 @@ namespace fizz_buzzxx
      */
     class IntegralSequence
     {
-    public :
-
+    public:
         /*!
          * シーケンスコンテナを生成する
          *
@@ -45,7 +44,7 @@ namespace fizz_buzzxx
          */
         auto end() const -> IntegralSequenceIterator;
 
-    private :
+    private:
         int _first_value;
         int _final_value;
     };
@@ -57,19 +56,18 @@ namespace fizz_buzzxx
      */
     class IntegralSequenceIterator
     {
-    public :
-
+    public:
         /*! イテレータ間の差を表す符号付き整数型 */
-        using difference_type   = std::ptrdiff_t;
+        using difference_type = std::ptrdiff_t;
 
         /*! イテレータが指す値の型 */
-        using value_type        = int;
+        using value_type = int;
 
         /*! イテレータが指す値のポインタ型 */
-        using pointer           = int *;
+        using pointer = int *;
 
         /*! イテレータが指す値の参照型 */
-        using reference         = int &;
+        using reference = int &;
 
         /*! イテレータの分類 */
         using iterator_category = std::input_iterator_tag;
@@ -86,21 +84,21 @@ namespace fizz_buzzxx
          *
          * @return このイテレータが指す値への参照を返却する
          */
-        auto operator * () -> reference;
+        auto operator*() -> reference;
 
         /*!
          * メンバアクセス演算
          *
          * @return このイテレータが指す値への参照を返却する
          */
-        auto operator -> () -> reference;
+        auto operator->() -> reference;
 
         /*!
          * 前置インクリメント演算
          *
          * @return このイテレータを進めた後, このイテレータへの参照を返却する
          */
-        auto operator ++ () -> IntegralSequenceIterator const &;
+        auto operator++() -> const IntegralSequenceIterator &;
 
         /*!
          * 後置インクリメント演算
@@ -108,7 +106,7 @@ namespace fizz_buzzxx
          * @return このイテレータを進めた後,
          *         このイテレータの進める前のコピーを返却する
          */
-        auto operator ++ (int) -> IntegralSequenceIterator const;
+        auto operator++(int) -> const IntegralSequenceIterator;
 
         /*!
          * 等価比較演算
@@ -118,7 +116,7 @@ namespace fizz_buzzxx
          * @return このイテレータと @c that が等価である場合は @c true を,
          *         そうではない場合は @c false を返却する
          */
-        auto operator == (IntegralSequenceIterator const & that) const -> bool;
+        auto operator==(const IntegralSequenceIterator & that) const -> bool;
 
         /*!
          * 非等価比較演算
@@ -128,9 +126,9 @@ namespace fizz_buzzxx
          * @return このイテレータと @c that が非等価である場合は @c true を,
          *         そうではない場合は @c false を返却する
          */
-        auto operator != (IntegralSequenceIterator const & that) const -> bool;
+        auto operator!=(const IntegralSequenceIterator & that) const -> bool;
 
-    private :
+    private:
         int _value;
     };
 }
@@ -148,7 +146,7 @@ namespace fizz_buzzxx
     ////////////////////////////////////////////////////////////////////////////
 
     IntegralSequence::IntegralSequence(
-        int const first_value, int const final_value)
+        const int first_value, const int final_value)
         : _first_value(first_value), _final_value(final_value)
     {}
 
@@ -166,43 +164,43 @@ namespace fizz_buzzxx
     // IntegralSequenceIterator
     ////////////////////////////////////////////////////////////////////////////
 
-    IntegralSequenceIterator::IntegralSequenceIterator(value_type const value)
+    IntegralSequenceIterator::IntegralSequenceIterator(const value_type value)
         : _value(value)
     {}
 
-    auto IntegralSequenceIterator::operator * () -> reference
+    auto IntegralSequenceIterator::operator*() -> reference
     {
         return this->_value;
     }
 
-    auto IntegralSequenceIterator::operator -> () -> reference
+    auto IntegralSequenceIterator::operator->() -> reference
     {
         return this->_value;
     }
 
-    auto IntegralSequenceIterator::operator ++ ()
-    -> IntegralSequenceIterator const &
+    auto IntegralSequenceIterator::operator++()
+        -> const IntegralSequenceIterator &
     {
-        ++ this->_value;
-        return * this;
+        ++this->_value;
+        return *this;
     }
 
-    auto IntegralSequenceIterator::operator ++ (int)
-    -> IntegralSequenceIterator const
+    auto IntegralSequenceIterator::operator++(int)
+        -> const IntegralSequenceIterator
     {
-        IntegralSequenceIterator const clone = * this;
-        this->_value ++;
+        const IntegralSequenceIterator clone = *this;
+        this->_value++;
         return clone;
     }
 
-    auto IntegralSequenceIterator::operator == (
-        IntegralSequenceIterator const & that) const -> bool
+    auto IntegralSequenceIterator::operator==(
+        const IntegralSequenceIterator & that) const -> bool
     {
         return this->_value == that._value;
     }
 
-    auto IntegralSequenceIterator::operator != (
-        IntegralSequenceIterator const & that) const -> bool
+    auto IntegralSequenceIterator::operator!=(
+        const IntegralSequenceIterator & that) const -> bool
     {
         return this->_value != that._value;
     }
