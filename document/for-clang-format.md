@@ -1,4 +1,4 @@
-## clang-format によるソースコードのフォーマット
+# clang-format によるソースコードのフォーマット
 
   + Ubuntu 20.04.3 LTS
   + clang-format version 10.0.0-4ubuntu1
