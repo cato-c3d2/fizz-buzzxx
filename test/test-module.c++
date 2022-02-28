@@ -2,8 +2,6 @@
 
 #include <boost/test/included/unit_test.hpp>
 
-// TODO 仮のテストケース
-BOOST_AUTO_TEST_CASE(sample)
-{
-    BOOST_CHECK(true);
-}
+#include "./include/fizz-buzz++/algorithm.test-case.h++"
+#include "./include/fizz-buzz++/fizz-buzz.class.test-case.h++"
+#include "./include/fizz-buzz++/integral-sequence.class.test-case.h++"
