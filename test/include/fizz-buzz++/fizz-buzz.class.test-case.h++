@@ -141,11 +141,8 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_one)
 
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_zero)
 {
-    // Fizz の除数として 0 を指定する
-    FizzBuzz fizz_buzz { 0 };
-
-    // FIXME 例外がスローされること
-    // BOOST_CHECK_EQUAL(fizz_buzz(1), "1");
+    // Fizz の除数として 0 を指定した場合, 例外が発生すること
+    BOOST_CHECK_THROW(FizzBuzz { 0 }, std::invalid_argument);
 }
 
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_negative_number)
@@ -237,11 +234,12 @@ BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_one)
 
 BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_zero)
 {
-    // Buzz の除数として 0 を指定する
-    FizzBuzz fizz_buzz { 3, 0 };
-
-    // FIXME 例外がスローされること
-    // BOOST_CHECK_EQUAL(fizz_buzz(1), "1");
+    // Buzz の除数として 0 を指定した場合, 例外が発生すること
+    // NOTE BOOST_CHECK_THROW と一様初期化(波括弧による初期化)を併用すると
+    //      コンパイルが通らないため, コンストラクタ呼び出しによる初期化を使用する.
+    //      ただし, 初期化するオブジェクトの引数が 1 つであれば,
+    //      一様初期化でもコンパイルは通る模様.
+    BOOST_CHECK_THROW(FizzBuzz(3, 0), std::invalid_argument);
 }
 
 BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_negative_number)
