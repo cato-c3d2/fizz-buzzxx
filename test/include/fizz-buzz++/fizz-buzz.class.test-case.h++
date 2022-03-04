@@ -340,32 +340,25 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_to_empty)
     // Fizz の文言として空文字列を指定する
     FizzBuzz fizz_buzz { 3, 5, "" };
 
-    // FIXME 整数 n が 3 で割り切れる際の演算結果が空文字列にならない
-
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 2), "2"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 3), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 3), "3"          );
+    BOOST_CHECK_EQUAL(fizz_buzz( 3), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz( 4), "4"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 5), "Buzz"       );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 6), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 6), "6"          );
+    BOOST_CHECK_EQUAL(fizz_buzz( 6), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz( 7), "7"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 8), "8"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 9), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 9), "9"          );
+    BOOST_CHECK_EQUAL(fizz_buzz( 9), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz(10), "Buzz"       );
     BOOST_CHECK_EQUAL(fizz_buzz(11), "11"         );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(12), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(12), "12"         );
+    BOOST_CHECK_EQUAL(fizz_buzz(12), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz(13), "13"         );
     BOOST_CHECK_EQUAL(fizz_buzz(14), "14"         );
     BOOST_CHECK_EQUAL(fizz_buzz(15), " Buzz"      );
     BOOST_CHECK_EQUAL(fizz_buzz(16), "16"         );
     BOOST_CHECK_EQUAL(fizz_buzz(17), "17"         );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(18), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(18), "18"         );
+    BOOST_CHECK_EQUAL(fizz_buzz(18), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz(19), "19"         );
     BOOST_CHECK_EQUAL(fizz_buzz(20), "Buzz"       );
     // clang-format on
@@ -405,21 +398,17 @@ BOOST_AUTO_TEST_CASE(change_buzz_message_to_empty)
     // Buzz の文言として空文字列を指定する
     FizzBuzz fizz_buzz { 3, 5, "Fizz", "" };
 
-    // FIXME 整数 n が 5 で割り切れる際の演算結果が空文字列にならない
-
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 2), "2"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 3), "Fizz"       );
     BOOST_CHECK_EQUAL(fizz_buzz( 4), "4"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 5), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 5), "5"          );
+    BOOST_CHECK_EQUAL(fizz_buzz( 5), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz( 6), "Fizz"       );
     BOOST_CHECK_EQUAL(fizz_buzz( 7), "7"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 8), "8"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 9), "Fizz"       );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(10), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(10), "10"         );
+    BOOST_CHECK_EQUAL(fizz_buzz(10), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz(11), "11"         );
     BOOST_CHECK_EQUAL(fizz_buzz(12), "Fizz"       );
     BOOST_CHECK_EQUAL(fizz_buzz(13), "13"         );
@@ -429,8 +418,7 @@ BOOST_AUTO_TEST_CASE(change_buzz_message_to_empty)
     BOOST_CHECK_EQUAL(fizz_buzz(17), "17"         );
     BOOST_CHECK_EQUAL(fizz_buzz(18), "Fizz"       );
     BOOST_CHECK_EQUAL(fizz_buzz(19), "19"         );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(20), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(20), "20"         );
+    BOOST_CHECK_EQUAL(fizz_buzz(20), ""           );
     // clang-format on
 }
 
@@ -469,38 +457,27 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message_to_empty)
     // Fizz の文言及び Buzz の文言として空文字列を指定する
     FizzBuzz fizz_buzz { 3, 5, "", "" };
 
-    // FIXME 整数 n が 3 で割り切れる際の演算結果が空文字列にならない
-    // FIXME 整数 n が 5 で割り切れる際の演算結果が空文字列にならない
-
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 2), "2"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 3), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 3), "3"          );
+    BOOST_CHECK_EQUAL(fizz_buzz( 3), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz( 4), "4"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 5), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 5), "5"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 6), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 6), "6"          );
+    BOOST_CHECK_EQUAL(fizz_buzz( 5), ""           );
+    BOOST_CHECK_EQUAL(fizz_buzz( 6), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz( 7), "7"          );
     BOOST_CHECK_EQUAL(fizz_buzz( 8), "8"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz( 9), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz( 9), "9"          );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(10), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(10), "10"         );
+    BOOST_CHECK_EQUAL(fizz_buzz( 9), ""           );
+    BOOST_CHECK_EQUAL(fizz_buzz(10), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz(11), "11"         );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(12), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(12), "12"         );
+    BOOST_CHECK_EQUAL(fizz_buzz(12), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz(13), "13"         );
     BOOST_CHECK_EQUAL(fizz_buzz(14), "14"         );
     BOOST_CHECK_EQUAL(fizz_buzz(15), " "          );
     BOOST_CHECK_EQUAL(fizz_buzz(16), "16"         );
     BOOST_CHECK_EQUAL(fizz_buzz(17), "17"         );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(18), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(18), "18"         );
+    BOOST_CHECK_EQUAL(fizz_buzz(18), ""           );
     BOOST_CHECK_EQUAL(fizz_buzz(19), "19"         );
-    // FIXME BOOST_CHECK_EQUAL(fizz_buzz(20), ""           );
-    BOOST_CHECK_EQUAL(fizz_buzz(20), "20"         );
+    BOOST_CHECK_EQUAL(fizz_buzz(20), ""           );
     // clang-format on
 }
 

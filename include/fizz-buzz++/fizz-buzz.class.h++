@@ -123,16 +123,19 @@ namespace fizz_buzzxx
 
     auto FizzBuzz::evaluate(const int value) const -> std::string
     {
-        std::string message   = "";
-        std::string delimiter = "";
+        std::string message      = "";
+        std::string delimiter    = "";
+        bool        is_divisible = false;
         if (value % this->_fizz_divisor == 0) {
-            message   = this->_fizz_message;
-            delimiter = " ";
+            message      = this->_fizz_message;
+            delimiter    = " ";
+            is_divisible = true;
         }
         if (value % this->_buzz_divisor == 0) {
             message += delimiter + this->_buzz_message;
+            is_divisible = true;
         }
-        if (message != "") {
+        if (is_divisible) {
             return message;
         }
         return std::to_string(value);
