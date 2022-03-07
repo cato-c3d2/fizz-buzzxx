@@ -24,11 +24,7 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
     IntegralSequenceIterator first = integra_lsequence.begin();
 
     // コンテナの末尾の整数 + 1 を参照するイテレータ last を生成する
-    IntegralSequenceIterator last = integra_lsequence.end();
-
-    // FIXME 本来は `IntegralSequenceIterator const last` と宣言したいところだが,
-    //       `IntegralSequenceIterator::operator*` が非 const 関数であるため,
-    //       それができない.
+    IntegralSequenceIterator const last = integra_lsequence.end();
 
     // 【検証】
     // イテレータ first は整数 0 を参照し, イテレータ last は整数 10 を参照すること.
@@ -41,17 +37,15 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
 
     // 【検証】
     // インクリメント(前置)したイテレータ first が整数 1 を参照すること
-    ++first;
-    BOOST_CHECK(*first == 1);
-
-    // FIXME 本来は `BOOST_CHECK(* (++first) == 1)` と記述したいところだが,
-    //       `IntegralSequenceIterator::operator++` の戻り値の型が const 修飾されているため,
-    //       それができない.
+    BOOST_CHECK(*(++first) == 1);
 
     // 【検証】
-    // インクリメント(後置)したイテレータ first が整数 2 を参照すること
-    first++;
-    BOOST_CHECK(*first == 2);
+    // インクリメント(後置)したイテレータ first が整数 1 を参照したままであること.
+    // また, 次の文ではイテレータ first が整数 2 を参照していること.
+    // clang-format off
+    BOOST_CHECK(*(first++) == 1);
+    BOOST_CHECK(*    first == 2);
+    // clang-format on
 
     // 【検証】
     // std::next で次に進めたイテレータ first が整数 3 を参照すること
