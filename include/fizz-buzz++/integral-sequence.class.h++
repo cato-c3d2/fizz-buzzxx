@@ -11,6 +11,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <cstddef>
+#include <iterator>
+
 namespace fizz_buzzxx
 {
     class IntegralSequenceIterator;
