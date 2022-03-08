@@ -6,7 +6,7 @@ var indexSectionsWithContent =
   3: "aefi",
   4: "befimo",
   5: "d",
-  6: "diprv",
+  6: "cdiprv",
   7: "cdfré"
 };
 

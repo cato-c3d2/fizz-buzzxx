@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pointer_83',['pointer',['../d9/d4b/classfizz__buzzxx_1_1IntegralSequenceIterator.html#aed10a61c9ecf902c2499669ee6d5949f',1,'fizz_buzzxx::IntegralSequenceIterator']]]
+  ['iterator_5fcategory_93',['iterator_category',['../d9/d4b/classfizz__buzzxx_1_1IntegralSequenceIterator.html#a3d10c93be5e521247a997d7990eac9a2',1,'fizz_buzzxx::IntegralSequenceIterator']]]
 ];

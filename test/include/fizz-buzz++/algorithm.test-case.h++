@@ -20,14 +20,19 @@ using namespace fizz_buzzxx;
 
 BOOST_AUTO_TEST_SUITE(function__fizz_buzz)
 
-// [ テストパターン ]
-// FizzBuzz を評価する関数オブジェクトとして,
-// デフォルトの関数オブジェクト FizzBuzz を使用する.
-// NOTE 関数 fizz_buzz の名称について
-// 関数名が `fizz_buzz` であるにもかかわらず,
-// FizzBuzz 問題とは無関係なことが行えるのは, 設計に問題があるような気がする.
+/*!
+ * テストパターン :
+ * FizzBuzz を評価する関数オブジェクトとして,
+ * デフォルトの関数オブジェクト FizzBuzz を使用する
+ *
+ * @see fizz_buzzxx::fizz_buzz()
+ */
 BOOST_AUTO_TEST_CASE(default_evaluator)
 {
+    // NOTE 関数 fizz_buzz の名称について
+    // 関数名が `fizz_buzz` であるにもかかわらず,
+    // FizzBuzz 問題とは無関係なことが行えるのは, 設計に問題があるような気がする.
+
     // 入力イテレータの元となるコンテナを用意する
     std::array<int, 15> input {};
     for (auto i = 0; i < input.size(); ++i) {
@@ -100,9 +105,13 @@ BOOST_AUTO_TEST_CASE(default_evaluator)
     // clang-format on
 }
 
-// [ テストパターン ]
-// FizzBuzz を評価する関数オブジェクトとして,
-// 関数オブジェクト FizzBuzz の代わりに, 整数を二乗する関数オブジェクトを使用する.
+/*!
+ * テストパターン :
+ * FizzBuzz を評価する関数オブジェクトとして,
+ * 関数オブジェクト FizzBuzz の代わりに, 整数を二乗する関数オブジェクトを使用する
+ *
+ * @see fizz_buzzxx::fizz_buzz()
+ */
 BOOST_AUTO_TEST_CASE(custom_evaluator)
 {
     // 入力イテレータの元となるコンテナを用意する

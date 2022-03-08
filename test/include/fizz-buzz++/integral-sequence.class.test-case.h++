@@ -15,6 +15,13 @@ using namespace fizz_buzzxx;
 
 BOOST_AUTO_TEST_SUITE(class__IntegralSequence)
 
+/*!
+ * テストパターン :
+ * @c IntegralSequence を @c IntegralSequenceIterator と共に使用する
+ *
+ * @see fizz_buzzxx::IntegralSequence
+ * @see fizz_buzzxx::IntegralSequenceIterator
+ */
 BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
 {
     // 0 ～ 9 の整数の並びを表現するコンテナを生成する
