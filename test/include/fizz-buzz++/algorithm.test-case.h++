@@ -7,8 +7,6 @@
 
 #include <fizz-buzz++/algorithm.h++>
 
-#include <boost/test/included/unit_test.hpp>
-
 #include <array>
 #include <functional>
 #include <string>

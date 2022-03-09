@@ -7,8 +7,6 @@
 
 #include <fizz-buzz++/integral-sequence.class.h++>
 
-#include <boost/test/included/unit_test.hpp>
-
 BOOST_AUTO_TEST_SUITE(namespace__fizz_buzzxx)
 
 using namespace fizz_buzzxx;
