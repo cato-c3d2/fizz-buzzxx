@@ -69,10 +69,10 @@ $(function() {
 <li>Ubuntu 20.04.3 LTS</li>
 <li>clang-format version 10.0.0-4ubuntu1</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 clang-format をインストールする</h1>
 <div class="fragment"><div class="line">sudo apt install clang-format -y</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
 .clang-format を生成する</h1>
 <div class="fragment"><div class="line">clang-format -style=llvm -dump-config &gt; .clang-format</div>
 </div><!-- fragment --><blockquote class="doxtable">
@@ -83,7 +83,7 @@ clang-format をインストールする</h1>
 <p><code>style</code> オプションの値はその他に <code>google</code> (Google 準拠のスタイル) などがあるが, 当プロジェクトでは <code>llvm</code> (LLVM 準拠のスタイル) を指定する.<br  />
  </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 .clang-format を編集する</h1>
 <p>下記に修正前と修正後の比較結果を記載する.<br  />
 </p>
@@ -244,7 +244,7 @@ clang-format をインストールする</h1>
 <div class="line"> UseTab:          Never</div>
 <div class="line"> ...</div>
 <div class="line">+</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 ソースコードをフォーマットする</h1>
 <div class="fragment"><div class="line">find -type f -name &quot;*.c++&quot; -o -name &quot;*.h++&quot; | xargs clang-format -i</div>
 </div><!-- fragment --><blockquote class="doxtable">
