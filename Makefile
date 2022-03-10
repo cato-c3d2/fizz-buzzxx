@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++17 -Wall -g3 -I ./include/
 SHELL    = /bin/bash
 
 .PHONY : all
-all : clean format build test-example document
+all : clean format build test test-example document
 
 .PHONY : build
 build : build/example-00.exe  \
@@ -140,3 +140,35 @@ document-clean :
 .PHONY : format
 format :
 	find -type f -name "*.c++" -o -name "*.h++" | xargs clang-format -i
+
+################################################################################
+# test (Boost.Test)
+################################################################################
+
+# ------------------------------------------------------------------------------
+# Boost.Test を静的ライブラリとして使用する際のコンパイルオプション
+# NOTE Boost.Test をヘッダオンリーライブラリとして使用する場合は,
+#      この変数をコメントアウトすればよい
+boost_test_options = -l boost_unit_test_framework \
+                     -static \
+                     -D LINK_BOOST_TEST_AS_STATIC_LIBRARY
+# ------------------------------------------------------------------------------
+
+.PHONY : test
+test : test-clean test-build test-run
+
+.PHONY : test-build
+test-build : ./test/build/test-module.exe
+
+test/build/test-module.exe : ./test/test-module.c++
+	$(CXX) ./test/test-module.c++ -o ./test/build/test-module.exe \
+        $(CXXFLAGS) \
+        $(boost_test_options)
+
+.PHONY : test-clean
+test-clean :
+	$(RM) ./test/build/*.exe
+
+.PHONY : test-run
+test-run : ./test/build/test-module.exe
+	./test/build/test-module.exe

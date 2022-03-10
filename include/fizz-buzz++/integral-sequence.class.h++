@@ -11,6 +11,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <cstddef>
+#include <iterator>
+
 namespace fizz_buzzxx
 {
     class IntegralSequenceIterator;
@@ -66,8 +69,15 @@ namespace fizz_buzzxx
         /*! イテレータが指す値のポインタ型 */
         using pointer = int *;
 
-        /*! イテレータが指す値の参照型 */
+        /*! イテレータが指す値の参照型 (非 const) */
         using reference = int &;
+
+        /*!
+         * イテレータが指す値の参照型 (const)
+         *
+         * @see reference
+         */
+        using const_reference = const int &;
 
         /*! イテレータの分類 */
         using iterator_category = std::input_iterator_tag;
@@ -87,11 +97,21 @@ namespace fizz_buzzxx
         auto operator*() -> reference;
 
         /*!
+         * @copydoc operator*()
+         */
+        auto operator*() const -> const_reference;
+
+        /*!
          * メンバアクセス演算
          *
          * @return このイテレータが指す値への参照を返却する
          */
         auto operator->() -> reference;
+
+        /*!
+         * @copydoc operator->()
+         */
+        auto operator->() const -> const_reference;
 
         /*!
          * 前置インクリメント演算
@@ -173,7 +193,17 @@ namespace fizz_buzzxx
         return this->_value;
     }
 
+    auto IntegralSequenceIterator::operator*() const -> const_reference
+    {
+        return this->_value;
+    }
+
     auto IntegralSequenceIterator::operator->() -> reference
+    {
+        return this->_value;
+    }
+
+    auto IntegralSequenceIterator::operator->() const -> const_reference
     {
         return this->_value;
     }

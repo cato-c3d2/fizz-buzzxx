@@ -1,11 +1,13 @@
 <map id="example/example&#45;02b.c++" name="example/example&#45;02b.c++">
-<area shape="rect" id="node1" title=" " alt="" coords="625,5,828,32"/>
-<area shape="rect" id="node2" href="$d1/d59/fizz-buzz_09_09_8h_09_09.html" title=" " alt="" coords="393,80,527,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="489,244,548,271"/>
-<area shape="rect" id="node8" title=" " alt="" coords="725,80,805,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="830,80,901,107"/>
-<area shape="rect" id="node3" href="$d2/d3a/algorithm_8h_09_09.html" title=" " alt="" coords="5,162,208,189"/>
-<area shape="rect" id="node5" href="$dd/d2d/fizz-buzz_8class_8h_09_09.html" title=" " alt="" coords="233,162,466,189"/>
-<area shape="rect" id="node7" href="$d8/d30/integral-sequence_8class_8h_09_09.html" title=" " alt="" coords="491,155,651,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="64,244,149,271"/>
+<area shape="rect" id="node1" title=" " alt="" coords="405,5,607,32"/>
+<area shape="rect" id="node2" href="$d1/d59/fizz-buzz_09_09_8h_09_09.html" title=" " alt="" coords="300,80,435,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="462,319,521,345"/>
+<area shape="rect" id="node10" title=" " alt="" coords="5,244,76,271"/>
+<area shape="rect" id="node11" title=" " alt="" coords="613,80,693,107"/>
+<area shape="rect" id="node3" href="$d2/d3a/algorithm_8h_09_09.html" title=" " alt="" coords="335,162,538,189"/>
+<area shape="rect" id="node4" href="$dd/d2d/fizz-buzz_8class_8h_09_09.html" title=" " alt="" coords="195,244,428,271"/>
+<area shape="rect" id="node8" href="$d8/d30/integral-sequence_8class_8h_09_09.html" title=" " alt="" coords="78,155,238,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="453,244,538,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="268,319,355,345"/>
+<area shape="rect" id="node9" title=" " alt="" coords="100,244,171,271"/>
 </map>

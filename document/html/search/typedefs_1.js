@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iterator_5fcategory_82',['iterator_category',['../d9/d4b/classfizz__buzzxx_1_1IntegralSequenceIterator.html#a3d10c93be5e521247a997d7990eac9a2',1,'fizz_buzzxx::IntegralSequenceIterator']]]
+  ['difference_5ftype_92',['difference_type',['../d9/d4b/classfizz__buzzxx_1_1IntegralSequenceIterator.html#a2028fef5c87c537f15ecbcb3d3051cd3',1,'fizz_buzzxx::IntegralSequenceIterator']]]
 ];

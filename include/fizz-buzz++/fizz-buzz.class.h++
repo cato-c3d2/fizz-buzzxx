@@ -86,6 +86,8 @@ namespace fizz_buzzxx
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <stdexcept>
+
 namespace fizz_buzzxx
 {
     const int FizzBuzz::default_fizz_divisor = 3;
@@ -105,7 +107,14 @@ namespace fizz_buzzxx
         , _buzz_divisor(buzz_divisor)
         , _fizz_message(fizz_message)
         , _buzz_message(buzz_message)
-    {}
+    {
+        if (fizz_divisor == 0) {
+            throw std::invalid_argument("fizz_divisor is zero.");
+        }
+        if (buzz_divisor == 0) {
+            throw std::invalid_argument("buzz_divisor is zero.");
+        }
+    }
 
     auto FizzBuzz::operator()(const int value) const -> std::string
     {
@@ -114,16 +123,19 @@ namespace fizz_buzzxx
 
     auto FizzBuzz::evaluate(const int value) const -> std::string
     {
-        std::string message   = "";
-        std::string delimiter = "";
+        std::string message      = "";
+        std::string delimiter    = "";
+        bool        is_divisible = false;
         if (value % this->_fizz_divisor == 0) {
-            message   = this->_fizz_message;
-            delimiter = " ";
+            message      = this->_fizz_message;
+            delimiter    = " ";
+            is_divisible = true;
         }
         if (value % this->_buzz_divisor == 0) {
             message += delimiter + this->_buzz_message;
+            is_divisible = true;
         }
-        if (message != "") {
+        if (is_divisible) {
             return message;
         }
         return std::to_string(value);
