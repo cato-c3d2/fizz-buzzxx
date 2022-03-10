@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fizz-buzz++: 開発ドキュメント</title>
+<title>fizz-buzz++: Boost.Test によるユニットテスト</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -62,15 +62,68 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">開発ドキュメント </div>  </div>
+<div class="title">Boost.Test によるユニットテスト </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md19"></a>
-@ref ./for_doxygen.md "Doxygen によるドキュメンテーション"</h1>
-<h1><a class="anchor" id="autotoc_md20"></a>
-@ref ./for-clang-format.md "clang-format によるソースコードのフォーマット"</h1>
-<h1><a class="anchor" id="autotoc_md21"></a>
-@ref ./for-boost-test.md "Boost.Test によるユニットテスト"</h1>
+<div class="textblock"><ul>
+<li>Ubuntu 20.04.3 LTS</li>
+<li>libboost1.71-dev</li>
+<li>libboost-test1.71.0</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+libboost-dev をインストールする</h1>
+<div class="fragment"><div class="line">sudo apt install libboost-dev -y</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+libboost-test-dev をインストールする</h1>
+<blockquote class="doxtable">
+<p>Boost.Test をヘッダオンリーライブラリとして使用する場合, この手順は必要ない.<br  />
+ </p>
+</blockquote>
+<div class="fragment"><div class="line">sudo apt install libboost-test-dev -y</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p><code>libboost-test-dev</code> をインストールすることによって, 下記の静的ライブラリが生成される.<br  />
+</p>
+<div class="fragment"><div class="line">/usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.a</div>
+</div><!-- fragment --><p></p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Boost.Test をヘッダオンリーライブラリとして使用する</h1>
+<p>下記のヘッダファイルをインクルードする.<br  />
+</p>
+<ul>
+<li><code>boost/test/included/unit_test.hpp</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Boost.Test を静的ライブラリとして使用する</h1>
+<p>下記のヘッダファイルをインクルードする.<br  />
+</p>
+<ul>
+<li><code>boost/test/unit_test.hpp</code></li>
+</ul>
+<p>また, テストモジュール(後述)をコンパイルする際に, 下記のコンパイルオプションを指定する.<br  />
+</p>
+<ul>
+<li><code>-l boost_unit_test_framework</code></li>
+<li><code>-static</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+テストモジュールとテストケースを実装する</h1>
+<p>テストモジュール及びテストケースの実装については, 下記を参照のこと :<br  />
+</p>
+<ul>
+<li>テストモジュール<ul>
+<li><a href="../../../test/test-module.c++">test-module.c++</a></li>
+</ul>
+</li>
+<li><code>FizzBuzz</code> クラスのテストケース<ul>
+<li><a href="../../../test/include/fizz-buzz++/fizz-buzz.class.test-case.h++">fizz-buzz.class.test-case.h++</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+テストモジュールを実行する</h1>
+<p>特に必要な手順などはなく, コンパイルしたテストモジュールを実行すればよい.<br  />
+ </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

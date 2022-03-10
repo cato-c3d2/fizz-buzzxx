@@ -7,7 +7,7 @@ var indexSectionsWithContent =
   4: "befimo",
   5: "d",
   6: "cdiprv",
-  7: "cdfré"
+  7: "bcdfré"
 };
 
 var indexSectionNames =
