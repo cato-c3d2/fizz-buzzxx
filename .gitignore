@@ -33,3 +33,6 @@
 
 # Visual Studio Code configurations
 .vscode/
+
+# Doxygen documents
+document/html/
