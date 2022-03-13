@@ -29,15 +29,12 @@ namespace fizz_buzzxx
      *
      * @see FizzBuzz
      */
-    template<
-        typename InputIterator,
-        typename Callback,
-        typename FizzBuzzEvaluator = FizzBuzz>
+    template<typename InputIterator, typename Callback>
     auto fizz_buzz(
-        InputIterator     first,
-        InputIterator     last,
-        Callback          callback,
-        FizzBuzzEvaluator fizz_buzz_evaluator = {}) -> Callback;
+        InputIterator first,
+        InputIterator last,
+        Callback      callback,
+        FizzBuzz      fizz_buzz_evaluator = {}) -> Callback;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -50,15 +47,12 @@ namespace fizz_buzzxx
 
 namespace fizz_buzzxx
 {
-    template<
-        typename InputIterator,
-        typename Callback,
-        typename FizzBuzzEvaluator>
+    template<typename InputIterator, typename Callback>
     auto fizz_buzz(
-        const InputIterator     first,
-        const InputIterator     last,
-        const Callback          callback,
-        const FizzBuzzEvaluator fizz_buzz_evaluator) -> Callback
+        const InputIterator first,
+        const InputIterator last,
+        const Callback      callback,
+        const FizzBuzz      fizz_buzz_evaluator) -> Callback
     {
         std::for_each(first, last, [&](auto value) {
             callback(fizz_buzz_evaluator(value));
