@@ -54,23 +54,8 @@ namespace fizz_buzzxx
          * @return FizzBuzz の値を返却する @n
          *         FizzBuzz の値が整数 @c value の場合は,
          *         整数 @c value を文字列に変換して返却する
-         *
-         * @see evaluate()
          */
         auto operator()(int value) const -> std::string;
-
-        /*!
-         * 引数として与えられた整数に対する FizzBuzz の値を求める
-         *
-         * @param[in] value FizzBuzz の値を求める整数
-         *
-         * @return FizzBuzz の値を返却する @n
-         *         FizzBuzz の値が整数 @c value の場合は,
-         *         整数 @c value を文字列に変換して返却する
-         *
-         * @see operator()()
-         */
-        auto evaluate(int value) const -> std::string;
 
     private:
         const int         _fizz_divisor;
@@ -117,11 +102,6 @@ namespace fizz_buzzxx
     }
 
     auto FizzBuzz::operator()(const int value) const -> std::string
-    {
-        return this->evaluate(value);
-    }
-
-    auto FizzBuzz::evaluate(const int value) const -> std::string
     {
         std::string message      = "";
         std::string delimiter    = "";
