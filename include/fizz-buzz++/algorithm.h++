@@ -20,10 +20,10 @@ namespace fizz_buzzxx
     /*!
      * イテレータの範囲に対して繰り返し FizzBuzz を評価する
      *
-     * @param[in] first               範囲の開始位置を示す入力イテレータ
-     * @param[in] last                範囲の終了位置を示す入力イテレータ
-     * @param[in] callback            範囲内の各要素に適用されるユーザー定義の関数オブジェクト
-     * @param[in] fizz_buzz_evaluator FizzBuzz を評価する関数オブジェクト
+     * @param[in] first    範囲の開始位置を示す入力イテレータ
+     * @param[in] last     範囲の終了位置を示す入力イテレータ
+     * @param[in] callback 範囲内の各要素に適用されるユーザー定義の関数オブジェクト
+     * @param[in] evaluate FizzBuzz を評価する関数オブジェクト
      *
      * @return 範囲内のすべての要素に適用した後の @c callback のコピーを返却する
      *
@@ -34,7 +34,7 @@ namespace fizz_buzzxx
         InputIterator first,
         InputIterator last,
         Callback      callback,
-        FizzBuzz      fizz_buzz_evaluator = {}) -> Callback;
+        FizzBuzz      evaluate = {}) -> Callback;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -52,10 +52,10 @@ namespace fizz_buzzxx
         const InputIterator first,
         const InputIterator last,
         const Callback      callback,
-        const FizzBuzz      fizz_buzz_evaluator) -> Callback
+        const FizzBuzz      evaluate) -> Callback
     {
         std::for_each(first, last, [&](auto value) {
-            callback(fizz_buzz_evaluator(value));
+            callback(evaluate(value));
         });
         return callback;
     }
