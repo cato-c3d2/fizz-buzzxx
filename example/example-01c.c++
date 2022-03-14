@@ -22,6 +22,8 @@
  */
 auto main() -> int
 {
+    using namespace fizz_buzzxx;
+
     // 1 ～ 100 の整数を格納した配列を生成する
     std::size_t constexpr size = 100;
     int sequence[size];
@@ -30,8 +32,7 @@ auto main() -> int
     }
 
     // FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzzxx::fizz_buzz(
-        std::begin(sequence), std::end(sequence), [&](const auto value) {
-            std::cout << value << std::endl;
-        });
+    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
+        std::cout << value << std::endl;
+    });
 }

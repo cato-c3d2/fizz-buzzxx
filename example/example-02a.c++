@@ -25,15 +25,16 @@
  */
 auto main() -> int
 {
+    using namespace fizz_buzzxx;
+
     // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const fizz_buzzxx::IntegralSequence sequence(1, 100);
+    const IntegralSequence sequence(1, 100);
 
     // FizzBuzz 問題の結果を文字列ストリームに出力する
     std::ostringstream out;
-    fizz_buzzxx::fizz_buzz(
-        std::begin(sequence), std::end(sequence), [&](const auto value) {
-            out << value << std::endl;
-        });
+    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
+        out << value << std::endl;
+    });
 
     // 文字列ストリームに出力した FizzBuzz 問題の結果を標準出力に出力する
     std::cout << out.str();
