@@ -7,7 +7,7 @@
  * イテレータの範囲に対して繰り返し FizzBuzz を評価するアルゴリズム
  * @c fizz_buzz を使用したもの. @n
  *
- * @file example-00.c++
+ * @file example-00a.c++
  * @see  fizz_buzzxx::IntegralSequence
  * @see  fizz_buzzxx::fizz_buzz
  */

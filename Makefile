@@ -6,7 +6,7 @@ SHELL    = /bin/bash
 all : clean format build test test-example document
 
 .PHONY : build
-build : build/example-00.exe  \
+build : build/example-00a.exe \
         build/example-01a.exe \
         build/example-01b.exe \
         build/example-01c.exe \
@@ -16,10 +16,10 @@ build : build/example-00.exe  \
         build/example-03b.exe \
         build/example-03c.exe \
         build/example-10a.exe \
-        build/example-99.exe
+        build/example-99z.exe
 
-build/example-00.exe : ./example/example-00.c++
-	$(CXX) ./example/example-00.c++ -o ./build/example-00.exe $(CXXFLAGS)
+build/example-00a.exe : ./example/example-00a.c++
+	$(CXX) ./example/example-00a.c++ -o ./build/example-00a.exe $(CXXFLAGS)
 
 build/example-01a.exe : ./example/example-01a.c++
 	$(CXX) ./example/example-01a.c++ -o ./build/example-01a.exe $(CXXFLAGS)
@@ -48,15 +48,15 @@ build/example-03c.exe : ./example/example-03c.c++
 build/example-10a.exe : ./example/example-10a.c++
 	$(CXX) ./example/example-10a.c++ -o ./build/example-10a.exe $(CXXFLAGS)
 
-build/example-99.exe : ./example/example-99.c++
-	$(CXX) ./example/example-99.c++ -o ./build/example-99.exe $(CXXFLAGS)
+build/example-99z.exe : ./example/example-99z.c++
+	$(CXX) ./example/example-99z.c++ -o ./build/example-99z.exe $(CXXFLAGS)
 
 .PHONY : clean
 clean :
 	$(RM) ./build/*.exe
 
 .PHONY : test-example
-test-example : test-example-00  \
+test-example : test-example-00a \
                test-example-01a \
                test-example-01b \
                test-example-01c \
@@ -66,13 +66,13 @@ test-example : test-example-00  \
                test-example-03b \
                test-example-03c \
                test-example-10a \
-               test-example-99
+               test-example-99z
 
 # サンプルコードの期待結果(テキストファイル)と実行結果(標準出力)を比較し、
 # 差異があれば標準エラー出力にリダイレクトする
-.PHONY : test-example-00
-test-example-00 : ./build/example-00.exe
-	diff -u ./example/output/example-00.txt <(./build/example-00.exe) 1>&2
+.PHONY : test-example-00a
+test-example-00a : ./build/example-00a.exe
+	diff -u ./example/output/example-00a.txt <(./build/example-00a.exe) 1>&2
 
 .PHONY : test-example-01a
 test-example-01a : ./build/example-01a.exe
@@ -110,9 +110,9 @@ test-example-03c : ./build/example-03c.exe
 test-example-10a : ./build/example-10a.exe
 	diff -u ./example/output/example-10a.txt <(./build/example-10a.exe) 1>&2
 
-.PHONY : test-example-99
-test-example-99 : ./build/example-99.exe
-	diff -u ./example/output/example-99.txt <(./build/example-99.exe) 1>&2
+.PHONY : test-example-99z
+test-example-99z : ./build/example-99z.exe
+	diff -u ./example/output/example-99z.txt <(./build/example-99z.exe) 1>&2
 
 ################################################################################
 # document (Doxygen)

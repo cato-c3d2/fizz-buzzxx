@@ -5,7 +5,7 @@
  *
  * 一般的な方法で FizzBuzz 問題を実装したもの. @n
  *
- * @file example-99.c++
+ * @file example-99z.c++
  */
 
 #include <iostream>
