@@ -72,47 +72,47 @@ test-example : test-example-00  \
 # 差異があれば標準エラー出力にリダイレクトする
 .PHONY : test-example-00
 test-example-00 : ./build/example-00.exe
-	diff -u ./example/example-00.output.txt <(./build/example-00.exe) 1>&2
+	diff -u ./example/output/example-00.txt <(./build/example-00.exe) 1>&2
 
 .PHONY : test-example-01a
 test-example-01a : ./build/example-01a.exe
-	diff -u ./example/example-01a.output.txt <(./build/example-01a.exe) 1>&2
+	diff -u ./example/output/example-01a.txt <(./build/example-01a.exe) 1>&2
 
 .PHONY : test-example-01b
 test-example-01b : ./build/example-01b.exe
-	diff -u ./example/example-01b.output.txt <(./build/example-01b.exe) 1>&2
+	diff -u ./example/output/example-01b.txt <(./build/example-01b.exe) 1>&2
 
 .PHONY : test-example-01c
 test-example-01c : ./build/example-01c.exe
-	diff -u ./example/example-01c.output.txt <(./build/example-01c.exe) 1>&2
+	diff -u ./example/output/example-01c.txt <(./build/example-01c.exe) 1>&2
 
 .PHONY : test-example-02a
 test-example-02a : ./build/example-02a.exe
-	diff -u ./example/example-02a.output.txt <(./build/example-02a.exe) 1>&2
+	diff -u ./example/output/example-02a.txt <(./build/example-02a.exe) 1>&2
 
 .PHONY : test-example-02b
 test-example-02b : ./build/example-02b.exe
-	diff -u ./example/example-02b.output.txt <(./build/example-02b.exe) 1>&2
+	diff -u ./example/output/example-02b.txt <(./build/example-02b.exe) 1>&2
 
 .PHONY : test-example-03a
 test-example-03a : ./build/example-03a.exe
-	diff -u ./example/example-03a.output.txt <(./build/example-03a.exe) 1>&2
+	diff -u ./example/output/example-03a.txt <(./build/example-03a.exe) 1>&2
 
 .PHONY : test-example-03b
 test-example-03b : ./build/example-03b.exe
-	diff -u ./example/example-03b.output.txt <(./build/example-03b.exe) 1>&2
+	diff -u ./example/output/example-03b.txt <(./build/example-03b.exe) 1>&2
 
 .PHONY : test-example-03c
 test-example-03c : ./build/example-03c.exe
-	diff -u ./example/example-03c.output.txt <(./build/example-03c.exe) 1>&2
+	diff -u ./example/output/example-03c.txt <(./build/example-03c.exe) 1>&2
 
 .PHONY : test-example-10a
 test-example-10a : ./build/example-10a.exe
-	diff -u ./example/example-10a.output.txt <(./build/example-10a.exe) 1>&2
+	diff -u ./example/output/example-10a.txt <(./build/example-10a.exe) 1>&2
 
 .PHONY : test-example-99
 test-example-99 : ./build/example-99.exe
-	diff -u ./example/example-99.output.txt <(./build/example-99.exe) 1>&2
+	diff -u ./example/output/example-99.txt <(./build/example-99.exe) 1>&2
 
 ################################################################################
 # document (Doxygen)
