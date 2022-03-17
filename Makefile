@@ -1,6 +1,7 @@
-CXX      = clang++
-CXXFLAGS = -std=c++17 -Wall -g3 -I ./include/
-SHELL    = /bin/bash
+include ./configuration.mk
+
+include_home  = ./include/
+build_options = $(CXXFLAGS) -I $(include_home)
 
 .PHONY : all
 all : clean format build test test-example document
@@ -19,37 +20,37 @@ build : build/example-00a.exe \
         build/example-99z.exe
 
 build/example-00a.exe : ./example/example-00a.c++
-	$(CXX) ./example/example-00a.c++ -o ./build/example-00a.exe $(CXXFLAGS)
+	$(CXX) ./example/example-00a.c++ -o ./build/example-00a.exe $(build_options)
 
 build/example-01a.exe : ./example/example-01a.c++
-	$(CXX) ./example/example-01a.c++ -o ./build/example-01a.exe $(CXXFLAGS)
+	$(CXX) ./example/example-01a.c++ -o ./build/example-01a.exe $(build_options)
 
 build/example-01b.exe : ./example/example-01b.c++
-	$(CXX) ./example/example-01b.c++ -o ./build/example-01b.exe $(CXXFLAGS)
+	$(CXX) ./example/example-01b.c++ -o ./build/example-01b.exe $(build_options)
 
 build/example-01c.exe : ./example/example-01c.c++
-	$(CXX) ./example/example-01c.c++ -o ./build/example-01c.exe $(CXXFLAGS)
+	$(CXX) ./example/example-01c.c++ -o ./build/example-01c.exe $(build_options)
 
 build/example-02a.exe : ./example/example-02a.c++
-	$(CXX) ./example/example-02a.c++ -o ./build/example-02a.exe $(CXXFLAGS)
+	$(CXX) ./example/example-02a.c++ -o ./build/example-02a.exe $(build_options)
 
 build/example-02b.exe : ./example/example-02b.c++
-	$(CXX) ./example/example-02b.c++ -o ./build/example-02b.exe $(CXXFLAGS)
+	$(CXX) ./example/example-02b.c++ -o ./build/example-02b.exe $(build_options)
 
 build/example-03a.exe : ./example/example-03a.c++
-	$(CXX) ./example/example-03a.c++ -o ./build/example-03a.exe $(CXXFLAGS)
+	$(CXX) ./example/example-03a.c++ -o ./build/example-03a.exe $(build_options)
 
 build/example-03b.exe : ./example/example-03b.c++
-	$(CXX) ./example/example-03b.c++ -o ./build/example-03b.exe $(CXXFLAGS)
+	$(CXX) ./example/example-03b.c++ -o ./build/example-03b.exe $(build_options)
 
 build/example-03c.exe : ./example/example-03c.c++
-	$(CXX) ./example/example-03c.c++ -o ./build/example-03c.exe $(CXXFLAGS)
+	$(CXX) ./example/example-03c.c++ -o ./build/example-03c.exe $(build_options)
 
 build/example-10a.exe : ./example/example-10a.c++
-	$(CXX) ./example/example-10a.c++ -o ./build/example-10a.exe $(CXXFLAGS)
+	$(CXX) ./example/example-10a.c++ -o ./build/example-10a.exe $(build_options)
 
 build/example-99z.exe : ./example/example-99z.c++
-	$(CXX) ./example/example-99z.c++ -o ./build/example-99z.exe $(CXXFLAGS)
+	$(CXX) ./example/example-99z.c++ -o ./build/example-99z.exe $(build_options)
 
 .PHONY : clean
 clean :

@@ -1,6 +1,7 @@
-CXX      = clang++
-CXXFLAGS = -std=c++17 -Wall -g3 -I ../include/
-SHELL    = /bin/bash
+include ../configuration.mk
+
+include_home  = ../include/
+build_options = $(CXXFLAGS) -I $(include_home)
 
 # ------------------------------------------------------------------------------
 # Boost.Test を静的ライブラリとして使用する際のコンパイルオプション
@@ -19,7 +20,7 @@ build : ./build/test-module.exe
 
 build/test-module.exe : ./test-module.c++
 	$(CXX) ./test-module.c++ -o ./build/test-module.exe \
-        $(CXXFLAGS) \
+        $(build_options) \
         $(boost_test_options)
 
 .PHONY : clean
