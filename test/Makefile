@@ -11,21 +11,21 @@ boost_test_options = -l boost_unit_test_framework \
                      -D LINK_BOOST_TEST_AS_STATIC_LIBRARY
 # ------------------------------------------------------------------------------
 
-.PHONY : test
-test : test-clean test-build test-run
+.PHONY : all
+all : clean build run
 
-.PHONY : test-build
-test-build : ./build/test-module.exe
+.PHONY : build
+build : ./build/test-module.exe
 
 build/test-module.exe : ./test-module.c++
 	$(CXX) ./test-module.c++ -o ./build/test-module.exe \
         $(CXXFLAGS) \
         $(boost_test_options)
 
-.PHONY : test-clean
-test-clean :
+.PHONY : clean
+clean :
 	$(RM) ./build/*.exe
 
-.PHONY : test-run
-test-run : ./build/test-module.exe
+.PHONY : run
+run : ./build/test-module.exe
 	./build/test-module.exe
