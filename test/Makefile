@@ -19,9 +19,9 @@ all : clean build run
 build : ./build/test-module.exe
 
 build/test-module.exe : ./test-module.c++
-	$(CXX) ./test-module.c++ -o ./build/test-module.exe \
-        $(build_options) \
-        $(boost_test_options)
+	$(CXX) $< -o $@ $(build_options) $(boost_test_options)
+    # NOTE 自動変数が展開され, 下記のコマンドが実行される :
+    #      $(CXX) ./test-module.c++ -o ./build/test-module.exe $(build_options) $(boost_test_options)
 
 .PHONY : clean
 clean :
@@ -29,4 +29,5 @@ clean :
 
 .PHONY : run
 run : ./build/test-module.exe
-	./build/test-module.exe
+	$<
+    # NOTE 最初の依存ファイルであるテストモジュールを実行する
