@@ -4,7 +4,7 @@ include_home  = ./include/
 build_options = $(CXXFLAGS) -I $(include_home)
 
 .PHONY : all
-all : clean format build test test-example document
+all : clean format build test compare-example document
 
 .PHONY : build
 build : build/example-00a.exe \
@@ -62,67 +62,67 @@ build/example-99z.exe : ./example/example-99z.c++
 clean :
 	$(RM) ./build/*.exe
 
-.PHONY : test-example
-test-example : test-example-00a \
-               test-example-01a \
-               test-example-01b \
-               test-example-01c \
-               test-example-02a \
-               test-example-02b \
-               test-example-03a \
-               test-example-03b \
-               test-example-03c \
-               test-example-10a \
-               test-example-99z
+.PHONY : compare-example
+compare-example : compare-example-00a \
+                  compare-example-01a \
+                  compare-example-01b \
+                  compare-example-01c \
+                  compare-example-02a \
+                  compare-example-02b \
+                  compare-example-03a \
+                  compare-example-03b \
+                  compare-example-03c \
+                  compare-example-10a \
+                  compare-example-99z
 
 # サンプルコードの期待結果(テキストファイル)と実行結果(標準出力)を比較し、
 # 差異があれば標準エラー出力にリダイレクトする
 run_and_compare_result = diff -u $(1) <($(2)) 1>&2
 
-.PHONY : test-example-00a
-test-example-00a : ./build/example-00a.exe
+.PHONY : compare-example-00a
+compare-example-00a : ./build/example-00a.exe
 	$(call run_and_compare_result, ./example/output/example-00a.txt, $<)
     # NOTE 自動変数が展開され, 下記のコマンドが実行される :
     #      $(call run_and_compare_result, ./example/output/example-00a.txt, ./build/example-00a.exe)
 
-.PHONY : test-example-01a
-test-example-01a : ./build/example-01a.exe
+.PHONY : compare-example-01a
+compare-example-01a : ./build/example-01a.exe
 	$(call run_and_compare_result, ./example/output/example-01a.txt, $<)
 
-.PHONY : test-example-01b
-test-example-01b : ./build/example-01b.exe
+.PHONY : compare-example-01b
+compare-example-01b : ./build/example-01b.exe
 	$(call run_and_compare_result, ./example/output/example-01b.txt, $<)
 
-.PHONY : test-example-01c
-test-example-01c : ./build/example-01c.exe
+.PHONY : compare-example-01c
+compare-example-01c : ./build/example-01c.exe
 	$(call run_and_compare_result, ./example/output/example-01c.txt, $<)
 
-.PHONY : test-example-02a
-test-example-02a : ./build/example-02a.exe
+.PHONY : compare-example-02a
+compare-example-02a : ./build/example-02a.exe
 	$(call run_and_compare_result, ./example/output/example-02a.txt, $<)
 
-.PHONY : test-example-02b
-test-example-02b : ./build/example-02b.exe
+.PHONY : compare-example-02b
+compare-example-02b : ./build/example-02b.exe
 	$(call run_and_compare_result, ./example/output/example-02b.txt, $<)
 
-.PHONY : test-example-03a
-test-example-03a : ./build/example-03a.exe
+.PHONY : compare-example-03a
+compare-example-03a : ./build/example-03a.exe
 	$(call run_and_compare_result, ./example/output/example-03a.txt, $<)
 
-.PHONY : test-example-03b
-test-example-03b : ./build/example-03b.exe
+.PHONY : compare-example-03b
+compare-example-03b : ./build/example-03b.exe
 	$(call run_and_compare_result, ./example/output/example-03b.txt, $<)
 
-.PHONY : test-example-03c
-test-example-03c : ./build/example-03c.exe
+.PHONY : compare-example-03c
+compare-example-03c : ./build/example-03c.exe
 	$(call run_and_compare_result, ./example/output/example-03c.txt, $<)
 
-.PHONY : test-example-10a
-test-example-10a : ./build/example-10a.exe
+.PHONY : compare-example-10a
+compare-example-10a : ./build/example-10a.exe
 	$(call run_and_compare_result, ./example/output/example-10a.txt, $<)
 
-.PHONY : test-example-99z
-test-example-99z : ./build/example-99z.exe
+.PHONY : compare-example-99z
+compare-example-99z : ./build/example-99z.exe
 	$(call run_and_compare_result, ./example/output/example-99z.txt, $<)
 
 ################################################################################
