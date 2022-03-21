@@ -75,8 +75,8 @@ compare-example : compare-example-00a \
                   compare-example-10a \
                   compare-example-99z
 
-# サンプルコードの期待結果(テキストファイル)と実行結果(標準出力)を比較し、
-# 差異があれば標準エラー出力にリダイレクトする
+# サンプルコードの期待結果(テキストファイル)と実行結果(標準出力)を比較し,
+# 差異があれば標準エラー出力にリダイレクトするユーザ定義関数
 run_and_compare_result = diff -u $(1) <($(2)) 1>&2
 
 .PHONY : compare-example-00a
