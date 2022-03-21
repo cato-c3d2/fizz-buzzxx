@@ -77,51 +77,53 @@ test-example : test-example-00a \
 
 # サンプルコードの期待結果(テキストファイル)と実行結果(標準出力)を比較し、
 # 差異があれば標準エラー出力にリダイレクトする
+run_and_compare_result = diff -u $(1) <($(2)) 1>&2
+
 .PHONY : test-example-00a
 test-example-00a : ./build/example-00a.exe
-	diff -u ./example/output/example-00a.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-00a.txt, $<)
     # NOTE 自動変数が展開され, 下記のコマンドが実行される :
-    #      diff -u ./example/output/example-00a.txt <(./build/example-00a.exe) 1>&2
+    #      $(call run_and_compare_result, ./example/output/example-00a.txt, ./build/example-00a.exe)
 
 .PHONY : test-example-01a
 test-example-01a : ./build/example-01a.exe
-	diff -u ./example/output/example-01a.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-01a.txt, $<)
 
 .PHONY : test-example-01b
 test-example-01b : ./build/example-01b.exe
-	diff -u ./example/output/example-01b.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-01b.txt, $<)
 
 .PHONY : test-example-01c
 test-example-01c : ./build/example-01c.exe
-	diff -u ./example/output/example-01c.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-01c.txt, $<)
 
 .PHONY : test-example-02a
 test-example-02a : ./build/example-02a.exe
-	diff -u ./example/output/example-02a.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-02a.txt, $<)
 
 .PHONY : test-example-02b
 test-example-02b : ./build/example-02b.exe
-	diff -u ./example/output/example-02b.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-02b.txt, $<)
 
 .PHONY : test-example-03a
 test-example-03a : ./build/example-03a.exe
-	diff -u ./example/output/example-03a.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-03a.txt, $<)
 
 .PHONY : test-example-03b
 test-example-03b : ./build/example-03b.exe
-	diff -u ./example/output/example-03b.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-03b.txt, $<)
 
 .PHONY : test-example-03c
 test-example-03c : ./build/example-03c.exe
-	diff -u ./example/output/example-03c.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-03c.txt, $<)
 
 .PHONY : test-example-10a
 test-example-10a : ./build/example-10a.exe
-	diff -u ./example/output/example-10a.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-10a.txt, $<)
 
 .PHONY : test-example-99z
 test-example-99z : ./build/example-99z.exe
-	diff -u ./example/output/example-99z.txt <($<) 1>&2
+	$(call run_and_compare_result, ./example/output/example-99z.txt, $<)
 
 ################################################################################
 # document (Doxygen)
