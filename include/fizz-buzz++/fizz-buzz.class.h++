@@ -16,7 +16,7 @@
 namespace fizz_buzzxx
 {
     /*!
-     * FizzBuzz を評価する関数オブジェクト
+     * FizzBuzz 演算を行う関数オブジェクト
      */
     class FizzBuzz
     {

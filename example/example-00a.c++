@@ -4,7 +4,7 @@
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
  *
  * 整数の並びを表現するコンテナ @c IntegralSequence と,
- * イテレータの範囲に対して繰り返し FizzBuzz を評価するアルゴリズム
+ * イテレータの範囲に対して FizzBuzz 演算を繰り返すアルゴリズム
  * @c fizz_buzz を使用したもの. @n
  *
  * @file example-00a.c++

@@ -20,12 +20,12 @@ BOOST_AUTO_TEST_SUITE(function__fizz_buzz)
 
 /*!
  * テストパターン :
- * FizzBuzz を評価する関数オブジェクトとして,
+ * FizzBuzz 演算を行う関数オブジェクトとして,
  * デフォルトの関数オブジェクト FizzBuzz を使用する
  *
  * @see fizz_buzzxx::fizz_buzz()
  */
-BOOST_AUTO_TEST_CASE(default_evaluator)
+BOOST_AUTO_TEST_CASE(default_operation)
 {
     // 入力イテレータの元となるコンテナを用意する
     std::array<int, 15> input {};
@@ -101,12 +101,12 @@ BOOST_AUTO_TEST_CASE(default_evaluator)
 
 /*!
  * テストパターン :
- * FizzBuzz を評価する関数オブジェクトとして,
+ * FizzBuzz 演算を行う関数オブジェクトとして,
  * Fizz/Buzz の除数及び文言を変更した関数オブジェクト FizzBuzz を使用する
  *
  * @see fizz_buzzxx::fizz_buzz()
  */
-BOOST_AUTO_TEST_CASE(custom_evaluator)
+BOOST_AUTO_TEST_CASE(custom_operation)
 {
     // 入力イテレータの元となるコンテナを用意する
     std::array<int, 15> input {};
@@ -132,13 +132,13 @@ BOOST_AUTO_TEST_CASE(custom_evaluator)
     // Buzz の除数として 6 を,
     // Fizz の文言として "fizz++" を,
     // Buzz の文言として "buzz++" を指定した関数オブジェクト FizzBuzz を生成する
-    FizzBuzz evaluate { 4, 6, "fizz++", "buzz++" };
+    FizzBuzz operate { 4, 6, "fizz++", "buzz++" };
 
     // 入力イテレータ first が指し示す整数 n に関数 FizzBuzz::operator() を適用し,
     // 文字列 value を得る.
     // 次に, 文字列 value をコンテナ output に格納する.
     // 以上の処理を (first, last] の範囲に適用する.
-    fizz_buzz(first, last, callback, evaluate);
+    fizz_buzz(first, last, callback, operate);
 
     // 【事後条件】
     // 入力イテレータ first と last は等しくないこと.
