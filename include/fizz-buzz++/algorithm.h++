@@ -54,8 +54,8 @@ namespace fizz_buzzxx
         const Callback      callback,
         const FizzBuzz      evaluate) -> Callback
     {
-        std::for_each(first, last, [&](auto value) {
-            callback(evaluate(value));
+        std::for_each(first, last, [&](auto n) {
+            callback(evaluate(n));
         });
         return callback;
     }

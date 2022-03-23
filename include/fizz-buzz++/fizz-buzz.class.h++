@@ -50,12 +50,12 @@ namespace fizz_buzzxx
         /*!
          * 関数呼び出し演算
          *
-         * @param[in] value FizzBuzz の値を求める整数
+         * @param[in] n FizzBuzz の値を求める整数
          * @return FizzBuzz の値を返却する @n
-         *         FizzBuzz の値が整数 @c value の場合は,
-         *         整数 @c value を文字列に変換して返却する
+         *         FizzBuzz の値が整数 @c n の場合は,
+         *         整数 @c n を文字列に変換して返却する
          */
-        auto operator()(int value) const -> std::string;
+        auto operator()(int n) const -> std::string;
 
     private:
         const int         _fizz_divisor;
@@ -101,24 +101,24 @@ namespace fizz_buzzxx
         }
     }
 
-    auto FizzBuzz::operator()(const int value) const -> std::string
+    auto FizzBuzz::operator()(const int n) const -> std::string
     {
         std::string message      = "";
         std::string delimiter    = "";
         bool        is_divisible = false;
-        if (value % this->_fizz_divisor == 0) {
+        if (n % this->_fizz_divisor == 0) {
             message      = this->_fizz_message;
             delimiter    = " ";
             is_divisible = true;
         }
-        if (value % this->_buzz_divisor == 0) {
+        if (n % this->_buzz_divisor == 0) {
             message += delimiter + this->_buzz_message;
             is_divisible = true;
         }
         if (is_divisible) {
             return message;
         }
-        return std::to_string(value);
+        return std::to_string(n);
     }
 }
 
