@@ -11,6 +11,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <fizz-buzz++/buzz.class.h++>
+#include <fizz-buzz++/fizz.class.h++>
+
 #include <string>
 
 namespace fizz_buzzxx
@@ -18,21 +21,9 @@ namespace fizz_buzzxx
     /*!
      * FizzBuzz 演算を行う関数オブジェクト
      */
-    class FizzBuzz
+    class FizzBuzz : public Fizz, public Buzz
     {
     public:
-        /*! Fizz の除数のデフォルト値 */
-        static const int default_fizz_divisor;
-
-        /*! Buzz の除数のデフォルト値 */
-        static const int default_buzz_divisor;
-
-        /*! Fizz の文言のデフォルト値 */
-        static const std::string default_fizz_message;
-
-        /*! Buzz の文言のデフォルト値 */
-        static const std::string default_buzz_message;
-
         /*!
          * 関数オブジェクトを生成する
          *
@@ -42,10 +33,10 @@ namespace fizz_buzzxx
          * @param[in] buzz_message Buzz の文言
          */
         FizzBuzz(
-            int         fizz_divisor = FizzBuzz::default_fizz_divisor,
-            int         buzz_divisor = FizzBuzz::default_buzz_divisor,
-            std::string fizz_message = FizzBuzz::default_fizz_message,
-            std::string buzz_message = FizzBuzz::default_buzz_message);
+            int         fizz_divisor = Fizz::default_divisor,
+            int         buzz_divisor = Buzz::default_divisor,
+            std::string fizz_message = Fizz::default_message,
+            std::string buzz_message = Buzz::default_message);
 
         /*!
          * 関数呼び出し演算
@@ -56,12 +47,6 @@ namespace fizz_buzzxx
          *         整数 @c n を文字列に変換して返却する
          */
         auto operator()(int n) const -> std::string;
-
-    private:
-        const int         _fizz_divisor;
-        const int         _buzz_divisor;
-        const std::string _fizz_message;
-        const std::string _buzz_message;
     };
 }
 
@@ -75,44 +60,26 @@ namespace fizz_buzzxx
 
 namespace fizz_buzzxx
 {
-    const int FizzBuzz::default_fizz_divisor = 3;
-
-    const int FizzBuzz::default_buzz_divisor = 5;
-
-    const std::string FizzBuzz::default_fizz_message = "Fizz";
-
-    const std::string FizzBuzz::default_buzz_message = "Buzz";
-
     FizzBuzz::FizzBuzz(
         const int         fizz_divisor,
         const int         buzz_divisor,
         const std::string fizz_message,
         const std::string buzz_message)
-        : _fizz_divisor(fizz_divisor)
-        , _buzz_divisor(buzz_divisor)
-        , _fizz_message(fizz_message)
-        , _buzz_message(buzz_message)
-    {
-        if (fizz_divisor == 0) {
-            throw std::invalid_argument("fizz_divisor is zero.");
-        }
-        if (buzz_divisor == 0) {
-            throw std::invalid_argument("buzz_divisor is zero.");
-        }
-    }
+        : Fizz(fizz_divisor, fizz_message), Buzz(buzz_divisor, buzz_message)
+    {}
 
     auto FizzBuzz::operator()(const int n) const -> std::string
     {
         std::string message      = "";
         std::string delimiter    = "";
         bool        is_divisible = false;
-        if (n % this->_fizz_divisor == 0) {
-            message      = this->_fizz_message;
+        if (n % this->Fizz::_divisor == 0) {
+            message      = this->Fizz::_message;
             delimiter    = " ";
             is_divisible = true;
         }
-        if (n % this->_buzz_divisor == 0) {
-            message += delimiter + this->_buzz_message;
+        if (n % this->Buzz::_divisor == 0) {
+            message += delimiter + this->Buzz::_message;
             is_divisible = true;
         }
         if (is_divisible) {
