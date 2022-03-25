@@ -11,6 +11,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <fizz-buzz++/fizz.class.h++>
+
 #include <string>
 
 namespace fizz_buzzxx
@@ -18,7 +20,7 @@ namespace fizz_buzzxx
     /*!
      * FizzBuzz 演算の Buzz の部分を担うクラス
      */
-    class Buzz
+    class Buzz : public Zz
     {
     public:
         /*! Buzz の除数のデフォルト値 */
@@ -36,10 +38,6 @@ namespace fizz_buzzxx
         Buzz(
             int         divisor = Buzz::default_divisor,
             std::string message = Buzz::default_message);
-
-    protected:
-        const int         _divisor;
-        const std::string _message;
     };
 }
 
@@ -58,12 +56,8 @@ namespace fizz_buzzxx
     const std::string Buzz::default_message = "Buzz";
 
     Buzz::Buzz(const int divisor, const std::string message)
-        : _divisor(divisor), _message(message)
-    {
-        if (divisor == 0) {
-            throw std::invalid_argument("divisor is zero.");
-        }
-    }
+        : Zz(divisor, message)
+    {}
 }
 
 #endif /* FIZZ_BUZZXX__BUZZ_CLASS_HXX */
