@@ -73,13 +73,13 @@ namespace fizz_buzzxx
         std::string message      = "";
         std::string delimiter    = "";
         bool        is_divisible = false;
-        if (n % this->Fizz::_divisor == 0) {
-            message      = this->Fizz::_message;
+        if (n % this->Fizz::divisor() == 0) {
+            message      = this->Fizz::message();
             delimiter    = " ";
             is_divisible = true;
         }
-        if (n % this->Buzz::_divisor == 0) {
-            message += delimiter + this->Buzz::_message;
+        if (n % this->Buzz::divisor() == 0) {
+            message += delimiter + this->Buzz::message();
             is_divisible = true;
         }
         if (is_divisible) {
