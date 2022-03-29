@@ -16,18 +16,28 @@
 namespace fizz_buzzxx
 {
     /*!
-     * クラス Fizz 及び Buzz の基底クラス
+     * Zz 演算を行う関数オブジェクト
      */
     class Zz
     {
     public:
         /*!
-         * オブジェクトを生成する
+         * 関数オブジェクトを生成する
          *
          * @param[in] divisor 除数
          * @param[in] message 文言
          */
         Zz(int divisor, std::string message);
+
+        /*!
+         * 関数呼び出し演算
+         *
+         * @param[in] n Zz の値を求める整数
+         * @return Zz の値を返却する @n
+         *         Zz の値が整数 @c n の場合は,
+         *         整数 @c n を文字列に変換して返却する
+         */
+        auto operator()(int n) const -> std::string;
 
         /*!
          * 除数を取得する
@@ -65,6 +75,14 @@ namespace fizz_buzzxx
         if (divisor == 0) {
             throw std::invalid_argument("divisor is zero.");
         }
+    }
+
+    auto Zz::operator()(const int n) const -> std::string
+    {
+        if (n % this->divisor() == 0) {
+            return this->message();
+        }
+        return std::to_string(n);
     }
 
     auto Zz::divisor() const -> int

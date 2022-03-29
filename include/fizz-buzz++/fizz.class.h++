@@ -18,7 +18,7 @@
 namespace fizz_buzzxx
 {
     /*!
-     * FizzBuzz 演算の Fizz の部分を担うクラス
+     * Fizz 演算を行う関数オブジェクト
      */
     class Fizz : public Zz
     {
@@ -30,7 +30,7 @@ namespace fizz_buzzxx
         static const std::string default_message;
 
         /*!
-         * オブジェクトを生成する
+         * 関数オブジェクトを生成する
          *
          * @param[in] divisor Fizz の除数
          * @param[in] message Fizz の文言

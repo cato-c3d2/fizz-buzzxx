@@ -9,5 +9,8 @@
 #endif
 
 #include "./include/fizz-buzz++/algorithm.test-case.h++"
+#include "./include/fizz-buzz++/buzz.class.test-case.h++"
 #include "./include/fizz-buzz++/fizz-buzz.class.test-case.h++"
+#include "./include/fizz-buzz++/fizz.class.test-case.h++"
 #include "./include/fizz-buzz++/integral-sequence.class.test-case.h++"
+#include "./include/fizz-buzz++/zz.class.test-case.h++"
