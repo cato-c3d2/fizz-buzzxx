@@ -53,6 +53,16 @@ namespace fizz_buzzxx
          */
         auto message() const -> std::string;
 
+    protected:
+        /*!
+         * 整数 @c n が除数で割り切れるか判定する
+         *
+         * @param[in] n 割り切れるか判定する整数
+         * @retval true  整数 @c n が除数で割り切れる
+         * @retval false 整数 @c n が除数で割り切れない
+         */
+        auto is_divisible_by(int n) const -> bool;
+
     private:
         const int         _divisor;
         const std::string _message;
@@ -79,7 +89,7 @@ namespace fizz_buzzxx
 
     auto Zz::operator()(const int n) const -> std::string
     {
-        if (n % this->divisor() == 0) {
+        if (this->is_divisible_by(n)) {
             return this->message();
         }
         return std::to_string(n);
@@ -93,6 +103,15 @@ namespace fizz_buzzxx
     auto Zz::message() const -> std::string
     {
         return this->_message;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+    // Protected member
+    ////////////////////////////////////////////////////////////////////////////
+
+    auto Zz::is_divisible_by(const int n) const -> bool
+    {
+        return n % this->divisor() == 0;
     }
 }
 
