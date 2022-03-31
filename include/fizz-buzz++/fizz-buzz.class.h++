@@ -56,6 +56,8 @@ namespace fizz_buzzxx
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <boost/algorithm/string/join.hpp>
+
 #include <stdexcept>
 
 namespace fizz_buzzxx
@@ -70,20 +72,15 @@ namespace fizz_buzzxx
 
     auto FizzBuzz::operator()(const int n) const -> std::string
     {
-        std::string message      = "";
-        std::string delimiter    = "";
-        bool        is_divisible = false;
+        std::vector<std::string> messages = {};
         if (this->Fizz::is_divisible_by(n)) {
-            message      = this->Fizz::message();
-            delimiter    = " ";
-            is_divisible = true;
+            messages.push_back(this->Fizz::message());
         }
         if (this->Buzz::is_divisible_by(n)) {
-            message += delimiter + this->Buzz::message();
-            is_divisible = true;
+            messages.push_back(this->Buzz::message());
         }
-        if (is_divisible) {
-            return message;
+        if (! messages.empty()) {
+            return boost::algorithm::join(messages, " ");
         }
         return std::to_string(n);
     }
