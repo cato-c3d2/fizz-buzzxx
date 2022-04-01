@@ -132,7 +132,7 @@ BOOST_AUTO_TEST_CASE(custom_operation)
     // Buzz の除数として 6 を,
     // Fizz の文言として "fizz++" を,
     // Buzz の文言として "buzz++" を指定した関数オブジェクト FizzBuzz を生成する
-    FizzBuzz operate { 4, 6, "fizz++", "buzz++" };
+    FizzBuzz operate { Fizz { 4, "fizz++" }, Buzz { 6, "buzz++" } };
 
     // 入力イテレータ first が指し示す整数 n に関数 FizzBuzz::operator() を適用し,
     // 文字列 value を得る.

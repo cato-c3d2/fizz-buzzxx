@@ -38,6 +38,17 @@ namespace fizz_buzzxx
         Fizz(
             int         divisor = Fizz::default_divisor,
             std::string message = Fizz::default_message);
+
+        /*!
+         * 関数オブジェクトを生成する
+         *
+         * Fizz の除数はデフォルト値となる.
+         *
+         * @param[in] message Fizz の文言
+         *
+         * @see Fizz::default_divisor
+         */
+        Fizz(std::string message);
     };
 }
 
@@ -57,6 +68,9 @@ namespace fizz_buzzxx
 
     Fizz::Fizz(const int divisor, const std::string message)
         : Zz(divisor, message)
+    {}
+
+    Fizz::Fizz(const std::string message) : Fizz(Fizz::default_divisor, message)
     {}
 }
 

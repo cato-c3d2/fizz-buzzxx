@@ -40,5 +40,5 @@ auto main() -> int
         },
         // "Fizz" を出力する際の条件を "4 で割り切れる場合" とし,
         // "Buzz" を出力する際の条件を "6 で割り切れる場合" とする
-        FizzBuzz { 4, 6, "Fizz", "Buzz" });
+        FizzBuzz { Fizz { 4 }, Buzz { 6 } });
 }

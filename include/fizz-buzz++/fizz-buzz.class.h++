@@ -27,16 +27,19 @@ namespace fizz_buzzxx
         /*!
          * 関数オブジェクトを生成する
          *
-         * @param[in] fizz_divisor Fizz の除数
-         * @param[in] buzz_divisor Buzz の除数
-         * @param[in] fizz_message Fizz の文言
-         * @param[in] buzz_message Buzz の文言
+         * @param[in] fizz Fizz の関数オブジェクト
+         * @param[in] buzz Buzz の関数オブジェクト
          */
-        FizzBuzz(
-            int         fizz_divisor = Fizz::default_divisor,
-            int         buzz_divisor = Buzz::default_divisor,
-            std::string fizz_message = Fizz::default_message,
-            std::string buzz_message = Buzz::default_message);
+        FizzBuzz(Fizz fizz = {}, Buzz buzz = {});
+
+        /*!
+         * 関数オブジェクトを生成する
+         *
+         * Fizz の関数オブジェクトはデフォルトとなる.
+         *
+         * @param[in] buzz Buzz の関数オブジェクト
+         */
+        FizzBuzz(Buzz buzz);
 
         /*!
          * 関数呼び出し演算
@@ -62,12 +65,11 @@ namespace fizz_buzzxx
 
 namespace fizz_buzzxx
 {
-    FizzBuzz::FizzBuzz(
-        const int         fizz_divisor,
-        const int         buzz_divisor,
-        const std::string fizz_message,
-        const std::string buzz_message)
-        : Fizz(fizz_divisor, fizz_message), Buzz(buzz_divisor, buzz_message)
+    FizzBuzz::FizzBuzz(const Fizz fizz, const Buzz buzz)
+        : Fizz(fizz), Buzz(buzz)
+    {}
+
+    FizzBuzz::FizzBuzz(const Buzz buzz) : FizzBuzz(Fizz(), buzz)
     {}
 
     auto FizzBuzz::operator()(const int n) const -> std::string

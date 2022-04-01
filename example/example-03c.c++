@@ -40,5 +40,5 @@ auto main() -> int
         },
         // 4 で割り切れる場合に "Fizz++" を出力し,
         // 6 で割り切れる場合に "Buzz++" を出力する
-        FizzBuzz { 4, 6, "Fizz++", "Buzz++" });
+        FizzBuzz { Fizz { 4, "Fizz++" }, Buzz { 6, "Buzz++" } });
 }

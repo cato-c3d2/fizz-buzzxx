@@ -40,5 +40,5 @@ auto main() -> int
         },
         // 3 で割り切れる場合の文言を "Fizz++",
         // 5 で割り切れる場合の文言を "Buzz++" とする
-        FizzBuzz { 3, 5, "Fizz++", "Buzz++" });
+        FizzBuzz { Fizz { "Fizz++" }, Buzz { "Buzz++" } });
 }

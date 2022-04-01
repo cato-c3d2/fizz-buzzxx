@@ -38,6 +38,17 @@ namespace fizz_buzzxx
         Buzz(
             int         divisor = Buzz::default_divisor,
             std::string message = Buzz::default_message);
+
+        /*!
+         * 関数オブジェクトを生成する
+         *
+         * Buzz の除数はデフォルト値となる.
+         *
+         * @param[in] message Buzz の文言
+         *
+         * @see Buzz::default_divisor
+         */
+        Buzz(std::string message);
     };
 }
 
@@ -57,6 +68,9 @@ namespace fizz_buzzxx
 
     Buzz::Buzz(const int divisor, const std::string message)
         : Zz(divisor, message)
+    {}
+
+    Buzz::Buzz(const std::string message) : Buzz(Buzz::default_divisor, message)
     {}
 }
 
