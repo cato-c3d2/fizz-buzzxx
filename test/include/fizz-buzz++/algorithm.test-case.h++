@@ -33,8 +33,10 @@ BOOST_AUTO_TEST_CASE(default_operation)
         input[i] = i + 1;
     }
 
-    auto       first = input.begin();
-    auto const last  = input.end();
+    // clang-format off
+          auto first = input.begin();
+    const auto last  = input.end();
+    // clang-format on
 
     // 【事前条件】
     // 入力イテレータ first と last は等しくないこと
@@ -43,7 +45,7 @@ BOOST_AUTO_TEST_CASE(default_operation)
     // 文字列 value をコンテナ output に格納する関数
     std::vector<std::string>         output {};
     std::function<void(std::string)> callback
-        = [&output](std::string const value) {
+        = [&output](const std::string value) {
               output.push_back(value);
           };
 
@@ -114,8 +116,10 @@ BOOST_AUTO_TEST_CASE(custom_operation)
         input[i] = i + 1;
     }
 
-    auto       first = input.begin();
-    auto const last  = input.end();
+    // clang-format off
+          auto first = input.begin();
+    const auto last  = input.end();
+    // clang-format on
 
     // 【事前条件】
     // 入力イテレータ first と last は等しくないこと
@@ -124,7 +128,7 @@ BOOST_AUTO_TEST_CASE(custom_operation)
     // 文字列 value をコンテナ output に格納する関数
     std::vector<std::string>         output {};
     std::function<void(std::string)> callback
-        = [&output](std::string const value) {
+        = [&output](const std::string value) {
               output.push_back(value);
           };
 
