@@ -23,13 +23,13 @@ BOOST_AUTO_TEST_SUITE(class__IntegralSequence)
 BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
 {
     // 0 ～ 9 の整数の並びを表現するコンテナを生成する
-    IntegralSequence const integra_lsequence { 0, 9 };
+    IntegralSequence const integral_sequence { 0, 9 };
 
     // コンテナの先頭の整数を参照するイテレータ first を生成する
-    IntegralSequence::Iterator first = integra_lsequence.begin();
+    IntegralSequence::Iterator first = integral_sequence.begin();
 
     // コンテナの末尾の整数 + 1 を参照するイテレータ last を生成する
-    IntegralSequence::Iterator const last = integra_lsequence.end();
+    IntegralSequence::Iterator const last = integral_sequence.end();
 
     // 【検証】
     // イテレータ first は整数 0 を参照し, イテレータ last は整数 10 を参照すること.
