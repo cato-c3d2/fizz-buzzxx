@@ -28,7 +28,7 @@ auto main() -> int
     using namespace fizz_buzzxx;
 
     // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const IntegralSequence sequence(1, 100);
+    const IntegralSequence sequence { 1, 100 };
 
     // FizzBuzz 問題の結果を文字列ストリームに出力する
     std::ostringstream out;

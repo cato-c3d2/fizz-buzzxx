@@ -67,10 +67,11 @@ namespace fizz_buzzxx
     const std::string Buzz::default_message = "Buzz";
 
     Buzz::Buzz(const int divisor, const std::string message)
-        : Zz(divisor, message)
+        : Zz { divisor, message }
     {}
 
-    Buzz::Buzz(const std::string message) : Buzz(Buzz::default_divisor, message)
+    Buzz::Buzz(const std::string message)
+        : Buzz { Buzz::default_divisor, message }
     {}
 }
 

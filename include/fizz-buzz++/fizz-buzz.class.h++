@@ -66,10 +66,10 @@ namespace fizz_buzzxx
 namespace fizz_buzzxx
 {
     FizzBuzz::FizzBuzz(const Fizz fizz, const Buzz buzz)
-        : Fizz(fizz), Buzz(buzz)
+        : Fizz { fizz }, Buzz { buzz }
     {}
 
-    FizzBuzz::FizzBuzz(const Buzz buzz) : FizzBuzz(Fizz(), buzz)
+    FizzBuzz::FizzBuzz(const Buzz buzz) : FizzBuzz { Fizz(), buzz }
     {}
 
     auto FizzBuzz::operator()(const int n) const -> std::string

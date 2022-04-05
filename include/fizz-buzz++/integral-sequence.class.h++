@@ -168,24 +168,25 @@ namespace fizz_buzzxx
 
     IntegralSequence::IntegralSequence(
         const int first_value, const int final_value)
-        : _first_value(first_value), _final_value(final_value)
+        : _first_value { first_value }, _final_value { final_value }
     {}
 
     auto IntegralSequence::begin() const -> Iterator
     {
-        return Iterator(this->_first_value);
+        return Iterator { this->_first_value };
     }
 
     auto IntegralSequence::end() const -> Iterator
     {
-        return Iterator(this->_final_value + 1);
+        return Iterator { this->_final_value + 1 };
     }
 
     ////////////////////////////////////////////////////////////////////////////
     // Iterator
     ////////////////////////////////////////////////////////////////////////////
 
-    IntegralSequence::Iterator::Iterator(const value_type value) : _value(value)
+    IntegralSequence::Iterator::Iterator(const value_type value)
+        : _value { value }
     {}
 
     auto IntegralSequence::Iterator::operator*() -> reference

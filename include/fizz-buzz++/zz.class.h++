@@ -80,7 +80,7 @@ namespace fizz_buzzxx
 namespace fizz_buzzxx
 {
     Zz::Zz(const int divisor, const std::string message)
-        : _divisor(divisor), _message(message)
+        : _divisor { divisor }, _message { message }
     {
         if (divisor == 0) {
             throw std::invalid_argument("divisor is zero.");
