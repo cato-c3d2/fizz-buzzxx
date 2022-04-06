@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__FizzBuzz)
 BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 {
     // デフォルト引数で FizzBuzz のオブジェクトを生成する
-    FizzBuzz fizz_buzz;
+    FizzBuzz fizz_buzz {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"        );
@@ -61,7 +61,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 {
     // デフォルト引数で FizzBuzz のオブジェクトを生成する
-    FizzBuzz fizz_buzz;
+    FizzBuzz fizz_buzz {};
 
     BOOST_CHECK_EQUAL(fizz_buzz(0), "Fizz Buzz");
 }
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 {
     // デフォルト引数で FizzBuzz のオブジェクトを生成する
-    FizzBuzz fizz_buzz;
+    FizzBuzz fizz_buzz {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( -1), "-1"       );

@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__Buzz)
 BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 {
     // デフォルト引数で Buzz のオブジェクトを生成する
-    Buzz buzz;
+    Buzz buzz {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( 1), "1"   );
@@ -61,7 +61,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 {
     // デフォルト引数で Buzz のオブジェクトを生成する
-    Buzz buzz;
+    Buzz buzz {};
 
     BOOST_CHECK_EQUAL(buzz(0), "Buzz");
 }
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 {
     // デフォルト引数で Buzz のオブジェクトを生成する
-    Buzz buzz;
+    Buzz buzz {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( -1), "-1"  );
