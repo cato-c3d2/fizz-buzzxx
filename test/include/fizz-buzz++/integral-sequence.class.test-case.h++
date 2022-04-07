@@ -23,7 +23,7 @@ BOOST_AUTO_TEST_SUITE(class__IntegralSequence)
 BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
 {
     // 0 ～ 9 の整数の並びを表現するコンテナを生成する
-    const IntegralSequence integral_sequence { 0, 9 };
+    const IntegralSequence integral_sequence = { 0, 9 };
 
     // コンテナの先頭の整数を参照するイテレータ first を生成する
     IntegralSequence::Iterator first = integral_sequence.begin();

@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__Zz)
 BOOST_AUTO_TEST_CASE(operate_by_positive_numbers)
 {
     // Zz の除数に 3 を, Zz の文言に "Fizz" を指定して Zz のオブジェクトを生成する
-    Zz zz { 3, "Fizz" };
+    Zz zz = { 3, "Fizz" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(zz( 1), "1"   );
@@ -61,7 +61,7 @@ BOOST_AUTO_TEST_CASE(operate_by_positive_numbers)
 BOOST_AUTO_TEST_CASE(operate_by_zero)
 {
     // Zz の除数に 3 を, Zz の文言に "Fizz" を指定して Zz のオブジェクトを生成する
-    Zz zz { 3, "Fizz" };
+    Zz zz = { 3, "Fizz" };
 
     BOOST_CHECK_EQUAL(zz(0), "Fizz");
 }
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(operate_by_zero)
 BOOST_AUTO_TEST_CASE(operate_by_negative_numbers)
 {
     // Zz の除数に 3 を, Zz の文言に "Fizz" を指定して Zz のオブジェクトを生成する
-    Zz zz { 3, "Fizz" };
+    Zz zz = { 3, "Fizz" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(zz( -1), "-1"  );
@@ -114,7 +114,7 @@ BOOST_AUTO_TEST_CASE(operate_by_negative_numbers)
 BOOST_AUTO_TEST_CASE(specify_divisor_to_one)
 {
     // Zz の除数として 1 を指定する
-    Zz zz { 1, "Zz" };
+    Zz zz = { 1, "Zz" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(zz( 1), "Zz");
@@ -170,7 +170,7 @@ BOOST_AUTO_TEST_CASE(specify_divisor_to_zero)
 BOOST_AUTO_TEST_CASE(specify_divisor_to_negative_number)
 {
     // Zz の除数として -5 を指定する
-    Zz zz { -5, "Buzz" };
+    Zz zz = { -5, "Buzz" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(zz( 1), "1"   );
@@ -207,7 +207,7 @@ BOOST_AUTO_TEST_CASE(specify_divisor_to_negative_number)
 BOOST_AUTO_TEST_CASE(specify_message_to_empty)
 {
     // Zz の文言として空文字列を指定する
-    Zz zz { 5, "" };
+    Zz zz = { 5, "" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(zz( 1), "1" );

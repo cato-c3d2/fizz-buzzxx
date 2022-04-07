@@ -26,7 +26,7 @@ auto main() -> int
 
     // 1 ～ 100 の整数を格納した配列を生成する
     std::size_t constexpr size = 100;
-    int sequence[size] {};
+    int sequence[size]         = {};
     for (auto index = 0; index < size; ++index) {
         sequence[index] = index + 1;
     }

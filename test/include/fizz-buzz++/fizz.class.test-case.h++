@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__Fizz)
 BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 {
     // デフォルト引数で Fizz のオブジェクトを生成する
-    Fizz fizz {};
+    Fizz fizz = {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz( 1), "1"   );
@@ -61,7 +61,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 {
     // デフォルト引数で Fizz のオブジェクトを生成する
-    Fizz fizz {};
+    Fizz fizz = {};
 
     BOOST_CHECK_EQUAL(fizz(0), "Fizz");
 }
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 {
     // デフォルト引数で Fizz のオブジェクトを生成する
-    Fizz fizz {};
+    Fizz fizz = {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz( -1), "-1"  );
@@ -114,7 +114,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 BOOST_AUTO_TEST_CASE(change_divisor)
 {
     // Fizz の除数として 4 を指定する
-    Fizz fizz { 4 };
+    Fizz fizz = { 4 };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz( 1), "1"   );
@@ -151,7 +151,7 @@ BOOST_AUTO_TEST_CASE(change_divisor)
 BOOST_AUTO_TEST_CASE(change_divisor_to_one)
 {
     // Fizz の除数として 1 を指定する
-    Fizz fizz { 1 };
+    Fizz fizz = { 1 };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz( 1), "Fizz");
@@ -203,7 +203,7 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_zero)
 BOOST_AUTO_TEST_CASE(change_divisor_to_negative_number)
 {
     // Fizz の除数として -3 を指定する
-    Fizz fizz { -3 };
+    Fizz fizz = { -3 };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz( 1), "1"   );
@@ -240,7 +240,7 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_negative_number)
 BOOST_AUTO_TEST_CASE(change_message)
 {
     // Fizz の文言として "fizz++" を指定する
-    Fizz fizz { 3, "fizz++" };
+    Fizz fizz = { 3, "fizz++" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz( 1), "1"     );
@@ -277,7 +277,7 @@ BOOST_AUTO_TEST_CASE(change_message)
 BOOST_AUTO_TEST_CASE(change_message_to_empty)
 {
     // Fizz の文言として空文字列を指定する
-    Fizz fizz { 3, "" };
+    Fizz fizz = { 3, "" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz( 1), "1" );
