@@ -43,8 +43,8 @@ BOOST_AUTO_TEST_CASE(default_operation)
     BOOST_CHECK(first != last);
 
     // 文字列 value をコンテナ output に格納する関数
-    std::vector<std::string>         output = {};
-    std::function<void(std::string)> callback
+    std::vector<std::string>               output = {};
+    const std::function<void(std::string)> callback
         = [&output](const std::string value) {
               output.push_back(value);
           };
@@ -126,8 +126,8 @@ BOOST_AUTO_TEST_CASE(custom_operation)
     BOOST_CHECK(first != last);
 
     // 文字列 value をコンテナ output に格納する関数
-    std::vector<std::string>         output = {};
-    std::function<void(std::string)> callback
+    std::vector<std::string>               output = {};
+    const std::function<void(std::string)> callback
         = [&output](const std::string value) {
               output.push_back(value);
           };

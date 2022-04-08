@@ -30,7 +30,7 @@ auto main() -> int
     const IntegralSequence sequence = { 1, 100 };
 
     // 与えられた整数に対して FizzBuzz 演算を行う関数オブジェクトを生成する
-    FizzBuzz fizz_buzz = {};
+    const FizzBuzz fizz_buzz = {};
 
     // FizzBuzz 問題の結果を標準出力に出力する
     std::for_each(

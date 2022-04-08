@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__FizzBuzz)
 BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 {
     // デフォルト引数で FizzBuzz のオブジェクトを生成する
-    FizzBuzz fizz_buzz = {};
+    const FizzBuzz fizz_buzz = {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"        );
@@ -61,7 +61,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 {
     // デフォルト引数で FizzBuzz のオブジェクトを生成する
-    FizzBuzz fizz_buzz = {};
+    const FizzBuzz fizz_buzz = {};
 
     BOOST_CHECK_EQUAL(fizz_buzz(0), "Fizz Buzz");
 }
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 {
     // デフォルト引数で FizzBuzz のオブジェクトを生成する
-    FizzBuzz fizz_buzz = {};
+    const FizzBuzz fizz_buzz = {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( -1), "-1"       );
@@ -114,7 +114,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 BOOST_AUTO_TEST_CASE(change_fizz_divisor)
 {
     // Fizz の除数として 4 を指定する
-    FizzBuzz fizz_buzz = { Fizz { 4 } };
+    const FizzBuzz fizz_buzz = { Fizz { 4 } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"        );
@@ -151,7 +151,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor)
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_one)
 {
     // Fizz の除数として 1 を指定する
-    FizzBuzz fizz_buzz = { Fizz { 1 } };
+    const FizzBuzz fizz_buzz = { Fizz { 1 } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "Fizz"     );
@@ -203,7 +203,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_zero)
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_negative_number)
 {
     // Fizz の除数として -3 を指定する
-    FizzBuzz fizz_buzz = { Fizz { -3 } };
+    const FizzBuzz fizz_buzz = { Fizz { -3 } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"        );
@@ -240,7 +240,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_negative_number)
 BOOST_AUTO_TEST_CASE(change_buzz_divisor)
 {
     // Buzz の除数として 6 を指定する
-    FizzBuzz fizz_buzz = { Buzz { 6 } };
+    const FizzBuzz fizz_buzz = { Buzz { 6 } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"        );
@@ -277,7 +277,7 @@ BOOST_AUTO_TEST_CASE(change_buzz_divisor)
 BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_one)
 {
     // Buzz の除数として 1 を指定する
-    FizzBuzz fizz_buzz = { Buzz { 1 } };
+    const FizzBuzz fizz_buzz = { Buzz { 1 } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "Buzz"     );
@@ -329,7 +329,7 @@ BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_zero)
 BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_negative_number)
 {
     // Buzz の除数として -5 を指定する
-    FizzBuzz fizz_buzz = { Buzz { -5 } };
+    const FizzBuzz fizz_buzz = { Buzz { -5 } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"        );
@@ -367,7 +367,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_and_buzz_divisor)
 {
     // Fizz の除数として 4 を,
     // Buzz の除数として 6 を指定する
-    FizzBuzz fizz_buzz = { Fizz { 4 }, Buzz { 6 } };
+    const FizzBuzz fizz_buzz = { Fizz { 4 }, Buzz { 6 } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"        );
@@ -409,7 +409,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_and_buzz_divisor)
 BOOST_AUTO_TEST_CASE(change_fizz_message)
 {
     // Fizz の文言として "fizz++" を指定する
-    FizzBuzz fizz_buzz = { Fizz { "fizz++" } };
+    const FizzBuzz fizz_buzz = { Fizz { "fizz++" } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
@@ -446,7 +446,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_message)
 BOOST_AUTO_TEST_CASE(change_fizz_message_to_empty)
 {
     // Fizz の文言として空文字列を指定する
-    FizzBuzz fizz_buzz = { Fizz { "" } };
+    const FizzBuzz fizz_buzz = { Fizz { "" } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
@@ -483,7 +483,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_to_empty)
 BOOST_AUTO_TEST_CASE(change_buzz_message)
 {
     // Buzz の文言として "buzz++" を指定する
-    FizzBuzz fizz_buzz = { Buzz { "buzz++" } };
+    const FizzBuzz fizz_buzz = { Buzz { "buzz++" } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
@@ -520,7 +520,7 @@ BOOST_AUTO_TEST_CASE(change_buzz_message)
 BOOST_AUTO_TEST_CASE(change_buzz_message_to_empty)
 {
     // Buzz の文言として空文字列を指定する
-    FizzBuzz fizz_buzz = { Buzz { "" } };
+    const FizzBuzz fizz_buzz = { Buzz { "" } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
@@ -558,7 +558,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message)
 {
     // Fizz の文言として "fizz++" を,
     // Buzz の文言として "buzz++" を指定する
-    FizzBuzz fizz_buzz = { Fizz { "fizz++" }, Buzz { "buzz++" } };
+    const FizzBuzz fizz_buzz = { Fizz { "fizz++" }, Buzz { "buzz++" } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"            );
@@ -595,7 +595,7 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message)
 BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message_to_empty)
 {
     // Fizz の文言及び Buzz の文言として空文字列を指定する
-    FizzBuzz fizz_buzz = { Fizz { "" }, Buzz { "" } };
+    const FizzBuzz fizz_buzz = { Fizz { "" }, Buzz { "" } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"          );
@@ -635,7 +635,7 @@ BOOST_AUTO_TEST_CASE(change_all)
     // Buzz の除数として 6 を,
     // Fizz の文言として "fizz++" を,
     // Buzz の文言として "buzz++" を指定する
-    FizzBuzz fizz_buzz = { Fizz { 4, "fizz++" }, Buzz { 6, "buzz++" } };
+    const FizzBuzz fizz_buzz = { Fizz { 4, "fizz++" }, Buzz { 6, "buzz++" } };
 
     // clang-format off
     BOOST_CHECK_EQUAL(fizz_buzz( 1), "1"            );

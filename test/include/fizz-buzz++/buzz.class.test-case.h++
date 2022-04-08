@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__Buzz)
 BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 {
     // デフォルト引数で Buzz のオブジェクトを生成する
-    Buzz buzz = {};
+    const Buzz buzz = {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( 1), "1"   );
@@ -61,7 +61,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 {
     // デフォルト引数で Buzz のオブジェクトを生成する
-    Buzz buzz = {};
+    const Buzz buzz = {};
 
     BOOST_CHECK_EQUAL(buzz(0), "Buzz");
 }
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 {
     // デフォルト引数で Buzz のオブジェクトを生成する
-    Buzz buzz = {};
+    const Buzz buzz = {};
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( -1), "-1"  );
@@ -114,7 +114,7 @@ BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 BOOST_AUTO_TEST_CASE(change_divisor)
 {
     // Buzz の除数として 6 を指定する
-    Buzz buzz = { 6 };
+    const Buzz buzz = { 6 };
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( 1), "1"   );
@@ -151,7 +151,7 @@ BOOST_AUTO_TEST_CASE(change_divisor)
 BOOST_AUTO_TEST_CASE(change_divisor_to_one)
 {
     // Buzz の除数として 1 を指定する
-    Buzz buzz = { 1 };
+    const Buzz buzz = { 1 };
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( 1), "Buzz");
@@ -203,7 +203,7 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_zero)
 BOOST_AUTO_TEST_CASE(change_divisor_to_negative_number)
 {
     // Buzz の除数として -5 を指定する
-    Buzz buzz = { -5 };
+    const Buzz buzz = { -5 };
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( 1), "1"   );
@@ -240,7 +240,7 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_negative_number)
 BOOST_AUTO_TEST_CASE(change_message)
 {
     // Buzz の文言として "buzz++" を指定する
-    Buzz buzz = { 5, "buzz++" };
+    const Buzz buzz = { 5, "buzz++" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( 1), "1"     );
@@ -277,7 +277,7 @@ BOOST_AUTO_TEST_CASE(change_message)
 BOOST_AUTO_TEST_CASE(change_message_to_empty)
 {
     // Buzz の文言として空文字列を指定する
-    Buzz buzz = { 5, "" };
+    const Buzz buzz = { 5, "" };
 
     // clang-format off
     BOOST_CHECK_EQUAL(buzz( 1), "1" );
