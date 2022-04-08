@@ -42,8 +42,10 @@ BOOST_AUTO_TEST_CASE(default_operation)
     // 入力イテレータ first と last は等しくないこと
     BOOST_CHECK(first != last);
 
+    // 処理結果を格納するコンテナ
+    std::vector<std::string> output = {};
+
     // 文字列 value をコンテナ output に格納する関数
-    std::vector<std::string>               output = {};
     const std::function<void(std::string)> callback
         = [&output](const std::string value) {
               output.push_back(value);
@@ -125,8 +127,10 @@ BOOST_AUTO_TEST_CASE(custom_operation)
     // 入力イテレータ first と last は等しくないこと
     BOOST_CHECK(first != last);
 
+    // 処理結果を格納するコンテナ
+    std::vector<std::string> output = {};
+
     // 文字列 value をコンテナ output に格納する関数
-    std::vector<std::string>               output = {};
     const std::function<void(std::string)> callback
         = [&output](const std::string value) {
               output.push_back(value);
