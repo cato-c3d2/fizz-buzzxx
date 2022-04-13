@@ -46,10 +46,10 @@ BOOST_AUTO_TEST_CASE(default_operation)
     std::vector<std::string> output = {};
 
     // 文字列 value をコンテナ output に格納する関数
-    const std::function<void(std::string)> callback
-        = [&output](const std::string value) {
-              output.push_back(value);
-          };
+    const std::function<void(std::string)> callback =
+        [&output](const std::string value) {
+            output.push_back(value);
+        };
 
     // 入力イテレータ first が指し示す整数 n に関数 FizzBuzz::operator() を適用し,
     // 文字列 value を得る.
@@ -131,10 +131,10 @@ BOOST_AUTO_TEST_CASE(custom_operation)
     std::vector<std::string> output = {};
 
     // 文字列 value をコンテナ output に格納する関数
-    const std::function<void(std::string)> callback
-        = [&output](const std::string value) {
-              output.push_back(value);
-          };
+    const std::function<void(std::string)> callback =
+        [&output](const std::string value) {
+            output.push_back(value);
+        };
 
     // Fizz の除数として 4 を,
     // Buzz の除数として 6 を,
