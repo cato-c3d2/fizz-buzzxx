@@ -1,12 +1,13 @@
 /*!
- * サンプルコード 02(a)
+ * サンプルコード 00
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
  *
- * FizzBuzz の値を出力するストリームとして,
- * 文字列ストリーム @c std::ostringstream を使用したもの. @n
+ * 整数の並びを表現するコンテナ @c IntegralSequence と,
+ * イテレータの範囲に対して FizzBuzz 演算を繰り返すアルゴリズム
+ * @c fizz_buzz を使用したもの. @n
  *
- * @file example-02a.c++
+ * @file example-00a.c++
  * @see  fizz_buzzxx::IntegralSequence
  * @see  fizz_buzzxx::fizz_buzz
  */
@@ -15,7 +16,6 @@
 
 #include <iostream>
 #include <iterator>
-#include <sstream>
 
 /*!
  * FizzBuzz 問題の結果を標準出力に出力する
@@ -30,12 +30,8 @@ auto main() -> int
     // 1 ～ 100 の整数の並びを表現するコンテナを生成する
     const IntegralSequence sequence = { 1, 100 };
 
-    // FizzBuzz 問題の結果を文字列ストリームに出力する
-    std::ostringstream out;
+    // FizzBuzz 問題の結果を標準出力に出力する
     fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
-        out << value << std::endl;
+        std::cout << value << std::endl;
     });
-
-    // 文字列ストリームに出力した FizzBuzz 問題の結果を標準出力に出力する
-    std::cout << out.str();
 }

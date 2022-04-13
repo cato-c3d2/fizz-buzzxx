@@ -25,16 +25,17 @@
  */
 auto main() -> int
 {
+    using namespace fizz_buzzxx;
+
     // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const fizz_buzzxx::IntegralSequence sequence(1, 100);
+    const IntegralSequence sequence = { 1, 100 };
 
     // FizzBuzz 問題の結果を標準出力に出力する
     std::string delimiter = "";
-    fizz_buzzxx::fizz_buzz(
-        std::begin(sequence), std::end(sequence), [&](const auto value) {
-            std::cout << delimiter << value;
-            // 要素間の区切りをカンマ(+半角スペース)とする
-            delimiter = ", ";
-        });
+    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
+        std::cout << delimiter << value;
+        // 要素間の区切りをカンマ(+半角スペース)とする
+        delimiter = ", ";
+    });
     std::cout << std::endl;
 }

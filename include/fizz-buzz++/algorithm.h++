@@ -18,26 +18,23 @@ namespace fizz_buzzxx
     class FizzBuzz;
 
     /*!
-     * イテレータの範囲に対して繰り返し FizzBuzz を評価する
+     * イテレータの範囲に対して FizzBuzz 演算を繰り返す
      *
-     * @param[in] first               範囲の開始位置を示す入力イテレータ
-     * @param[in] last                範囲の終了位置を示す入力イテレータ
-     * @param[in] callback            範囲内の各要素に適用されるユーザー定義の関数オブジェクト
-     * @param[in] fizz_buzz_evaluator FizzBuzz を評価する関数オブジェクト
+     * @param[in] first    範囲の開始位置を示す入力イテレータ
+     * @param[in] last     範囲の終了位置を示す入力イテレータ
+     * @param[in] callback 範囲内の各要素に適用されるユーザー定義の関数オブジェクト
+     * @param[in] operate  FizzBuzz 演算を行う関数オブジェクト
      *
      * @return 範囲内のすべての要素に適用した後の @c callback のコピーを返却する
      *
      * @see FizzBuzz
      */
-    template<
-        typename InputIterator,
-        typename Callback,
-        typename FizzBuzzEvaluator = FizzBuzz>
+    template<typename InputIterator, typename Callback>
     auto fizz_buzz(
-        InputIterator     first,
-        InputIterator     last,
-        Callback          callback,
-        FizzBuzzEvaluator fizz_buzz_evaluator = {}) -> Callback;
+        InputIterator first,
+        InputIterator last,
+        Callback      callback,
+        FizzBuzz      operate = {}) -> Callback;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -50,18 +47,15 @@ namespace fizz_buzzxx
 
 namespace fizz_buzzxx
 {
-    template<
-        typename InputIterator,
-        typename Callback,
-        typename FizzBuzzEvaluator>
+    template<typename InputIterator, typename Callback>
     auto fizz_buzz(
-        const InputIterator     first,
-        const InputIterator     last,
-        const Callback          callback,
-        const FizzBuzzEvaluator fizz_buzz_evaluator) -> Callback
+        const InputIterator first,
+        const InputIterator last,
+        const Callback      callback,
+        const FizzBuzz      operate) -> Callback
     {
-        std::for_each(first, last, [&](auto value) {
-            callback(fizz_buzz_evaluator(value));
+        std::for_each(first, last, [&](auto n) {
+            callback(operate(n));
         });
         return callback;
     }

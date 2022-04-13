@@ -24,15 +24,16 @@
  */
 auto main() -> int
 {
+    using namespace fizz_buzzxx;
+
     // 1 ～ 100 の整数を格納した可変長のシーケンスコンテナを生成する
-    std::vector<int> sequence;
+    std::vector<int> sequence = {};
     for (auto index = 0; index < 100; ++index) {
         sequence.push_back(index + 1);
     }
 
     // FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzzxx::fizz_buzz(
-        std::begin(sequence), std::end(sequence), [&](const auto value) {
-            std::cout << value << std::endl;
-        });
+    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
+        std::cout << value << std::endl;
+    });
 }

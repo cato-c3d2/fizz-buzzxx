@@ -24,11 +24,13 @@
  */
 auto main() -> int
 {
-    // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const fizz_buzzxx::IntegralSequence sequence(1, 100);
+    using namespace fizz_buzzxx;
 
-    // 与えられた整数の "FizzBuzz" を評価する関数オブジェクトを生成する
-    fizz_buzzxx::FizzBuzz fizz_buzz;
+    // 1 ～ 100 の整数の並びを表現するコンテナを生成する
+    const IntegralSequence sequence = { 1, 100 };
+
+    // 与えられた整数に対して FizzBuzz 演算を行う関数オブジェクトを生成する
+    const FizzBuzz fizz_buzz = {};
 
     // FizzBuzz 問題の結果を標準出力に出力する
     std::for_each(
