@@ -666,6 +666,112 @@ BOOST_AUTO_TEST_CASE(change_all)
     // clang-format on
 }
 
+BOOST_AUTO_TEST_SUITE(operator__equals)
+
+/*!
+ * テストパターン :
+ * @c FizzBuzz のオブジェクト同士で等価比較演算を行う
+ *
+ * @see fizz_buzzxx::Zz::operator==()
+ */
+BOOST_AUTO_TEST_CASE(compare_with_same_class_instances)
+{
+    const FizzBuzz fizz_buzz = {};
+
+    // 同一オブジェクトで比較した場合
+    // 等価であること
+    BOOST_CHECK(fizz_buzz == fizz_buzz);
+
+    // すべてのデータメンバの値が等しいオブジェクトと比較した場合
+    // 等価であること
+    const FizzBuzz fizz_buzz_0 = {};
+    BOOST_CHECK(fizz_buzz == fizz_buzz_0);
+
+    // データメンバの値が異なるオブジェクトと比較した場合
+    // いずれも等価ではないこと
+    // - f1  ... Fizz の除数が異なる
+    // - f2  ... Fizz の文言が異なる
+    // - f3  ... Fizz の除数と文言が異なる
+    // - b1  ... Buzz の除数が異なる
+    // - b2  ... Buzz の文言が異なる
+    // - b3  ... Fizz の除数と文言が異なる
+    // - fb1 ... Fizz の除数, Buzz の除数が異なる
+    // - fb2 ... Fizz の除数, Buzz の文言が異なる
+    // - fb3 ... Fizz の文言, Buzz の除数が異なる
+    // - fb4 ... Fizz の文言, Buzz の文言が異なる
+    // - fb5 ... Fizz の除数, Buzz の除数, Buzz の文言が異なる
+    // - fb6 ... Fizz の文言, Buzz の除数, Buzz の文言が異なる
+    // - fb7 ... Fizz の除数, Fizz の文言, Buzz の除数が異なる
+    // - fb8 ... Fizz の除数, Fizz の文言, Buzz の文言が異なる
+    // - fb9 ... すべてのデータメンバの値が異なる
+    // clang-format off
+    const FizzBuzz fizz_buzz_f1 = { Fizz { -3         } };
+    const FizzBuzz fizz_buzz_f2 = { Fizz {     "fizz" } };
+    const FizzBuzz fizz_buzz_f3 = { Fizz { -3, "fizz" } };
+    const FizzBuzz fizz_buzz_b1 = { Buzz { -5         } };
+    const FizzBuzz fizz_buzz_b2 = { Buzz {     "buzz" } };
+    const FizzBuzz fizz_buzz_b3 = { Buzz { -5, "buzz" } };
+
+    const FizzBuzz fizz_buzz_fb1 = { Fizz { -3         }, Buzz { -5         } };
+    const FizzBuzz fizz_buzz_fb2 = { Fizz { -3,        }, Buzz {     "buzz" } };
+    const FizzBuzz fizz_buzz_fb3 = { Fizz {     "fizz" }, Buzz { -5         } };
+    const FizzBuzz fizz_buzz_fb4 = { Fizz {     "fizz" }, Buzz {     "buzz" } };
+    const FizzBuzz fizz_buzz_fb5 = { Fizz { -3,        }, Buzz { -5, "buzz" } };
+    const FizzBuzz fizz_buzz_fb6 = { Fizz {     "fizz" }, Buzz { -5, "buzz" } };
+    const FizzBuzz fizz_buzz_fb7 = { Fizz { -3, "fizz" }, Buzz { -5         } };
+    const FizzBuzz fizz_buzz_fb8 = { Fizz { -3, "fizz" }, Buzz {     "buzz" } };
+    const FizzBuzz fizz_buzz_fb9 = { Fizz { -3, "fizz" }, Buzz { -5, "buzz" } };
+
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_f1));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_f2));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_f3));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_b1));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_b2));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_b3));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb1));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb2));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb3));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb4));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb5));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb6));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb7));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb8));
+    BOOST_CHECK(!(fizz_buzz == fizz_buzz_fb9));
+    // clang-format on
+}
+
+/*!
+ * テストパターン :
+ * @c FizzBuzz のオブジェクトと
+ * 同オブジェクトの参照またはポインタで等価比較演算を行う
+ *
+ * @see fizz_buzzxx::FizzBuzz::operator==()
+ */
+BOOST_AUTO_TEST_CASE(compare_with_references_and_pointers)
+{
+    const FizzBuzz fizz_buzz = {};
+
+    // 同一オブジェクトを指し示す参照またはポインタと比較した場合
+    // いずれも等価であること
+    // - cr ... const 参照
+    // - cp ... const ポインタ
+    // - nr ... 非 const 参照
+    // - np ... 非 const ポインタ
+    // clang-format off
+    FizzBuzz const & fizz_buzz_cr =   fizz_buzz;
+    FizzBuzz const * fizz_buzz_cp = & fizz_buzz;
+    FizzBuzz       & fizz_buzz_nr = const_cast<FizzBuzz &>(  fizz_buzz);
+    FizzBuzz       * fizz_buzz_np = const_cast<FizzBuzz *>(& fizz_buzz);
+
+    BOOST_CHECK(fizz_buzz ==   fizz_buzz_cr);
+    BOOST_CHECK(fizz_buzz == * fizz_buzz_cp);
+    BOOST_CHECK(fizz_buzz ==   fizz_buzz_nr);
+    BOOST_CHECK(fizz_buzz == * fizz_buzz_np);
+    // clang-format on
+}
+
+BOOST_AUTO_TEST_SUITE_END(/* operator__equals */)
+
 BOOST_AUTO_TEST_SUITE_END(/* class__FizzBuzz */)
 
 BOOST_AUTO_TEST_SUITE_END(/* namespace__fizz_buzzxx */)

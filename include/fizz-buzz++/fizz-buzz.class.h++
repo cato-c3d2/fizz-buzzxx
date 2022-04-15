@@ -50,6 +50,16 @@ namespace fizz_buzzxx
          *         整数 @c n を文字列に変換して返却する
          */
         auto operator()(int n) const -> std::string;
+
+        /*!
+         * 等価比較演算
+         *
+         * @param[in] that この関数オブジェクトと比較する @c FizzBuzz
+         *
+         * @return この関数オブジェクトと @c that が等価である場合は @c true を,
+         *         そうではない場合は @c false を返却する
+         */
+        auto operator==(const FizzBuzz & that) const -> bool;
     };
 }
 
@@ -85,6 +95,12 @@ namespace fizz_buzzxx
             return boost::algorithm::join(messages, " ");
         }
         return std::to_string(n);
+    }
+
+    auto FizzBuzz::operator==(const FizzBuzz & that) const -> bool
+    {
+        return this->Fizz::   operator==(static_cast<Fizz>(that))
+               && this->Buzz::operator==(static_cast<Buzz>(that));
     }
 }
 

@@ -5,6 +5,8 @@
 #ifndef TEST__INCLUDE__FIZZ_BUZZXX__ZZ_CLASS_TEST_CASE_HXX
 #define TEST__INCLUDE__FIZZ_BUZZXX__ZZ_CLASS_TEST_CASE_HXX
 
+#include <fizz-buzz++/buzz.class.h++>
+#include <fizz-buzz++/fizz.class.h++>
 #include <fizz-buzz++/zz.class.h++>
 
 BOOST_AUTO_TEST_SUITE(namespace__fizz_buzzxx)
@@ -232,6 +234,120 @@ BOOST_AUTO_TEST_CASE(specify_message_to_empty)
     BOOST_CHECK_EQUAL(zz(20), ""  );
     // clang-format on
 }
+
+BOOST_AUTO_TEST_SUITE(operator__equals)
+
+/*!
+ * テストパターン :
+ * @c Zz のオブジェクト同士で等価比較演算を行う
+ *
+ * @see fizz_buzzxx::Zz::operator==()
+ */
+BOOST_AUTO_TEST_CASE(compare_with_same_class_instances)
+{
+    const Zz zz = { 1, "Zz" };
+
+    // 同一オブジェクトで比較した場合
+    // 等価であること
+    BOOST_CHECK(zz == zz);
+
+    // すべてのデータメンバの値が等しいオブジェクトと比較した場合
+    // 等価であること
+    const Zz zz_0 = { 1, "Zz" };
+    BOOST_CHECK(zz == zz_0);
+
+    // データメンバの値が異なるオブジェクトと比較した場合
+    // いずれも等価ではないこと
+    // - #1 除数が異なる
+    // - #2 文言が異なる
+    // - #3 除数と文言が異なる
+    // clang-format off
+    const Zz zz_1 = { -1, "Zz" };
+    const Zz zz_2 = {  1, "zZ" };
+    const Zz zz_3 = { -1, "zZ" };
+
+    BOOST_CHECK(!(zz == zz_1));
+    BOOST_CHECK(!(zz == zz_2));
+    BOOST_CHECK(!(zz == zz_3));
+    // clang-format on
+}
+
+/*!
+ * テストパターン :
+ * @c Zz のオブジェクトと派生クラスのオブジェクトで等価比較演算を行う
+ *
+ * @see fizz_buzzxx::Zz::operator==()
+ * @see fizz_buzzxx::Fizz
+ * @see fizz_buzzxx::Buzz
+ */
+BOOST_AUTO_TEST_CASE(compare_with_derived_class_instances)
+{
+    const Zz zz = { 1, "Zz" };
+
+    // クラスが異なるがすべてのデータメンバの値が等しいオブジェクトと比較した場合
+    // いずれも等価であること
+    const Fizz fizz_0 = { 1, "Zz" };
+    const Buzz buzz_0 = { 1, "Zz" };
+
+    BOOST_CHECK(zz == fizz_0);
+    BOOST_CHECK(zz == buzz_0);
+
+    // クラスが異なりデータメンバの値も異なるオブジェクトと比較した場合
+    // いずれも等価ではないこと
+    // - fizz_1 ... 除数が異なる Fizz のオブジェクト
+    // - fizz_2 ... 文言が異なる Fizz のオブジェクト
+    // - fizz_3 ... 除数と文言が異なる Fizz のオブジェクト
+    // - buzz_1 ... 除数が異なる Fizz のオブジェクト
+    // - buzz_2 ... 文言が異なる Fizz のオブジェクト
+    // - buzz_3 ... 除数と文言が異なる Fizz のオブジェクト
+    // clang-format off
+    const Fizz fizz_1 = { 3, "Zz"   };
+    const Fizz fizz_2 = { 1, "Fizz" };
+    const Fizz fizz_3 = { 3, "Fizz" };
+    const Buzz buzz_1 = { 5, "Zz"   };
+    const Buzz buzz_2 = { 1, "Buzz" };
+    const Buzz buzz_3 = { 5, "Buzz" };
+
+    BOOST_CHECK(!(zz == fizz_1));
+    BOOST_CHECK(!(zz == fizz_2));
+    BOOST_CHECK(!(zz == fizz_3));
+    BOOST_CHECK(!(zz == buzz_1));
+    BOOST_CHECK(!(zz == buzz_2));
+    BOOST_CHECK(!(zz == buzz_3));
+    // clang-format on
+}
+
+/*!
+ * テストパターン :
+ * @c Zz のオブジェクトと
+ * 同オブジェクトの参照またはポインタで等価比較演算を行う
+ *
+ * @see fizz_buzzxx::Zz::operator==()
+ */
+BOOST_AUTO_TEST_CASE(compare_with_references_and_pointers)
+{
+    const Zz zz = { 1, "Zz" };
+
+    // 同一オブジェクトを指し示す参照またはポインタと比較した場合
+    // いずれも等価であること
+    // - cr ... const 参照
+    // - cp ... const ポインタ
+    // - nr ... 非 const 参照
+    // - np ... 非 const ポインタ
+    // clang-format off
+    Zz const & zz_cr =   zz;
+    Zz const * zz_cp = & zz;
+    Zz       & zz_nr = const_cast<Zz &>(  zz);
+    Zz       * zz_np = const_cast<Zz *>(& zz);
+
+    BOOST_CHECK(zz ==   zz_cr);
+    BOOST_CHECK(zz == * zz_cp);
+    BOOST_CHECK(zz ==   zz_nr);
+    BOOST_CHECK(zz == * zz_np);
+    // clang-format on
+}
+
+BOOST_AUTO_TEST_SUITE_END(/* operator__equals */)
 
 BOOST_AUTO_TEST_SUITE_END(/* class__Zz */)
 

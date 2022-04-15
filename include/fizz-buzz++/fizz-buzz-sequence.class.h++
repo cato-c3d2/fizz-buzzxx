@@ -277,8 +277,7 @@ namespace fizz_buzzxx
     auto FizzBuzzSequenceElement::operator==(
         const FizzBuzzSequenceElement & that) const -> bool
     {
-        // FIXME 被除数 n だけではなく関数オブジェクト FizzBuzz も比較すること
-        return this->_n == that._n;
+        return this->_fizz_buzz == that._fizz_buzz && this->_n == that._n;
     }
 
     auto FizzBuzzSequenceElement::operator!=(
