@@ -74,8 +74,8 @@ namespace fizz_buzzxx
         auto is_divisible_by(int n) const -> bool;
 
     private:
-        const int         _divisor;
-        const std::string _message;
+        int         _divisor;
+        std::string _message;
     };
 }
 

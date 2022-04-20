@@ -61,9 +61,7 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
     // 【検証】
     // std::next で次に進めたイテレータ first が
     // 整数 3 を保持する FizzBuzzSequenceElementを参照すること.
-    // FIXME イテレータ first が代入できないため, 暫定措置としてインクリメントする.
-    // first = std::next(first);
-    ++first;
+    first = std::next(first);
     BOOST_CHECK(*first == FizzBuzzSequenceElement(FizzBuzz {}, 3));
 
     // 【検証】

@@ -15,6 +15,27 @@ BOOST_AUTO_TEST_SUITE(class__FizzBuzz)
 
 /*!
  * テストパターン :
+ * @c FizzBuzz のオブジェクトがコピー代入可能であることを検証する
+ */
+BOOST_AUTO_TEST_CASE(copy_assignable)
+{
+    // clang-format off
+    const FizzBuzz source      = {};                           // コピー元のオブジェクト
+          FizzBuzz destination = { Fizz { -3 }, Buzz { -5 } }; // コピー先のオブジェクト
+    // clang-format on
+
+    // コピー元のオブジェクトをコピー先のオブジェクトをコピー代入する
+    destination = source;
+
+    // 二つのオブジェクトは等価であること
+    BOOST_CHECK(source == destination);
+
+    // 二つのオブジェクトのアドレスは異なること
+    BOOST_CHECK(std::addressof(source) != std::addressof(destination));
+}
+
+/*!
+ * テストパターン :
  * デフォルトの @c FizzBuzz のオブジェクトを生成し,
  * 正の整数に対して FizzBuzz 演算を行う
  *
