@@ -75,10 +75,10 @@ namespace fizz_buzzxx
         /*!
          * オブジェクトを生成する
          *
-         * @param[in] fizz_buzz FizzBuzz 演算を行う関数オブジェクト
          * @param[in] n         被除数
+         * @param[in] fizz_buzz FizzBuzz 演算を行う関数オブジェクト
          */
-        explicit FizzBuzzSequenceElement(FizzBuzz fizz_buzz, int n);
+        explicit FizzBuzzSequenceElement(int n, FizzBuzz fizz_buzz = {});
 
         /*!
          * 関数呼び出し演算
@@ -125,8 +125,8 @@ namespace fizz_buzzxx
         auto operator++(int) -> const FizzBuzzSequenceElement;
 
     private:
-        FizzBuzz _fizz_buzz;
         int      _n;
+        FizzBuzz _fizz_buzz;
     };
 
     /*!
@@ -250,14 +250,14 @@ namespace fizz_buzzxx
 
     auto FizzBuzzSequence::begin() const -> Iterator
     {
-        return Iterator { FizzBuzzSequenceElement { this->_fizz_buzz,
-                                                    this->_first } };
+        return Iterator { FizzBuzzSequenceElement { this->_first,
+                                                    this->_fizz_buzz } };
     }
 
     auto FizzBuzzSequence::end() const -> Iterator
     {
-        return Iterator { FizzBuzzSequenceElement { this->_fizz_buzz,
-                                                    this->_final + 1 } };
+        return Iterator { FizzBuzzSequenceElement { this->_final + 1,
+                                                    this->_fizz_buzz } };
     }
 
     ////////////////////////////////////////////////////////////////////////////
@@ -265,8 +265,8 @@ namespace fizz_buzzxx
     ////////////////////////////////////////////////////////////////////////////
 
     FizzBuzzSequenceElement::FizzBuzzSequenceElement(
-        const FizzBuzz fizz_buzz, const int n)
-        : _fizz_buzz { fizz_buzz }, _n { n }
+        const int n, const FizzBuzz fizz_buzz)
+        : _n { n }, _fizz_buzz { fizz_buzz }
     {}
 
     auto FizzBuzzSequenceElement::operator()() const -> std::string

@@ -38,15 +38,15 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
     // イテレータ last は整数 10 を保持する FizzBuzzSequenceElement を参照すること.
     // イテレータ first とイテレータ last は等価ではないと判定されること.
     // clang-format off
-    BOOST_CHECK(*first == FizzBuzzSequenceElement(FizzBuzz {},  0));
-    BOOST_CHECK(*last  == FizzBuzzSequenceElement(FizzBuzz {}, 10));
+    BOOST_CHECK(*first == FizzBuzzSequenceElement( 0));
+    BOOST_CHECK(*last  == FizzBuzzSequenceElement(10));
     BOOST_CHECK( first != last);
     // clang-format on
 
     // 【検証】
     // インクリメント(前置)したイテレータ first が
     // 整数 1 を保持する FizzBuzzSequenceElement を参照すること.
-    BOOST_CHECK(*(++first) == FizzBuzzSequenceElement(FizzBuzz {}, 1));
+    BOOST_CHECK(*(++first) == FizzBuzzSequenceElement(1));
 
     // 【検証】
     // インクリメント(後置)したイテレータ first が
@@ -54,22 +54,22 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
     // また, 次の文ではイテレータ first が
     // 整数 2 を保持する FizzBuzzSequenceElement を参照していること.
     // clang-format off
-    BOOST_CHECK(*(first++) == FizzBuzzSequenceElement(FizzBuzz {}, 1));
-    BOOST_CHECK(*    first == FizzBuzzSequenceElement(FizzBuzz {}, 2));
+    BOOST_CHECK(*(first++) == FizzBuzzSequenceElement(1));
+    BOOST_CHECK(*    first == FizzBuzzSequenceElement(2));
     // clang-format on
 
     // 【検証】
     // std::next で次に進めたイテレータ first が
     // 整数 3 を保持する FizzBuzzSequenceElementを参照すること.
     first = std::next(first);
-    BOOST_CHECK(*first == FizzBuzzSequenceElement(FizzBuzz {}, 3));
+    BOOST_CHECK(*first == FizzBuzzSequenceElement(3));
 
     // 【検証】
     // std::advance で 6 回進めたイテレータ first が
     // 整数 9 を保持する FizzBuzzSequenceElementを参照すること.
     // (整数 9 はコンテナの末尾の整数でもある)
     std::advance(first, 6);
-    BOOST_CHECK(*first == FizzBuzzSequenceElement(FizzBuzz {}, 9));
+    BOOST_CHECK(*first == FizzBuzzSequenceElement(9));
 
     // 【検証】
     // さらにインクリメントしたイテレータ first が
@@ -78,8 +78,8 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
     // (整数 10 はコンテナの末尾の整数 + 1 である)
     ++first;
     // clang-format off
-    BOOST_CHECK(*first == FizzBuzzSequenceElement(FizzBuzz {}, 10));
-    BOOST_CHECK(*last  == FizzBuzzSequenceElement(FizzBuzz {}, 10));
+    BOOST_CHECK(*first == FizzBuzzSequenceElement(10));
+    BOOST_CHECK(*last  == FizzBuzzSequenceElement(10));
     BOOST_CHECK(first == last);
     // clang-format on
 }
