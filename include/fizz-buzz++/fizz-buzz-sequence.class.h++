@@ -233,6 +233,30 @@ namespace fizz_buzzxx
 
 ////////////////////////////////////////////////////////////////////////////////
 //
+// Function declaration
+//
+////////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+
+namespace fizz_buzzxx
+{
+    /**
+     * ストリーム出力演算
+     *
+     * @c element に対して FizzBuzz 演算を行い, その結果を出力ストリームに出力する
+     *
+     * @param[in] out     出力ストリーム
+     * @param[in] element @c FizzBuzzSequence のオブジェクト
+     *
+     * @return 出力ストリーム
+     */
+    auto operator<<(std::ostream & out, const FizzBuzzSequenceElement & element)
+        -> std::ostream &;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
 // Class member definition
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -351,6 +375,22 @@ namespace fizz_buzzxx
         -> bool
     {
         return ! this->operator==(that);
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Function definition
+//
+////////////////////////////////////////////////////////////////////////////////
+
+namespace fizz_buzzxx
+{
+    auto operator<<(std::ostream & out, const FizzBuzzSequenceElement & element)
+        -> std::ostream &
+    {
+        out << element();
+        return out;
     }
 }
 

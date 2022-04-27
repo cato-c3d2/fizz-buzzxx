@@ -86,6 +86,39 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
 
 BOOST_AUTO_TEST_SUITE_END(/* class__FizzBuzzSequence */)
 
+BOOST_AUTO_TEST_SUITE(class__FizzBuzzSequenceElement)
+
+/*!
+ * テストパターン :
+ * @c FizzBuzzSequenceElement のオブジェクトを生成し,
+ * インクリメント演算とストリーム出力演算を繰り返す
+ *
+ * @see fizz_buzzxx::FizzBuzzSequenceElement
+ * @see fizz_buzzxx::FizzBuzzSequenceElement::operator++()
+ * @see operator<<(std::ostream &, fizz_buzzxx::FizzBuzzSequenceElement &)
+ */
+BOOST_AUTO_TEST_CASE(increment_operator_and_output_stream_operator)
+{
+    // 被除数の初期値として 1 を指定した
+    // FizzBuzzSequenceElement のオブジェクトを生成する.
+    FizzBuzzSequenceElement fizz_buzz { 1 };
+
+    // FizzBuzzSequenceElement のオブジェクトに対して
+    // インクリメントとストリーム出力(FizzBuzz 演算)を 15 回ほど繰り返す.
+    std::ostringstream out;
+    for (int i = 1; i <= 15; ++i) {
+        out << fizz_buzz++ << ", ";
+    }
+
+    // 【検証】
+    // 文字列ストリームに出力された FizzBuzz 演算の結果が期待結果と一致すること.
+    const std::string expect = "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, "
+                               "11, Fizz, 13, 14, Fizz Buzz, ";
+    BOOST_CHECK_EQUAL(out.str(), expect);
+}
+
+BOOST_AUTO_TEST_SUITE_END(/* class__FizzBuzzSequenceElement */)
+
 BOOST_AUTO_TEST_SUITE_END(/* namespace__fizz_buzzxx */)
 
 #endif /* TEST__INCLUDE__FIZZ_BUZZXX__FIZZ_BUZZ_SEQUENCE_CLASS_TEST_CASE_HXX */
