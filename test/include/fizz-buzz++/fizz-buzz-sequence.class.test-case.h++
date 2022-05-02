@@ -16,10 +16,10 @@ BOOST_AUTO_TEST_SUITE(class__FizzBuzzSequence)
 /*!
  * テストパターン :
  * @c FizzBuzzSequence を @c FizzBuzzSequence::Iterator 及び
- * @c FizzBuzzSequenceElement と共に使用する
+ * @c FizzBuzzSequence::Element と共に使用する
  *
  * @see fizz_buzzxx::FizzBuzzSequence
- * @see fizz_buzzxx::FizzBuzzSequenceElement
+ * @see fizz_buzzxx::FizzBuzzSequence::Element
  * @see fizz_buzzxx::FizzBuzzSequence::Iterator
  */
 BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
@@ -34,42 +34,42 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
     const FizzBuzzSequence::Iterator last = fizz_buzz_sequence.end();
 
     // 【検証】
-    // イテレータ first は整数 0 を保持する FizzBuzzSequenceElement を参照し,
-    // イテレータ last は整数 10 を保持する FizzBuzzSequenceElement を参照すること.
+    // イテレータ first は整数 0 を保持する FizzBuzzSequence::Element を参照し,
+    // イテレータ last は整数 10 を保持する FizzBuzzSequence::Element を参照すること.
     // イテレータ first とイテレータ last は等価ではないと判定されること.
     // clang-format off
-    BOOST_CHECK(*first == FizzBuzzSequenceElement( 0));
-    BOOST_CHECK(*last  == FizzBuzzSequenceElement(10));
+    BOOST_CHECK(*first == FizzBuzzSequence::Element( 0));
+    BOOST_CHECK(*last  == FizzBuzzSequence::Element(10));
     BOOST_CHECK( first != last);
     // clang-format on
 
     // 【検証】
     // インクリメント(前置)したイテレータ first が
-    // 整数 1 を保持する FizzBuzzSequenceElement を参照すること.
-    BOOST_CHECK(*(++first) == FizzBuzzSequenceElement(1));
+    // 整数 1 を保持する FizzBuzzSequence::Element を参照すること.
+    BOOST_CHECK(*(++first) == FizzBuzzSequence::Element(1));
 
     // 【検証】
     // インクリメント(後置)したイテレータ first が
-    // 整数 1 を保持する FizzBuzzSequenceElement を参照したままであること.
+    // 整数 1 を保持する FizzBuzzSequence::Element を参照したままであること.
     // また, 次の文ではイテレータ first が
-    // 整数 2 を保持する FizzBuzzSequenceElement を参照していること.
+    // 整数 2 を保持する FizzBuzzSequence::Element を参照していること.
     // clang-format off
-    BOOST_CHECK(*(first++) == FizzBuzzSequenceElement(1));
-    BOOST_CHECK(*    first == FizzBuzzSequenceElement(2));
+    BOOST_CHECK(*(first++) == FizzBuzzSequence::Element(1));
+    BOOST_CHECK(*    first == FizzBuzzSequence::Element(2));
     // clang-format on
 
     // 【検証】
     // std::next で次に進めたイテレータ first が
     // 整数 3 を保持する FizzBuzzSequenceElementを参照すること.
     first = std::next(first);
-    BOOST_CHECK(*first == FizzBuzzSequenceElement(3));
+    BOOST_CHECK(*first == FizzBuzzSequence::Element(3));
 
     // 【検証】
     // std::advance で 6 回進めたイテレータ first が
     // 整数 9 を保持する FizzBuzzSequenceElementを参照すること.
     // (整数 9 はコンテナの末尾の整数でもある)
     std::advance(first, 6);
-    BOOST_CHECK(*first == FizzBuzzSequenceElement(9));
+    BOOST_CHECK(*first == FizzBuzzSequence::Element(9));
 
     // 【検証】
     // さらにインクリメントしたイテレータ first が
@@ -78,8 +78,8 @@ BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
     // (整数 10 はコンテナの末尾の整数 + 1 である)
     ++first;
     // clang-format off
-    BOOST_CHECK(*first == FizzBuzzSequenceElement(10));
-    BOOST_CHECK(*last  == FizzBuzzSequenceElement(10));
+    BOOST_CHECK(*first == FizzBuzzSequence::Element(10));
+    BOOST_CHECK(*last  == FizzBuzzSequence::Element(10));
     BOOST_CHECK(first == last);
     // clang-format on
 }
@@ -90,20 +90,20 @@ BOOST_AUTO_TEST_SUITE(class__FizzBuzzSequenceElement)
 
 /*!
  * テストパターン :
- * @c FizzBuzzSequenceElement のオブジェクトを生成し,
+ * @c FizzBuzzSequence::Element のオブジェクトを生成し,
  * インクリメント演算とストリーム出力演算を繰り返す
  *
- * @see fizz_buzzxx::FizzBuzzSequenceElement
- * @see fizz_buzzxx::FizzBuzzSequenceElement::operator++()
- * @see operator<<(std::ostream &, fizz_buzzxx::FizzBuzzSequenceElement &)
+ * @see fizz_buzzxx::FizzBuzzSequence::Element
+ * @see fizz_buzzxx::FizzBuzzSequence::Element::operator++()
+ * @see operator<<(std::ostream &, fizz_buzzxx::FizzBuzzSequence::Element &)
  */
 BOOST_AUTO_TEST_CASE(increment_operator_and_output_stream_operator)
 {
     // 被除数の初期値として 1 を指定した
-    // FizzBuzzSequenceElement のオブジェクトを生成する.
-    FizzBuzzSequenceElement fizz_buzz { 1 };
+    // FizzBuzzSequence::Element のオブジェクトを生成する.
+    FizzBuzzSequence::Element fizz_buzz { 1 };
 
-    // FizzBuzzSequenceElement のオブジェクトに対して
+    // FizzBuzzSequence::Element のオブジェクトに対して
     // インクリメントとストリーム出力(FizzBuzz 演算)を 15 回ほど繰り返す.
     std::ostringstream out;
     for (int i = 1; i <= 15; ++i) {

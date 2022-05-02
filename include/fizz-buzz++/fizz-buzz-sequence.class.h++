@@ -18,14 +18,15 @@
 
 namespace fizz_buzzxx
 {
-    class FizzBuzzSequenceElement;
-
     /*!
      * FizzBuzz 演算の対象となる整数の範囲を表現するシーケンスコンテナ
      */
     class FizzBuzzSequence
     {
     public:
+        /*! @c FizzBuzzSequence の要素を表現するオブジェクト */
+        class Element;
+
         /*! @c FizzBuzzSequence の入力イテレータ */
         class Iterator;
 
@@ -69,7 +70,7 @@ namespace fizz_buzzxx
      * @see FizzBuzzSequence
      * @see FizzBuzzSequence::Iterator
      */
-    class FizzBuzzSequenceElement
+    class FizzBuzzSequence::Element
     {
     public:
         /*!
@@ -78,7 +79,7 @@ namespace fizz_buzzxx
          * @param[in] n         被除数
          * @param[in] fizz_buzz FizzBuzz 演算を行う関数オブジェクト
          */
-        explicit FizzBuzzSequenceElement(int n, FizzBuzz fizz_buzz = {});
+        explicit Element(int n, FizzBuzz fizz_buzz = {});
 
         /*!
          * 関数呼び出し演算
@@ -91,22 +92,22 @@ namespace fizz_buzzxx
         /*!
          * 等価比較演算
          *
-         * @param[in] that このオブジェクトと比較する @c FizzBuzzSequenceElement
+         * @param[in] that このオブジェクトと比較する @c Element
          *
          * @return このオブジェクトと @c that が等価である場合は @c true を,
          *         そうではない場合は @c false を返却する
          */
-        auto operator==(const FizzBuzzSequenceElement & that) const -> bool;
+        auto operator==(const Element & that) const -> bool;
 
         /*!
          * 非等価比較演算
          *
-         * @param[in] that このオブジェクトと比較する @c FizzBuzzSequenceElement
+         * @param[in] that このオブジェクトと比較する @c Element
          *
          * @return このオブジェクトと @c that が非等価である場合は @c true を,
          *         そうではない場合は @c false を返却する
          */
-        auto operator!=(const FizzBuzzSequenceElement & that) const -> bool;
+        auto operator!=(const Element & that) const -> bool;
 
         /*!
          * 前置インクリメント演算
@@ -114,7 +115,7 @@ namespace fizz_buzzxx
          * @return このオブジェクトが保持する被除数 @c n をインクリメントした後,
          *         このオブジェクトへの参照を返却する
          */
-        auto operator++() -> FizzBuzzSequenceElement &;
+        auto operator++() -> Element &;
 
         /*!
          * 後置インクリメント演算
@@ -122,7 +123,7 @@ namespace fizz_buzzxx
          * @return このオブジェクトが保持する被除数 @c n をインクリメントした後,
          *         このオブジェクトのインクリメントする前のコピーを返却する
          */
-        auto operator++(int) -> const FizzBuzzSequenceElement;
+        auto operator++(int) -> const Element;
 
     private:
         int      _n;
@@ -141,20 +142,20 @@ namespace fizz_buzzxx
         using difference_type = std::ptrdiff_t;
 
         /*! イテレータが指す値の型 */
-        using value_type = FizzBuzzSequenceElement;
+        using value_type = Element;
 
         /*! イテレータが指す値のポインタ型 */
-        using pointer = FizzBuzzSequenceElement *;
+        using pointer = Element *;
 
         /*! イテレータが指す値の参照型 (非 const) */
-        using reference = FizzBuzzSequenceElement &;
+        using reference = Element &;
 
         /*!
          * イテレータが指す値の参照型 (const)
          *
          * @see reference
          */
-        using const_reference = const FizzBuzzSequenceElement &;
+        using const_reference = const Element &;
 
         /*! イテレータの分類 */
         using iterator_category = std::input_iterator_tag;
@@ -162,10 +163,9 @@ namespace fizz_buzzxx
         /*!
          * イテレータを生成する
          *
-         * @param[in] element このイテレータが指す
-         *                    @c FizzBuzzSequenceElement オブジェクト
+         * @param[in] element このイテレータが指す @c Element オブジェクト
          */
-        Iterator(FizzBuzzSequenceElement element);
+        Iterator(Element element);
 
         /*!
          * 間接参照演算
@@ -227,7 +227,7 @@ namespace fizz_buzzxx
         auto operator++(int) -> const Iterator;
 
     private:
-        FizzBuzzSequenceElement _element;
+        Element _element;
     };
 }
 
@@ -247,11 +247,12 @@ namespace fizz_buzzxx
      * @c element に対して FizzBuzz 演算を行い, その結果を出力ストリームに出力する
      *
      * @param[in] out     出力ストリーム
-     * @param[in] element @c FizzBuzzSequence のオブジェクト
+     * @param[in] element @c FizzBuzzSequence::Element のオブジェクト
      *
      * @return 出力ストリーム
      */
-    auto operator<<(std::ostream & out, const FizzBuzzSequenceElement & element)
+    auto
+    operator<<(std::ostream & out, const FizzBuzzSequence::Element & element)
         -> std::ostream &;
 }
 
@@ -274,52 +275,48 @@ namespace fizz_buzzxx
 
     auto FizzBuzzSequence::begin() const -> Iterator
     {
-        return Iterator { FizzBuzzSequenceElement { this->_first,
-                                                    this->_fizz_buzz } };
+        return Iterator { Element { this->_first, this->_fizz_buzz } };
     }
 
     auto FizzBuzzSequence::end() const -> Iterator
     {
-        return Iterator { FizzBuzzSequenceElement { this->_final + 1,
-                                                    this->_fizz_buzz } };
+        return Iterator { Element { this->_final + 1, this->_fizz_buzz } };
     }
 
     ////////////////////////////////////////////////////////////////////////////
-    // FizzBuzzSequenceElement
+    // FizzBuzzSequence::Element
     ////////////////////////////////////////////////////////////////////////////
 
-    FizzBuzzSequenceElement::FizzBuzzSequenceElement(
-        const int n, const FizzBuzz fizz_buzz)
+    FizzBuzzSequence::Element::Element(const int n, const FizzBuzz fizz_buzz)
         : _n { n }, _fizz_buzz { fizz_buzz }
     {}
 
-    auto FizzBuzzSequenceElement::operator()() const -> std::string
+    auto FizzBuzzSequence::Element::operator()() const -> std::string
     {
         return this->_fizz_buzz(this->_n);
     }
 
-    auto FizzBuzzSequenceElement::operator==(
-        const FizzBuzzSequenceElement & that) const -> bool
+    auto FizzBuzzSequence::Element::operator==(const Element & that) const
+        -> bool
     {
         return this->_fizz_buzz == that._fizz_buzz && this->_n == that._n;
     }
 
-    auto FizzBuzzSequenceElement::operator!=(
-        const FizzBuzzSequenceElement & that) const -> bool
+    auto FizzBuzzSequence::Element::operator!=(const Element & that) const
+        -> bool
     {
         return ! this->operator==(that);
     }
 
-    auto FizzBuzzSequenceElement::operator++() -> FizzBuzzSequenceElement &
+    auto FizzBuzzSequence::Element::operator++() -> Element &
     {
         ++this->_n;
         return *this;
     }
 
-    auto FizzBuzzSequenceElement::operator++(int)
-        -> const FizzBuzzSequenceElement
+    auto FizzBuzzSequence::Element::operator++(int) -> const Element
     {
-        FizzBuzzSequenceElement clone = *this;
+        Element clone = *this;
         this->_n++;
         return clone;
     }
@@ -328,7 +325,7 @@ namespace fizz_buzzxx
     // Iterator
     ////////////////////////////////////////////////////////////////////////////
 
-    FizzBuzzSequence::Iterator::Iterator(const FizzBuzzSequenceElement element)
+    FizzBuzzSequence::Iterator::Iterator(const Element element)
         : _element { element }
     {}
 
@@ -386,7 +383,8 @@ namespace fizz_buzzxx
 
 namespace fizz_buzzxx
 {
-    auto operator<<(std::ostream & out, const FizzBuzzSequenceElement & element)
+    auto
+    operator<<(std::ostream & out, const FizzBuzzSequence::Element & element)
         -> std::ostream &
     {
         out << element();
