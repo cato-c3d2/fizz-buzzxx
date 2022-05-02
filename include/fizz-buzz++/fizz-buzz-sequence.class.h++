@@ -134,6 +134,7 @@ namespace fizz_buzzxx
      * @c FizzBuzzSequence の入力イテレータ
      *
      * @see FizzBuzzSequence
+     * @see FizzBuzzSequence::Element
      */
     class FizzBuzzSequence::Iterator
     {
@@ -163,7 +164,7 @@ namespace fizz_buzzxx
         /*!
          * イテレータを生成する
          *
-         * @param[in] element このイテレータが指す @c Element オブジェクト
+         * @param[in] element このイテレータが指す @c Element
          */
         Iterator(Element element);
 
