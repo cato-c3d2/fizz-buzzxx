@@ -8,9 +8,8 @@
  * - 整数 @c N を @c 5 で割り切れる場合の文言を @c "Buzz++" とする
  *
  * @file example-03a.c++
- * @see  fizz_buzzxx::IntegralSequence
  * @see  fizz_buzzxx::FizzBuzz
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>
@@ -28,17 +27,20 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const IntegralSequence sequence = { 1, 100 };
+    // FizzBuzz 問題の対象範囲とルールを設定したコンテナを生成する
+    const FizzBuzzSequence sequence = {
+        // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+        1,
+        100,
+        // FizzBuzz 問題のルールを下記のように変更する :
+        // - 3 で割り切れる場合の文言を "Fizz++" とする
+        // - 5 で割り切れる場合の文言を "Buzz++" とする
+        FizzBuzz { Fizz { "Fizz++" }, Buzz { "Buzz++" } }
+    };
 
-    // FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzz(
-        std::begin(sequence),
-        std::end(sequence),
-        [&](const auto value) {
+    // ルールを変更した FizzBuzz 問題の結果を標準出力に出力する
+    std::for_each(
+        std::begin(sequence), std::end(sequence), [&](const auto value) {
             std::cout << value << std::endl;
-        },
-        // 3 で割り切れる場合の文言を "Fizz++",
-        // 5 で割り切れる場合の文言を "Buzz++" とする
-        FizzBuzz { Fizz { "Fizz++" }, Buzz { "Buzz++" } });
+        });
 }

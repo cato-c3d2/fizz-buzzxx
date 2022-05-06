@@ -7,8 +7,7 @@
  * 要素間の区切りをカンマ(+半角スペース)に変更したもの. @n
  *
  * @file example-02b.c++
- * @see  fizz_buzzxx::IntegralSequence
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>
@@ -27,15 +26,16 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const IntegralSequence sequence = { 1, 100 };
+    // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+    const FizzBuzzSequence sequence = { 1, 100 };
 
     // FizzBuzz 問題の結果を標準出力に出力する
     std::string delimiter = "";
-    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
-        std::cout << delimiter << value;
-        // 要素間の区切りをカンマ(+半角スペース)とする
-        delimiter = ", ";
-    });
+    std::for_each(
+        std::begin(sequence), std::end(sequence), [&](const auto value) {
+            std::cout << delimiter << value;
+            // 要素間の区切りをカンマ(+半角スペース)とする
+            delimiter = ", ";
+        });
     std::cout << std::endl;
 }

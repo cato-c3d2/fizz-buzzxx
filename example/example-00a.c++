@@ -7,8 +7,7 @@
  * @c FizzBuzzSequence と, 範囲 for 文を使用したもの. @n
  *
  * @file example-00a.c++
- * @see  fizz_buzzxx::IntegralSequence
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>

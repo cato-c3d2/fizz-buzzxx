@@ -7,8 +7,7 @@
  * 文字列ストリーム @c std::ostringstream を使用したもの. @n
  *
  * @file example-02a.c++
- * @see  fizz_buzzxx::IntegralSequence
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>
@@ -27,14 +26,15 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const IntegralSequence sequence = { 1, 100 };
+    // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+    const FizzBuzzSequence sequence = { 1, 100 };
 
     // FizzBuzz 問題の結果を文字列ストリームに出力する
     std::ostringstream out;
-    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
-        out << value << std::endl;
-    });
+    std::for_each(
+        std::begin(sequence), std::end(sequence), [&](const auto value) {
+            out << value << std::endl;
+        });
 
     // 文字列ストリームに出力した FizzBuzz 問題の結果を標準出力に出力する
     std::cout << out.str();
