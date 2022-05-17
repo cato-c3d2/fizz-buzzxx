@@ -31,11 +31,10 @@ auto main() -> int
 
     // FizzBuzz 問題の結果を標準出力に出力する
     std::string delimiter = "";
-    std::for_each(
-        std::begin(sequence), std::end(sequence), [&](const auto value) {
-            std::cout << delimiter << value;
-            // 要素間の区切りをカンマ(+半角スペース)とする
-            delimiter = ", ";
-        });
+    for (const auto & value : sequence) {
+        std::cout << delimiter << value;
+        // 要素間の区切りをカンマ(+半角スペース)とする
+        delimiter = ", ";
+    }
     std::cout << std::endl;
 }

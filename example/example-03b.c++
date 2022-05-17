@@ -39,8 +39,7 @@ auto main() -> int
     };
 
     // ルールを変更した FizzBuzz 問題の結果を標準出力に出力する
-    std::for_each(
-        std::begin(sequence), std::end(sequence), [&](const auto value) {
-            std::cout << value << std::endl;
-        });
+    for (const auto & value : sequence) {
+        std::cout << value << std::endl;
+    }
 }
