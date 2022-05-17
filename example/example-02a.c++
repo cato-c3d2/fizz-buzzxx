@@ -31,7 +31,7 @@ auto main() -> int
 
     // FizzBuzz 問題の結果を文字列ストリームに出力する
     std::ostringstream out;
-    for (const auto & value : sequence) {
+    for (auto && value : sequence) {
         out << value << std::endl;
     }
 
