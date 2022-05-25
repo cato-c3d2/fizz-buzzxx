@@ -8,6 +8,8 @@ all : clean format build test compare-example document
 
 .PHONY : build
 build : build/example-00a.exe \
+        build/example-01a.exe \
+        build/example-01b.exe \
         build/example-02a.exe \
         build/example-02b.exe \
         build/example-03a.exe \
@@ -24,6 +26,12 @@ build/example-00a.exe : ./example/example-00a.c++
     #      自動変数の意味 :
     #      $@ ... ターゲットファイル名
     #      $< ... 最初の依存ファイル名
+
+build/example-01a.exe : ./example/example-01a.c++
+	$(CXX) $< -o $@ $(build_options)
+
+build/example-01b.exe : ./example/example-01b.c++
+	$(CXX) $< -o $@ $(build_options)
 
 build/example-02a.exe : ./example/example-02a.c++
 	$(CXX) $< -o $@ $(build_options)
@@ -52,6 +60,8 @@ clean :
 
 .PHONY : compare-example
 compare-example : compare-example-00a \
+                  compare-example-01a \
+                  compare-example-01b \
                   compare-example-02a \
                   compare-example-02b \
                   compare-example-03a \
@@ -69,6 +79,14 @@ compare-example-00a : ./build/example-00a.exe
 	$(call run_and_compare_result, ./example/output/example-00a.txt, $<)
     # NOTE 自動変数が展開され, 下記のコマンドが実行される :
     #      $(call run_and_compare_result, ./example/output/example-00a.txt, ./build/example-00a.exe)
+
+.PHONY : compare-example-01a
+compare-example-01a : ./build/example-01a.exe
+	$(call run_and_compare_result, ./example/output/example-01a.txt, $<)
+
+.PHONY : compare-example-01b
+compare-example-01b : ./build/example-01b.exe
+	$(call run_and_compare_result, ./example/output/example-01b.txt, $<)
 
 .PHONY : compare-example-02a
 compare-example-02a : ./build/example-02a.exe
