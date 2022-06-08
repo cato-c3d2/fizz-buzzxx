@@ -3,19 +3,16 @@
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
  *
- * 整数の並びを表現するコンテナ @c IntegralSequence と,
- * イテレータの範囲に対して FizzBuzz 演算を繰り返すアルゴリズム
- * @c fizz_buzz を使用したもの. @n
+ * FizzBuzz 演算の対象となる整数の範囲を表現するシーケンスコンテナ
+ * @c FizzBuzzSequence と, 範囲 for 文を使用したもの. @n
  *
  * @file example-00a.c++
- * @see  fizz_buzzxx::IntegralSequence
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>
 
 #include <iostream>
-#include <iterator>
 
 /*!
  * FizzBuzz 問題の結果を標準出力に出力する
@@ -27,11 +24,8 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const IntegralSequence sequence = { 1, 100 };
-
-    // FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
-        std::cout << value << std::endl;
-    });
+    // 1 ～ 100 の整数に対して FizzBuzz 演算を繰り返し, その結果を標準出力に出力する
+    for (auto && fizz_buzz : FizzBuzzSequence { 1, 100 }) {
+        std::cout << fizz_buzz << std::endl;
+    }
 }

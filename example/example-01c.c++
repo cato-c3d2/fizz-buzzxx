@@ -3,10 +3,14 @@
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
  *
- * 入力となるシーケンスコンテナとして, @c int の配列を使用したもの. @n
+ * @c FizzBuzzSequence 及び
+ * @c FizzBuzzSequence::Iterator, @c FizzBuzzSequence::Element と
+ * @c std::for_each を組み合わせたもの. @n
  *
  * @file example-01c.c++
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
+ * @see  fizz_buzzxx::FizzBuzzSequence::Iterator
+ * @see  fizz_buzzxx::FizzBuzzSequence::Element
  */
 
 #include <fizz-buzz++.h++>
@@ -24,15 +28,12 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数を格納した配列を生成する
-    std::size_t constexpr size = 100;
-    int sequence[size]         = {};
-    for (auto index = 0; index < size; ++index) {
-        sequence[index] = index + 1;
-    }
+    // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+    const FizzBuzzSequence sequence = { 1, 100 };
 
     // FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
-        std::cout << value << std::endl;
-    });
+    std::for_each(
+        std::begin(sequence), std::end(sequence), [&](auto && element) {
+            std::cout << element << std::endl;
+        });
 }

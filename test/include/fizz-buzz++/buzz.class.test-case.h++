@@ -15,6 +15,27 @@ BOOST_AUTO_TEST_SUITE(class__Buzz)
 
 /*!
  * テストパターン :
+ * @c Buzz のオブジェクトがコピー代入可能であることを検証する
+ */
+BOOST_AUTO_TEST_CASE(copy_assignable)
+{
+    // clang-format off
+    const Buzz source      = {};            // コピー元のオブジェクト
+          Buzz destination = { 3, "Fizz" }; // コピー先のオブジェクト
+    // clang-format on
+
+    // コピー元のオブジェクトをコピー先のオブジェクトをコピー代入する
+    destination = source;
+
+    // 二つのオブジェクトは等価であること
+    BOOST_CHECK(source == destination);
+
+    // 二つのオブジェクトのアドレスは異なること
+    BOOST_CHECK(std::addressof(source) != std::addressof(destination));
+}
+
+/*!
+ * テストパターン :
  * デフォルトの @c Buzz のオブジェクトを生成し,
  * 正の整数に対して Buzz 演算を行う
  *

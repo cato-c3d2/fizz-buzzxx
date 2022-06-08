@@ -3,16 +3,18 @@
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
  *
- * 入力となるシーケンスコンテナとして,
- * 固定長のシーケンスコンテナ @c std::array を使用したもの. @n
+ * @c FizzBuzzSequence 及び
+ * @c FizzBuzzSequence::Iterator, @c FizzBuzzSequence::Element と
+ * for 文を組み合わせたもの. @n
  *
  * @file example-01a.c++
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
+ * @see  fizz_buzzxx::FizzBuzzSequence::Iterator
+ * @see  fizz_buzzxx::FizzBuzzSequence::Element
  */
 
 #include <fizz-buzz++.h++>
 
-#include <array>
 #include <iostream>
 #include <iterator>
 
@@ -26,14 +28,11 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数を格納した固定長のシーケンスコンテナを生成する
-    std::array<int, 100> sequence = {};
-    for (auto index = 0; index < sequence.max_size(); ++index) {
-        sequence[index] = index + 1;
-    }
+    // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+    const FizzBuzzSequence sequence = { 1, 100 };
 
     // FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
-        std::cout << value << std::endl;
-    });
+    for (auto i = std::begin(sequence); i != std::end(sequence); ++i) {
+        std::cout << *i << std::endl;
+    }
 }

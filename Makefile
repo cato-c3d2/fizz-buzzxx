@@ -10,7 +10,6 @@ all : clean format build test compare-example document
 build : build/example-00a.exe \
         build/example-01a.exe \
         build/example-01b.exe \
-        build/example-01c.exe \
         build/example-02a.exe \
         build/example-02b.exe \
         build/example-03a.exe \
@@ -32,9 +31,6 @@ build/example-01a.exe : ./example/example-01a.c++
 	$(CXX) $< -o $@ $(build_options)
 
 build/example-01b.exe : ./example/example-01b.c++
-	$(CXX) $< -o $@ $(build_options)
-
-build/example-01c.exe : ./example/example-01c.c++
 	$(CXX) $< -o $@ $(build_options)
 
 build/example-02a.exe : ./example/example-02a.c++
@@ -66,7 +62,6 @@ clean :
 compare-example : compare-example-00a \
                   compare-example-01a \
                   compare-example-01b \
-                  compare-example-01c \
                   compare-example-02a \
                   compare-example-02b \
                   compare-example-03a \
@@ -92,10 +87,6 @@ compare-example-01a : ./build/example-01a.exe
 .PHONY : compare-example-01b
 compare-example-01b : ./build/example-01b.exe
 	$(call run_and_compare_result, ./example/output/example-01b.txt, $<)
-
-.PHONY : compare-example-01c
-compare-example-01c : ./build/example-01c.exe
-	$(call run_and_compare_result, ./example/output/example-01c.txt, $<)
 
 .PHONY : compare-example-02a
 compare-example-02a : ./build/example-02a.exe

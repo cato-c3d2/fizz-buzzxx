@@ -3,18 +3,20 @@
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
  *
- * 入力となるシーケンスコンテナとして,
- * 可変長のシーケンスコンテナ @c std::vector を使用したもの. @n
+ * @c FizzBuzzSequence 及び
+ * @c FizzBuzzSequence::Iterator, @c FizzBuzzSequence::Element と
+ * while 文を組み合わせたもの. @n
  *
  * @file example-01b.c++
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
+ * @see  fizz_buzzxx::FizzBuzzSequence::Iterator
+ * @see  fizz_buzzxx::FizzBuzzSequence::Element
  */
 
 #include <fizz-buzz++.h++>
 
 #include <iostream>
 #include <iterator>
-#include <vector>
 
 /*!
  * FizzBuzz 問題の結果を標準出力に出力する
@@ -26,14 +28,12 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数を格納した可変長のシーケンスコンテナを生成する
-    std::vector<int> sequence = {};
-    for (auto index = 0; index < 100; ++index) {
-        sequence.push_back(index + 1);
-    }
+    // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+    const FizzBuzzSequence sequence = { 1, 100 };
 
     // FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzz(std::begin(sequence), std::end(sequence), [&](const auto value) {
-        std::cout << value << std::endl;
-    });
+    auto iterator = std::begin(sequence);
+    while (iterator != std::end(sequence)) {
+        std::cout << *(iterator++) << std::endl;
+    }
 }

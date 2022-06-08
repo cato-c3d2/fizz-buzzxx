@@ -40,6 +40,16 @@ namespace fizz_buzzxx
         auto operator()(int n) const -> std::string;
 
         /*!
+         * 等価比較演算
+         *
+         * @param[in] that この関数オブジェクトと比較する @c Zz
+         *
+         * @return この関数オブジェクトと @c that が等価である場合は @c true を,
+         *         そうではない場合は @c false を返却する
+         */
+        auto operator==(const Zz & that) const -> bool;
+
+        /*!
          * 除数を取得する
          *
          * @return 除数
@@ -64,8 +74,8 @@ namespace fizz_buzzxx
         auto is_divisible_by(int n) const -> bool;
 
     private:
-        const int         _divisor;
-        const std::string _message;
+        int         _divisor;
+        std::string _message;
     };
 }
 
@@ -93,6 +103,12 @@ namespace fizz_buzzxx
             return this->message();
         }
         return std::to_string(n);
+    }
+
+    auto Zz::operator==(const Zz & that) const -> bool
+    {
+        return this->_divisor == that._divisor
+               && this->_message == that._message;
     }
 
     auto Zz::divisor() const -> int

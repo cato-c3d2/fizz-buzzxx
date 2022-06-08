@@ -8,9 +8,8 @@
  * - 文言 @c "Buzz" を出力する条件を「整数 @c N を @c 6 で割り切れる場合」とする
  *
  * @file example-03b.c++
- * @see  fizz_buzzxx::IntegralSequence
  * @see  fizz_buzzxx::FizzBuzz
- * @see  fizz_buzzxx::fizz_buzz
+ * @see  fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>
@@ -28,17 +27,19 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数の並びを表現するコンテナを生成する
-    const IntegralSequence sequence = { 1, 100 };
+    // FizzBuzz 問題の対象範囲とルールを設定したコンテナを生成する
+    const FizzBuzzSequence sequence = {
+        // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+        1,
+        100,
+        // FizzBuzz 問題のルールを下記のように変更する :
+        // - "Fizz" を出力する際の条件を "4 で割り切れる場合" とする
+        // - "Buzz" を出力する際の条件を "6 で割り切れる場合" とする
+        FizzBuzz { Fizz { 4 }, Buzz { 6 } }
+    };
 
     // ルールを変更した FizzBuzz 問題の結果を標準出力に出力する
-    fizz_buzz(
-        std::begin(sequence),
-        std::end(sequence),
-        [&](const auto value) {
-            std::cout << value << std::endl;
-        },
-        // "Fizz" を出力する際の条件を "4 で割り切れる場合" とし,
-        // "Buzz" を出力する際の条件を "6 で割り切れる場合" とする
-        FizzBuzz { Fizz { 4 }, Buzz { 6 } });
+    for (auto && element : sequence) {
+        std::cout << element << std::endl;
+    }
 }
