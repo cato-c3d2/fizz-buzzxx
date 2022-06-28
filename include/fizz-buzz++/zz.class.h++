@@ -16,13 +16,13 @@
 namespace fizz_buzzxx
 {
     /*!
-     * Zz 演算を行う関数オブジェクト
+     * @brief Zz 演算を行う関数オブジェクト
      */
     class Zz
     {
     public:
         /*!
-         * 関数オブジェクトを生成する
+         * @brief 関数オブジェクトを生成する
          *
          * @param[in] divisor 除数
          * @param[in] message 文言
@@ -30,7 +30,7 @@ namespace fizz_buzzxx
         Zz(int divisor, std::string message);
 
         /*!
-         * 関数呼び出し演算
+         * @brief 関数呼び出し演算
          *
          * @param[in] n Zz の値を求める整数
          * @return Zz の値を返却する @n
@@ -40,7 +40,7 @@ namespace fizz_buzzxx
         auto operator()(int n) const -> std::string;
 
         /*!
-         * 等価比較演算
+         * @brief 等価比較演算
          *
          * @param[in] that この関数オブジェクトと比較する @c Zz
          *
@@ -50,14 +50,14 @@ namespace fizz_buzzxx
         auto operator==(const Zz & that) const -> bool;
 
         /*!
-         * 除数を取得する
+         * @brief 除数を取得する
          *
          * @return 除数
          */
         auto divisor() const -> int;
 
         /*!
-         * 文言を取得する
+         * @brief 文言を取得する
          *
          * @return 文言
          */
@@ -65,7 +65,7 @@ namespace fizz_buzzxx
 
     protected:
         /*!
-         * 整数 @c n が除数で割り切れるか判定する
+         * @brief 整数 @c n が除数で割り切れるか判定する
          *
          * @param[in] n 割り切れるか判定する整数
          * @retval true  整数 @c n が除数で割り切れる

@@ -18,19 +18,19 @@
 namespace fizz_buzzxx
 {
     /*!
-     * Buzz 演算を行う関数オブジェクト
+     * @brief Buzz 演算を行う関数オブジェクト
      */
     class Buzz : public Zz
     {
     public:
-        /*! Buzz の除数のデフォルト値 */
+        /*! @brief Buzz の除数のデフォルト値 */
         static const int default_divisor;
 
-        /*! Buzz の文言のデフォルト値 */
+        /*! @brief Buzz の文言のデフォルト値 */
         static const std::string default_message;
 
         /*!
-         * 関数オブジェクトを生成する
+         * @brief 関数オブジェクトを生成する
          *
          * @param[in] divisor Buzz の除数
          * @param[in] message Buzz の文言
@@ -40,7 +40,7 @@ namespace fizz_buzzxx
             std::string message = Buzz::default_message);
 
         /*!
-         * 関数オブジェクトを生成する
+         * @brief 関数オブジェクトを生成する
          *
          * Buzz の除数はデフォルト値となる.
          *

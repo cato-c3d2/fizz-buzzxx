@@ -14,8 +14,8 @@ using namespace fizz_buzzxx;
 BOOST_AUTO_TEST_SUITE(class__Fizz)
 
 /*!
- * テストパターン :
- * @c Fizz のオブジェクトがコピー代入可能であることを検証する
+ * @brief テストパターン :
+ *        @c Fizz のオブジェクトがコピー代入可能であることを検証する
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
@@ -35,9 +35,9 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c Fizz のオブジェクトを生成し,
- * 正の整数に対して Fizz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c Fizz のオブジェクトを生成し,
+ *        正の整数に対して Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -72,9 +72,9 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c Fizz のオブジェクトを生成し,
- * @c 0 に対して Fizz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c Fizz のオブジェクトを生成し,
+ *        @c 0 に対して Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -88,9 +88,9 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c Fizz のオブジェクトを生成し,
- * 負の整数に対して Fizz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c Fizz のオブジェクトを生成し,
+ *        負の整数に対して Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -125,9 +125,9 @@ BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        Fizz の除数を変更して
+ *        @c Fizz のオブジェクトを生成し, Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -162,9 +162,9 @@ BOOST_AUTO_TEST_CASE(change_divisor)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を @c 1 に変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        Fizz の除数を @c 1 に変更して
+ *        @c Fizz のオブジェクトを生成し, Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -199,8 +199,8 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_one)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を @c 0 に変更して @c Fizz のオブジェクトを生成する
+ * @brief テストパターン :
+ *        Fizz の除数を @c 0 に変更して @c Fizz のオブジェクトを生成する
  *
  * @c Fizz のオブジェクトを生成する際に例外が発生するため,
  * Fizz 演算は行わない(行えない).
@@ -214,9 +214,9 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_zero)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を負の整数に変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        Fizz の除数を負の整数に変更して
+ *        @c Fizz のオブジェクトを生成し, Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -251,9 +251,9 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_negative_number)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言を変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        Fizz の文言を変更して
+ *        @c Fizz のオブジェクトを生成し, Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -288,9 +288,9 @@ BOOST_AUTO_TEST_CASE(change_message)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言を空文字列に変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        Fizz の文言を空文字列に変更して
+ *        @c Fizz のオブジェクトを生成し, Fizz 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()

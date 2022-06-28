@@ -19,19 +19,19 @@
 namespace fizz_buzzxx
 {
     /*!
-     * FizzBuzz 演算の対象となる整数の範囲を表現するシーケンスコンテナ
+     * @brief FizzBuzz 演算の対象となる整数の範囲を表現するシーケンスコンテナ
      */
     class FizzBuzzSequence
     {
     public:
-        /*! @c FizzBuzzSequence の要素を表現するオブジェクト */
+        /*! @brief @c FizzBuzzSequence の要素を表現するオブジェクト */
         class Element;
 
-        /*! @c FizzBuzzSequence の入力イテレータ */
+        /*! @brief @c FizzBuzzSequence の入力イテレータ */
         class Iterator;
 
         /*!
-         * シーケンスコンテナを生成する
+         * @brief シーケンスコンテナを生成する
          *
          * @param[in] first     先頭の整数
          * @param[in] final     末尾の整数 @n
@@ -41,14 +41,14 @@ namespace fizz_buzzxx
         FizzBuzzSequence(int first, int final, FizzBuzz fizz_buzz = {});
 
         /*!
-         * このシーケンスコンテナの開始位置を示す入力イテレータを生成する
+         * @brief このシーケンスコンテナの開始位置を示す入力イテレータを生成する
          *
          * @return このシーケンスコンテナの開始位置を示す入力イテレータを返却する
          */
         auto begin() const -> Iterator;
 
         /*!
-         * このシーケンスコンテナの終了位置を示す入力イテレータを生成する
+         * @brief このシーケンスコンテナの終了位置を示す入力イテレータを生成する
          *
          * @return このシーケンスコンテナの終了位置を示す入力イテレータを返却する
          */
@@ -61,7 +61,7 @@ namespace fizz_buzzxx
     };
 
     /*!
-     * @c FizzBuzzSequence の要素を表現するオブジェクト
+     * @brief @c FizzBuzzSequence の要素を表現するオブジェクト
      *
      * 実際には, @c FizzBuzzSequence がこのオブジェクトを直接保持するわけではないが,
      * @c FizzBuzzSequence::Iterator を経由して間接的に参照される. @n
@@ -74,7 +74,7 @@ namespace fizz_buzzxx
     {
     public:
         /*!
-         * オブジェクトを生成する
+         * @brief オブジェクトを生成する
          *
          * @param[in] n         被除数
          * @param[in] fizz_buzz FizzBuzz 演算を行う関数オブジェクト
@@ -82,7 +82,7 @@ namespace fizz_buzzxx
         explicit Element(int n, FizzBuzz fizz_buzz = {});
 
         /*!
-         * 関数呼び出し演算
+         * @brief 関数呼び出し演算
          *
          * @return このオブジェクトが保持する被除数 @c n に対して FizzBuzz 演算を行い,
          *         結果を返却する
@@ -90,7 +90,7 @@ namespace fizz_buzzxx
         auto operator()() const -> std::string;
 
         /*!
-         * 等価比較演算
+         * @brief 等価比較演算
          *
          * @param[in] that このオブジェクトと比較する @c Element
          *
@@ -100,7 +100,7 @@ namespace fizz_buzzxx
         auto operator==(const Element & that) const -> bool;
 
         /*!
-         * 非等価比較演算
+         * @brief 非等価比較演算
          *
          * @param[in] that このオブジェクトと比較する @c Element
          *
@@ -110,7 +110,7 @@ namespace fizz_buzzxx
         auto operator!=(const Element & that) const -> bool;
 
         /*!
-         * 前置インクリメント演算
+         * @brief 前置インクリメント演算
          *
          * @return このオブジェクトが保持する被除数 @c n をインクリメントした後,
          *         このオブジェクトへの参照を返却する
@@ -118,7 +118,7 @@ namespace fizz_buzzxx
         auto operator++() -> Element &;
 
         /*!
-         * 後置インクリメント演算
+         * @brief 後置インクリメント演算
          *
          * @return このオブジェクトが保持する被除数 @c n をインクリメントした後,
          *         このオブジェクトのインクリメントする前のコピーを返却する
@@ -131,7 +131,7 @@ namespace fizz_buzzxx
     };
 
     /*!
-     * @c FizzBuzzSequence の入力イテレータ
+     * @brief @c FizzBuzzSequence の入力イテレータ
      *
      * @see FizzBuzzSequence
      * @see FizzBuzzSequence::Element
@@ -139,37 +139,37 @@ namespace fizz_buzzxx
     class FizzBuzzSequence::Iterator
     {
     public:
-        /*! イテレータ間の差を表す符号付き整数型 */
+        /*! @brief イテレータ間の差を表す符号付き整数型 */
         using difference_type = std::ptrdiff_t;
 
-        /*! イテレータが指す値の型 */
+        /*! @brief イテレータが指す値の型 */
         using value_type = Element;
 
-        /*! イテレータが指す値のポインタ型 */
+        /*! @brief イテレータが指す値のポインタ型 */
         using pointer = Element *;
 
-        /*! イテレータが指す値の参照型 (非 const) */
+        /*! @brief イテレータが指す値の参照型 (非 const) */
         using reference = Element &;
 
         /*!
-         * イテレータが指す値の参照型 (const)
+         * @brief イテレータが指す値の参照型 (const)
          *
          * @see reference
          */
         using const_reference = const Element &;
 
-        /*! イテレータの分類 */
+        /*! @brief イテレータの分類 */
         using iterator_category = std::input_iterator_tag;
 
         /*!
-         * イテレータを生成する
+         * @brief イテレータを生成する
          *
          * @param[in] element このイテレータが指す @c Element
          */
         Iterator(Element element);
 
         /*!
-         * 間接参照演算
+         * @brief 間接参照演算
          *
          * @return このイテレータが指す値への参照を返却する
          */
@@ -181,7 +181,7 @@ namespace fizz_buzzxx
         auto operator*() const -> const_reference;
 
         /*!
-         * メンバアクセス演算
+         * @brief メンバアクセス演算
          *
          * @return このイテレータが指す値への参照を返却する
          */
@@ -193,7 +193,7 @@ namespace fizz_buzzxx
         auto operator->() const -> const_reference;
 
         /*!
-         * 等価比較演算
+         * @brief 等価比較演算
          *
          * @param[in] that このイテレータと比較する @c Iterator
          *
@@ -203,7 +203,7 @@ namespace fizz_buzzxx
         auto operator==(const Iterator & that) const -> bool;
 
         /*!
-         * 非等価比較演算
+         * @brief 非等価比較演算
          *
          * @param[in] that このイテレータと比較する @c Iterator
          *
@@ -213,14 +213,14 @@ namespace fizz_buzzxx
         auto operator!=(const Iterator & that) const -> bool;
 
         /*!
-         * 前置インクリメント演算
+         * @brief 前置インクリメント演算
          *
          * @return このイテレータを進めた後, このイテレータへの参照を返却する
          */
         auto operator++() -> const Iterator &;
 
         /*!
-         * 後置インクリメント演算
+         * @brief 後置インクリメント演算
          *
          * @return このイテレータを進めた後,
          *         このイテレータの進める前のコピーを返却する
@@ -243,7 +243,7 @@ namespace fizz_buzzxx
 namespace fizz_buzzxx
 {
     /**
-     * ストリーム出力演算
+     * @brief ストリーム出力演算
      *
      * @c element に対して FizzBuzz 演算を行い, その結果を出力ストリームに出力する
      *

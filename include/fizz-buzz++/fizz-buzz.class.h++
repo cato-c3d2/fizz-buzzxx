@@ -19,13 +19,13 @@
 namespace fizz_buzzxx
 {
     /*!
-     * FizzBuzz 演算を行う関数オブジェクト
+     * @brief FizzBuzz 演算を行う関数オブジェクト
      */
     class FizzBuzz : public Fizz, public Buzz
     {
     public:
         /*!
-         * 関数オブジェクトを生成する
+         * @brief 関数オブジェクトを生成する
          *
          * @param[in] fizz Fizz の関数オブジェクト
          * @param[in] buzz Buzz の関数オブジェクト
@@ -33,7 +33,7 @@ namespace fizz_buzzxx
         FizzBuzz(Fizz fizz = {}, Buzz buzz = {});
 
         /*!
-         * 関数オブジェクトを生成する
+         * @brief 関数オブジェクトを生成する
          *
          * Fizz の関数オブジェクトはデフォルトとなる.
          *
@@ -42,7 +42,7 @@ namespace fizz_buzzxx
         FizzBuzz(Buzz buzz);
 
         /*!
-         * 関数呼び出し演算
+         * @brief 関数呼び出し演算
          *
          * @param[in] n FizzBuzz の値を求める整数
          * @return FizzBuzz の値を返却する @n
@@ -52,7 +52,7 @@ namespace fizz_buzzxx
         auto operator()(int n) const -> std::string;
 
         /*!
-         * 等価比較演算
+         * @brief 等価比較演算
          *
          * @param[in] that この関数オブジェクトと比較する @c FizzBuzz
          *

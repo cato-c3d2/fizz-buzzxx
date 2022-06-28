@@ -14,9 +14,9 @@ using namespace fizz_buzzxx;
 BOOST_AUTO_TEST_SUITE(class__FizzBuzzSequence)
 
 /*!
- * テストパターン :
- * @c FizzBuzzSequence を @c FizzBuzzSequence::Iterator 及び
- * @c FizzBuzzSequence::Element と共に使用する
+ * @brief テストパターン :
+ *        @c FizzBuzzSequence を @c FizzBuzzSequence::Iterator 及び
+ *        @c FizzBuzzSequence::Element と共に使用する
  *
  * @see fizz_buzzxx::FizzBuzzSequence
  * @see fizz_buzzxx::FizzBuzzSequence::Element
@@ -89,9 +89,9 @@ BOOST_AUTO_TEST_SUITE_END(/* class__FizzBuzzSequence */)
 BOOST_AUTO_TEST_SUITE(class__FizzBuzzSequenceElement)
 
 /*!
- * テストパターン :
- * @c FizzBuzzSequence::Element のオブジェクトを生成し,
- * インクリメント演算とストリーム出力演算を繰り返す
+ * @brief テストパターン :
+ *        @c FizzBuzzSequence::Element のオブジェクトを生成し,
+ *        インクリメント演算とストリーム出力演算を繰り返す
  *
  * @see fizz_buzzxx::FizzBuzzSequence::Element
  * @see fizz_buzzxx::FizzBuzzSequence::Element::operator++()
