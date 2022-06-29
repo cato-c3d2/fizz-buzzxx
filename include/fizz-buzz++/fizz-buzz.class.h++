@@ -45,6 +45,7 @@ namespace fizz_buzzxx
          * @brief 関数呼び出し演算
          *
          * @param[in] n FizzBuzz の値を求める整数
+         *
          * @return FizzBuzz の値を返却する @n
          *         FizzBuzz の値が整数 @c n の場合は,
          *         整数 @c n を文字列に変換して返却する

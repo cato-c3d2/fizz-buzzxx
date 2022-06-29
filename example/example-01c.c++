@@ -1,4 +1,6 @@
 /*!
+ * @file example-01c.c++
+ *
  * @brief サンプルコード 01(c)
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
@@ -7,10 +9,9 @@
  * @c FizzBuzzSequence::Iterator, @c FizzBuzzSequence::Element と
  * @c std::for_each を組み合わせたもの. @n
  *
- * @file example-01c.c++
- * @see  fizz_buzzxx::FizzBuzzSequence
- * @see  fizz_buzzxx::FizzBuzzSequence::Iterator
- * @see  fizz_buzzxx::FizzBuzzSequence::Element
+ * @see fizz_buzzxx::FizzBuzzSequence
+ * @see fizz_buzzxx::FizzBuzzSequence::Iterator
+ * @see fizz_buzzxx::FizzBuzzSequence::Element
  */
 
 #include <fizz-buzz++.h++>

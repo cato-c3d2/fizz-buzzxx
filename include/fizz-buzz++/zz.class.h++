@@ -33,6 +33,7 @@ namespace fizz_buzzxx
          * @brief 関数呼び出し演算
          *
          * @param[in] n Zz の値を求める整数
+         *
          * @return Zz の値を返却する @n
          *         Zz の値が整数 @c n の場合は,
          *         整数 @c n を文字列に変換して返却する
@@ -68,6 +69,7 @@ namespace fizz_buzzxx
          * @brief 整数 @c n が除数で割り切れるか判定する
          *
          * @param[in] n 割り切れるか判定する整数
+         *
          * @retval true  整数 @c n が除数で割り切れる
          * @retval false 整数 @c n が除数で割り切れない
          */

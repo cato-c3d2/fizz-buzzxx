@@ -1,4 +1,6 @@
 /*!
+ * @file example-02a.c++
+ *
  * @brief サンプルコード 02(a)
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
@@ -6,8 +8,7 @@
  * FizzBuzz の値を出力するストリームとして,
  * 文字列ストリーム @c std::ostringstream を使用したもの. @n
  *
- * @file example-02a.c++
- * @see  fizz_buzzxx::FizzBuzzSequence
+ * @see fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>

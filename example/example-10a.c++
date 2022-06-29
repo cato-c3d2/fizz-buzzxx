@@ -1,12 +1,13 @@
 /*!
+ * @file example-10a.c++
+ *
  * @brief サンプルコード 10(a)
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
  *
  * @c FizzBuzz と for 文を使用したもの. @n
  *
- * @file example-10a.c++
- * @see  fizz_buzzxx::FizzBuzz
+ * @see fizz_buzzxx::FizzBuzz
  */
 
 #include <fizz-buzz++.h++>

@@ -1,4 +1,6 @@
 /*!
+ * @file example-02b.c++
+ *
  * @brief サンプルコード 02(b)
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
@@ -6,8 +8,7 @@
  * FizzBuzz 問題の出力の書式について,
  * 要素間の区切りをカンマ(+半角スペース)に変更したもの. @n
  *
- * @file example-02b.c++
- * @see  fizz_buzzxx::FizzBuzzSequence
+ * @see fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>

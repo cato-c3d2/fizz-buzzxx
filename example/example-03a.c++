@@ -1,4 +1,6 @@
 /*!
+ * @file example-03a.c++
+ *
  * @brief サンプルコード 03(a)
  *
  * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
@@ -7,9 +9,8 @@
  * - 整数 @c N を @c 3 で割り切れる場合の文言を @c "Fizz++" とする
  * - 整数 @c N を @c 5 で割り切れる場合の文言を @c "Buzz++" とする
  *
- * @file example-03a.c++
- * @see  fizz_buzzxx::FizzBuzz
- * @see  fizz_buzzxx::FizzBuzzSequence
+ * @see fizz_buzzxx::FizzBuzz
+ * @see fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>
