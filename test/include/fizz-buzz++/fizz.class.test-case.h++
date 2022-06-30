@@ -16,6 +16,8 @@ BOOST_AUTO_TEST_SUITE(class__Fizz)
 /*!
  * @brief テストパターン :
  *        @c Fizz のオブジェクトがコピー代入可能であることを検証する
+ *
+ * @see fizz_buzzxx::Fizz
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
