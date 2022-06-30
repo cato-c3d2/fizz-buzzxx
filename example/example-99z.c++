@@ -1,9 +1,7 @@
 /*!
  * @file example-99z.c++
  *
- * @brief サンプルコード 99
- *
- * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
+ * @brief FizzBuzz 問題のサンプルコード #99(z)
  *
  * 一般的な方法で FizzBuzz 問題を実装したもの. @n
  */

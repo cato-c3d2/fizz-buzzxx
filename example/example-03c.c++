@@ -1,9 +1,7 @@
 /*!
  * @file example-03c.c++
  *
- * @brief サンプルコード 03(c)
- *
- * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
+ * @brief FizzBuzz 問題のサンプルコード #03(c)
  *
  * FizzBuzz 問題のルールを下記のように変更したもの : @n
  * - 整数 @c N を @c 4 で割り切れる場合に文言 @c "Fizz++" を出力する

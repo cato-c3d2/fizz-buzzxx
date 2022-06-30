@@ -1,12 +1,9 @@
 /*!
  * @file example-00a.c++
  *
- * @brief サンプルコード 00
+ * @brief FizzBuzz 問題のサンプルコード #00(a)
  *
- * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
- *
- * FizzBuzz 演算の対象となる整数の範囲を表現するシーケンスコンテナ
- * @c FizzBuzzSequence と, 範囲 for 文を使用したもの. @n
+ * @c FizzBuzzSequence と 範囲 for 文を使用したもの. @n
  *
  * @see fizz_buzzxx::FizzBuzzSequence
  */

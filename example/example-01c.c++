@@ -1,17 +1,11 @@
 /*!
  * @file example-01c.c++
  *
- * @brief サンプルコード 01(c)
+ * @brief FizzBuzz 問題のサンプルコード #01(c)
  *
- * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
- *
- * @c FizzBuzzSequence 及び
- * @c FizzBuzzSequence::Iterator, @c FizzBuzzSequence::Element と
- * @c std::for_each を組み合わせたもの. @n
+ * @c FizzBuzzSequence と @c std::for_each を組み合わせたもの. @n
  *
  * @see fizz_buzzxx::FizzBuzzSequence
- * @see fizz_buzzxx::FizzBuzzSequence::Iterator
- * @see fizz_buzzxx::FizzBuzzSequence::Element
  */
 
 #include <fizz-buzz++.h++>
