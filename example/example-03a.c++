@@ -4,8 +4,8 @@
  * @brief FizzBuzz 問題のサンプルコード #03(a)
  *
  * FizzBuzz 問題のルールを下記のように変更したもの : @n
- * - 整数 @c N を @c 3 で割り切れる場合の文言を @c "Fizz++" とする
- * - 整数 @c N を @c 5 で割り切れる場合の文言を @c "Buzz++" とする
+ * - 整数 @c n を @c 3 で割り切れる場合の文言を @c "Fizz++" とする
+ * - 整数 @c n を @c 5 で割り切れる場合の文言を @c "Buzz++" とする
  *
  * @see fizz_buzzxx::FizzBuzz
  * @see fizz_buzzxx::FizzBuzzSequence

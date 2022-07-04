@@ -4,8 +4,8 @@
  * @brief FizzBuzz 問題のサンプルコード #03(b)
  *
  * FizzBuzz 問題のルールを下記のように変更したもの : @n
- * - 文言 @c "Fizz" を出力する条件を「整数 @c N を @c 4 で割り切れる場合」とする
- * - 文言 @c "Buzz" を出力する条件を「整数 @c N を @c 6 で割り切れる場合」とする
+ * - 文言 @c "Fizz" を出力する条件を「整数 @c n を @c 4 で割り切れる場合」とする
+ * - 文言 @c "Buzz" を出力する条件を「整数 @c n を @c 6 で割り切れる場合」とする
  *
  * @see fizz_buzzxx::FizzBuzz
  * @see fizz_buzzxx::FizzBuzzSequence
