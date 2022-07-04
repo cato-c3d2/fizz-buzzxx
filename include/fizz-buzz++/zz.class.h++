@@ -24,8 +24,8 @@ namespace fizz_buzzxx
         /*!
          * @brief 関数オブジェクトを生成する
          *
-         * @param[in] divisor 除数
-         * @param[in] message 文言
+         * @param[in] divisor ZZ 除数
+         * @param[in] message ZZ 文言
          */
         Zz(int divisor, std::string message);
 
@@ -51,27 +51,27 @@ namespace fizz_buzzxx
         auto operator==(const Zz & that) const -> bool;
 
         /*!
-         * @brief 除数を取得する
+         * @brief ZZ 除数を取得する
          *
-         * @return 除数
+         * @return ZZ 除数
          */
         auto divisor() const -> int;
 
         /*!
-         * @brief 文言を取得する
+         * @brief ZZ 文言を取得する
          *
-         * @return 文言
+         * @return ZZ 文言
          */
         auto message() const -> std::string;
 
     protected:
         /*!
-         * @brief 整数 @c n が除数で割り切れるか判定する
+         * @brief 整数 @c n が ZZ 除数で割り切れるか判定する
          *
          * @param[in] n 割り切れるか判定する整数
          *
-         * @retval true  整数 @c n が除数で割り切れる
-         * @retval false 整数 @c n が除数で割り切れない
+         * @retval true  整数 @c n が ZZ 除数で割り切れる
+         * @retval false 整数 @c n が ZZ 除数で割り切れない
          */
         auto is_divisible_by(int n) const -> bool;
 
