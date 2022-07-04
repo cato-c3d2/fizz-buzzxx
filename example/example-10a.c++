@@ -23,7 +23,7 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数に対して FizzBuzz 演算を繰り返し, その結果を標準出力に出力する
+    // 1 ～ 100 の整数に対して FIZZBUZZ 演算を繰り返し, その結果を標準出力に出力する
     const FizzBuzz fizz_buzz;
     for (auto i = 1; i <= 100; i++) {
         std::cout << fizz_buzz(i) << std::endl;

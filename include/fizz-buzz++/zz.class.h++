@@ -16,7 +16,7 @@
 namespace fizz_buzzxx
 {
     /*!
-     * @brief Zz 演算を行う関数オブジェクト
+     * @brief ZZ 演算を行う関数オブジェクト
      */
     class Zz
     {
@@ -32,10 +32,10 @@ namespace fizz_buzzxx
         /*!
          * @brief 関数呼び出し演算
          *
-         * @param[in] n Zz の値を求める整数
+         * @param[in] n ZZ 演算の解を求める整数
          *
-         * @return Zz の値を返却する @n
-         *         Zz の値が整数 @c n の場合は,
+         * @return ZZ 演算の解を返却する @n
+         *         ZZ 演算の解が整数 @c n の場合は,
          *         整数 @c n を文字列に変換して返却する
          */
         auto operator()(int n) const -> std::string;

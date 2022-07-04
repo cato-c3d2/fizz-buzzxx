@@ -19,7 +19,7 @@
 namespace fizz_buzzxx
 {
     /*!
-     * @brief FizzBuzz 演算を行う関数オブジェクト
+     * @brief FIZZBUZZ 演算を行う関数オブジェクト
      */
     class FizzBuzz : public Fizz, public Buzz
     {
@@ -44,10 +44,10 @@ namespace fizz_buzzxx
         /*!
          * @brief 関数呼び出し演算
          *
-         * @param[in] n FizzBuzz の値を求める整数
+         * @param[in] n FIZZBUZZ 演算の解を求める整数
          *
-         * @return FizzBuzz の値を返却する @n
-         *         FizzBuzz の値が整数 @c n の場合は,
+         * @return FIZZBUZZ 演算の解を返却する @n
+         *         FIZZBUZZ 演算の解が整数 @c n の場合は,
          *         整数 @c n を文字列に変換して返却する
          */
         auto operator()(int n) const -> std::string;

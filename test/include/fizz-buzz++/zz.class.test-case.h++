@@ -40,15 +40,15 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 
 /*!
  * @brief テストパターン :
- *        Zz の除数に @c 3 を, Zz の文言に @c "Fizz" を指定して
- *        @c Zz のオブジェクトを生成し, 正の整数に対して Zz 演算を行う
+ *        ZZ 除数に @c 3 を, ZZ 文言に @c "Fizz" を指定して
+ *        @c Zz のオブジェクトを生成し, 正の整数に対して ZZ 演算を行う
  *
  * @see fizz_buzzxx::Zz::Zz()
  * @see fizz_buzzxx::Zz::operator()()
  */
 BOOST_AUTO_TEST_CASE(operate_by_positive_numbers)
 {
-    // Zz の除数に 3 を, Zz の文言に "Fizz" を指定して Zz のオブジェクトを生成する
+    // ZZ 除数に 3 を, ZZ 文言に "Fizz" を指定して Zz のオブジェクトを生成する
     const Zz zz = { 3, "Fizz" };
 
     // clang-format off
@@ -77,15 +77,15 @@ BOOST_AUTO_TEST_CASE(operate_by_positive_numbers)
 
 /*!
  * @brief テストパターン :
- *        Zz の除数に @c 3 を, Zz の文言に @c "Fizz" を指定して
- *        @c Zz のオブジェクトを生成し, @c 0 に対して Zz 演算を行う
+ *        ZZ 除数に @c 3 を, ZZ 文言に @c "Fizz" を指定して
+ *        @c Zz のオブジェクトを生成し, @c 0 に対して ZZ 演算を行う
  *
  * @see fizz_buzzxx::Zz::Zz()
  * @see fizz_buzzxx::Zz::operator()()
  */
 BOOST_AUTO_TEST_CASE(operate_by_zero)
 {
-    // Zz の除数に 3 を, Zz の文言に "Fizz" を指定して Zz のオブジェクトを生成する
+    // ZZ 除数に 3 を, ZZ 文言に "Fizz" を指定して Zz のオブジェクトを生成する
     const Zz zz = { 3, "Fizz" };
 
     BOOST_CHECK_EQUAL(zz(0), "Fizz");
@@ -93,15 +93,15 @@ BOOST_AUTO_TEST_CASE(operate_by_zero)
 
 /*!
  * @brief テストパターン :
- *        Zz の除数に @c 3 を, Zz の文言に @c "Fizz" を指定して
- *        @c Zz のオブジェクトを生成し, 負の整数に対して Zz 演算を行う
+ *        ZZ 除数に @c 3 を, ZZ 文言に @c "Fizz" を指定して
+ *        @c Zz のオブジェクトを生成し, 負の整数に対して ZZ 演算を行う
  *
  * @see fizz_buzzxx::Zz::Zz()
  * @see fizz_buzzxx::Zz::operator()()
  */
 BOOST_AUTO_TEST_CASE(operate_by_negative_numbers)
 {
-    // Zz の除数に 3 を, Zz の文言に "Fizz" を指定して Zz のオブジェクトを生成する
+    // ZZ 除数に 3 を, ZZ 文言に "Fizz" を指定して Zz のオブジェクトを生成する
     const Zz zz = { 3, "Fizz" };
 
     // clang-format off
@@ -130,15 +130,15 @@ BOOST_AUTO_TEST_CASE(operate_by_negative_numbers)
 
 /*!
  * @brief テストパターン :
- *        Zz の除数に @c 1 を指定して
- *        @c Zz のオブジェクトを生成し, Zz 演算を行う
+ *        ZZ 除数に @c 1 を指定して
+ *        @c Zz のオブジェクトを生成し, ZZ 演算を行う
  *
  * @see fizz_buzzxx::Zz::Zz()
  * @see fizz_buzzxx::Zz::operator()()
  */
 BOOST_AUTO_TEST_CASE(specify_divisor_to_one)
 {
-    // Zz の除数として 1 を指定する
+    // ZZ 除数として 1 を指定する
     const Zz zz = { 1, "Zz" };
 
     // clang-format off
@@ -167,16 +167,16 @@ BOOST_AUTO_TEST_CASE(specify_divisor_to_one)
 
 /*!
  * @brief テストパターン :
- *        Zz の除数に @c 0 を指定して @c Zz のオブジェクトを生成する
+ *        ZZ 除数に @c 0 を指定して @c Zz のオブジェクトを生成する
  *
  * @c Zz のオブジェクトを生成する際に例外が発生するため,
- * Zz 演算は行わない(行えない).
+ * ZZ 演算は行わない(行えない).
  *
  * @see fizz_buzzxx::Zz::Zz()
  */
 BOOST_AUTO_TEST_CASE(specify_divisor_to_zero)
 {
-    // Zz の除数として 0 を指定した場合, 例外が発生すること
+    // ZZ 除数として 0 を指定した場合, 例外が発生すること
     // NOTE BOOST_CHECK_THROW と一様初期化(波括弧による初期化)を併用すると
     //      コンパイルが通らないため, コンストラクタ呼び出しによる初期化を使用する.
     //      ただし, 初期化するオブジェクトの引数が 1 つであれば,
@@ -186,15 +186,15 @@ BOOST_AUTO_TEST_CASE(specify_divisor_to_zero)
 
 /*!
  * @brief テストパターン :
- *        Zz の除数に負の整数を指定して
- *        @c Zz のオブジェクトを生成し, Zz 演算を行う
+ *        ZZ 除数に負の整数を指定して
+ *        @c Zz のオブジェクトを生成し, ZZ 演算を行う
  *
  * @see fizz_buzzxx::Zz::Zz()
  * @see fizz_buzzxx::Zz::operator()()
  */
 BOOST_AUTO_TEST_CASE(specify_divisor_to_negative_number)
 {
-    // Zz の除数として -5 を指定する
+    // ZZ 除数として -5 を指定する
     const Zz zz = { -5, "Buzz" };
 
     // clang-format off
@@ -223,15 +223,15 @@ BOOST_AUTO_TEST_CASE(specify_divisor_to_negative_number)
 
 /*!
  * @brief テストパターン :
- *        Zz の文言を空文字列に変更して
- *        @c Zz のオブジェクトを生成し, Zz 演算を行う
+ *        ZZ 文言を空文字列に変更して
+ *        @c Zz のオブジェクトを生成し, ZZ 演算を行う
  *
  * @see fizz_buzzxx::Zz::Zz()
  * @see fizz_buzzxx::Zz::operator()()
  */
 BOOST_AUTO_TEST_CASE(specify_message_to_empty)
 {
-    // Zz の文言として空文字列を指定する
+    // ZZ 文言として空文字列を指定する
     const Zz zz = { 5, "" };
 
     // clang-format off

@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE(class__FizzBuzzSequence)
  */
 BOOST_AUTO_TEST_CASE(with_IntegralSequenceIterator)
 {
-    // 整数 0 ～ 9 を対象とする FizzBuzz 演算のシーケンスコンテナを生成する
+    // 整数 0 ～ 9 を対象とする FIZZBUZZ 演算のシーケンスコンテナを生成する
     const FizzBuzzSequence fizz_buzz_sequence = { 0, 9 };
 
     // シーケンスコンテナの先頭の要素を参照するイテレータ first を生成する
@@ -104,14 +104,14 @@ BOOST_AUTO_TEST_CASE(increment_operator_and_output_stream_operator)
     FizzBuzzSequence::Element fizz_buzz { 1 };
 
     // FizzBuzzSequence::Element のオブジェクトに対して
-    // インクリメントとストリーム出力(FizzBuzz 演算)を 15 回ほど繰り返す.
+    // インクリメントとストリーム出力(FIZZBUZZ 演算)を 15 回ほど繰り返す.
     std::ostringstream out;
     for (int i = 1; i <= 15; ++i) {
         out << fizz_buzz++ << ", ";
     }
 
     // 【検証】
-    // 文字列ストリームに出力された FizzBuzz 演算の結果が期待結果と一致すること.
+    // 文字列ストリームに出力された FIZZBUZZ 演算の結果が期待結果と一致すること.
     const std::string expect = "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, "
                                "11, Fizz, 13, 14, Fizz Buzz, ";
     BOOST_CHECK_EQUAL(out.str(), expect);

@@ -19,7 +19,7 @@
 namespace fizz_buzzxx
 {
     /*!
-     * @brief FizzBuzz 演算の対象となる整数の範囲を表現するシーケンスコンテナ
+     * @brief FIZZBUZZ 演算の対象となる整数の範囲を表現するシーケンスコンテナ
      */
     class FizzBuzzSequence
     {
@@ -36,7 +36,7 @@ namespace fizz_buzzxx
          * @param[in] first     先頭の整数
          * @param[in] final     末尾の整数 @n
          *                      この値はシーケンスコンテナの範囲に含まれる
-         * @param[in] fizz_buzz FizzBuzz 演算を行う関数オブジェクト
+         * @param[in] fizz_buzz FIZZBUZZ 演算を行う関数オブジェクト
          */
         FizzBuzzSequence(int first, int final, FizzBuzz fizz_buzz = {});
 
@@ -77,14 +77,14 @@ namespace fizz_buzzxx
          * @brief オブジェクトを生成する
          *
          * @param[in] n         被除数
-         * @param[in] fizz_buzz FizzBuzz 演算を行う関数オブジェクト
+         * @param[in] fizz_buzz FIZZBUZZ 演算を行う関数オブジェクト
          */
         explicit Element(int n, FizzBuzz fizz_buzz = {});
 
         /*!
          * @brief 関数呼び出し演算
          *
-         * @return このオブジェクトが保持する被除数 @c n に対して FizzBuzz 演算を行い,
+         * @return このオブジェクトが保持する被除数 @c n に対して FIZZBUZZ 演算を行い,
          *         結果を返却する
          */
         auto operator()() const -> std::string;
@@ -245,7 +245,7 @@ namespace fizz_buzzxx
     /**
      * @brief ストリーム出力演算
      *
-     * @c element に対して FizzBuzz 演算を行い, その結果を出力ストリームに出力する
+     * @c element に対して FIZZBUZZ 演算を行い, その結果を出力ストリームに出力する
      *
      * @param[in] out     出力ストリーム
      * @param[in] element @c FizzBuzzSequence::Element のオブジェクト

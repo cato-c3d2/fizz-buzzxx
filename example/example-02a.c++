@@ -3,7 +3,7 @@
  *
  * @brief FizzBuzz 問題のサンプルコード #02(a)
  *
- * FizzBuzz の値を出力するストリームとして,
+ * FIZZBUZZ 演算の解を出力するストリームとして,
  * 文字列ストリーム @c std::ostringstream を使用したもの. @n
  *
  * @see fizz_buzzxx::FizzBuzzSequence
