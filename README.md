@@ -34,7 +34,7 @@ auto main() -> int
 
 ## 要件
 
-  当ライブラリは C++14/17 に準拠しています.<br>
+  当ライブラリは C++11/14/17 に準拠しています.<br>
   また, 当ライブラリは下記のライブラリに依存しています :<br>
 
   + Boost String Algorithms Library
