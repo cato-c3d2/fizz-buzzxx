@@ -109,6 +109,7 @@ namespace fizz_buzzxx
 #include <boost/algorithm/string/join.hpp>
 
 #include <stdexcept>
+#include <vector>
 
 namespace fizz_buzzxx
 {
