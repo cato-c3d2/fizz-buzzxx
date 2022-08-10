@@ -16,7 +16,7 @@
 #include <string>
 
 /*!
- * @brief FizzBuzz 問題の結果を標準出力に出力する
+ * @brief FizzBuzz を実行し, その結果を標準出力に出力する
  *
  * @return プログラムのリターンコード @n
  *         常に @c 0 を返却する
@@ -25,10 +25,10 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+    // FizzBuzz の範囲を 1 ～ 100 とする
     const FizzBuzzSequence sequence = { 1, 100 };
 
-    // FizzBuzz 問題の結果を標準出力に出力する
+    // FizzBuzz を繰り返し, その結果を標準出力に出力する
     std::string delimiter = "";
     for (auto && element : sequence) {
         std::cout << delimiter << element;

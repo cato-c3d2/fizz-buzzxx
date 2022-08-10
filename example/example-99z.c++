@@ -9,7 +9,7 @@
 #include <iostream>
 
 /*!
- * @brief FizzBuzz 問題の結果を標準出力に出力する
+ * @brief FizzBuzz を実行し, その結果を標準出力に出力する
  *
  * @return プログラムのリターンコード @n
  *         常に @c 0 を返却する

@@ -13,7 +13,7 @@
 #include <iostream>
 
 /*!
- * @brief FizzBuzz 問題の結果を標準出力に出力する
+ * @brief FizzBuzz を実行し, その結果を標準出力に出力する
  *
  * @return プログラムのリターンコード @n
  *         常に @c 0 を返却する
@@ -22,7 +22,7 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // 1 ～ 100 の整数に対して FIZZBUZZ 演算を繰り返し, その結果を標準出力に出力する
+    // 1 ～ 100 の整数に対して FizzBuzz を繰り返し, その結果を標準出力に出力する
     for (auto && fizz_buzz : FizzBuzzSequence { 1, 100 }) {
         std::cout << fizz_buzz << std::endl;
     }
