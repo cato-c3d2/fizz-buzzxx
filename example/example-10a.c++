@@ -3,7 +3,7 @@
  *
  * @brief FizzBuzz 問題のサンプルコード #10(a)
  *
- * @c FizzBuzz と for 文を使用したもの. @n
+ * クラス @c FizzBuzz と反復処理を使用したサンプルコード. @n
  *
  * @see fizz_buzzxx::FizzBuzz
  */

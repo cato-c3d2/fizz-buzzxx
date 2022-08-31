@@ -3,7 +3,8 @@
  *
  * @brief FizzBuzz 問題のサンプルコード #01(a)
  *
- * @c FizzBuzzSequence と for 文を組み合わせたもの. @n
+ * クラス @c FizzBuzzSequence とイテレータを使用したサンプルコード. @n
+ * イテレータの走査には for 文を使用している. @n
  *
  * @see fizz_buzzxx::FizzBuzzSequence
  */

@@ -3,7 +3,8 @@
  *
  * @brief FizzBuzz 問題のサンプルコード #00(a)
  *
- * @c FizzBuzzSequence と 範囲 for 文を使用したもの. @n
+ * 当ライブラリの最も基本的な使用方法を想定したサンプルコード. @n
+ * クラス @c FizzBuzzSequence と範囲 for 文を使用している. @n
  *
  * @see fizz_buzzxx::FizzBuzzSequence
  */

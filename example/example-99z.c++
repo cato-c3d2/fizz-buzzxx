@@ -3,7 +3,8 @@
  *
  * @brief FizzBuzz 問題のサンプルコード #99(z)
  *
- * 一般的な方法で FizzBuzz 問題を実装したもの. @n
+ * 番外編. @n
+ * 当ライブラリを使用せず, 一般的な方法で FizzBuzz 問題を実装したサンプルコード. @n
  */
 
 #include <iostream>

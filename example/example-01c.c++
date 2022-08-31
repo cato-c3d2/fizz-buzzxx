@@ -3,7 +3,8 @@
  *
  * @brief FizzBuzz 問題のサンプルコード #01(c)
  *
- * @c FizzBuzzSequence と @c std::for_each を組み合わせたもの. @n
+ * クラス @c FizzBuzzSequence とイテレータを使用したサンプルコード. @n
+ * イテレータの走査には @c std::for_each を使用している. @n
  *
  * @see fizz_buzzxx::FizzBuzzSequence
  */

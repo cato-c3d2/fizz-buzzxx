@@ -3,7 +3,8 @@
  *
  * @brief FizzBuzz 問題のサンプルコード #01(b)
  *
- * @c FizzBuzzSequence と while 文を組み合わせたもの. @n
+ * クラス @c FizzBuzzSequence とイテレータを使用したサンプルコード. @n
+ * イテレータの走査には while 文を使用している. @n
  *
  * @see fizz_buzzxx::FizzBuzzSequence
  */
