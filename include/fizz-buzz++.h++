@@ -10,9 +10,10 @@
 
 /*!
  * @namespace fizz_buzzxx
- * @brief     @c fizz-buzz++ の名前空間
- * @details   C++ の文法上の制約のため
- *            @c fizz-buzz++ ではなく @c fizz_buzzxx としている. @n
+ *
+ * @brief @c fizz-buzz++ の名前空間
+ *
+ * C++ の文法上の制約のため @c fizz-buzz++ ではなく @c fizz_buzzxx としている. @n
  */
 
 // NOTE `namespace fizz_buzzxx` のドキュメントコメントはこのファイルに記述している

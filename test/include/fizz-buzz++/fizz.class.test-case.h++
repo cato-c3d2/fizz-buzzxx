@@ -14,8 +14,10 @@ using namespace fizz_buzzxx;
 BOOST_AUTO_TEST_SUITE(class__Fizz)
 
 /*!
- * テストパターン :
- * @c Fizz のオブジェクトがコピー代入可能であることを検証する
+ * @brief テストパターン :
+ *        @c Fizz のオブジェクトがコピー代入可能であることを検証する
+ *
+ * @see fizz_buzzxx::Fizz
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
@@ -35,9 +37,9 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c Fizz のオブジェクトを生成し,
- * 正の整数に対して Fizz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c Fizz のオブジェクトを生成し,
+ *        正の整数に対して FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -72,9 +74,9 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c Fizz のオブジェクトを生成し,
- * @c 0 に対して Fizz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c Fizz のオブジェクトを生成し,
+ *        @c 0 に対して FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -88,9 +90,9 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c Fizz のオブジェクトを生成し,
- * 負の整数に対して Fizz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c Fizz のオブジェクトを生成し,
+ *        負の整数に対して FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
@@ -125,16 +127,16 @@ BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数を変更して
+ *        @c Fizz のオブジェクトを生成し, FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_divisor)
 {
-    // Fizz の除数として 4 を指定する
+    // FIZZ 除数として 4 を指定する
     const Fizz fizz = { 4 };
 
     // clang-format off
@@ -162,16 +164,16 @@ BOOST_AUTO_TEST_CASE(change_divisor)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を @c 1 に変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数を @c 1 に変更して
+ *        @c Fizz のオブジェクトを生成し, FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_divisor_to_one)
 {
-    // Fizz の除数として 1 を指定する
+    // FIZZ 除数として 1 を指定する
     const Fizz fizz = { 1 };
 
     // clang-format off
@@ -199,31 +201,31 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_one)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を @c 0 に変更して @c Fizz のオブジェクトを生成する
+ * @brief テストパターン :
+ *        FIZZ 除数を @c 0 に変更して @c Fizz のオブジェクトを生成する
  *
  * @c Fizz のオブジェクトを生成する際に例外が発生するため,
- * Fizz 演算は行わない(行えない).
+ * FIZZ 演算は行わない(行えない).
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  */
 BOOST_AUTO_TEST_CASE(change_divisor_to_zero)
 {
-    // Fizz の除数として 0 を指定した場合, 例外が発生すること
+    // FIZZ 除数として 0 を指定した場合, 例外が発生すること
     BOOST_CHECK_THROW(Fizz { 0 }, std::invalid_argument);
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を負の整数に変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数を負の整数に変更して
+ *        @c Fizz のオブジェクトを生成し, FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_divisor_to_negative_number)
 {
-    // Fizz の除数として -3 を指定する
+    // FIZZ 除数として -3 を指定する
     const Fizz fizz = { -3 };
 
     // clang-format off
@@ -251,16 +253,16 @@ BOOST_AUTO_TEST_CASE(change_divisor_to_negative_number)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言を変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 文言を変更して
+ *        @c Fizz のオブジェクトを生成し, FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_message)
 {
-    // Fizz の文言として "fizz++" を指定する
+    // FIZZ 文言として "fizz++" を指定する
     const Fizz fizz = { 3, "fizz++" };
 
     // clang-format off
@@ -288,16 +290,16 @@ BOOST_AUTO_TEST_CASE(change_message)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言を空文字列に変更して
- * @c Fizz のオブジェクトを生成し, Fizz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 文言を空文字列に変更して
+ *        @c Fizz のオブジェクトを生成し, FIZZ 演算を行う
  *
  * @see fizz_buzzxx::Fizz::Fizz()
  * @see fizz_buzzxx::Fizz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_message_to_empty)
 {
-    // Fizz の文言として空文字列を指定する
+    // FIZZ 文言として空文字列を指定する
     const Fizz fizz = { 3, "" };
 
     // clang-format off

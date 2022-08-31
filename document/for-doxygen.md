@@ -27,8 +27,6 @@ doxygen -g
 
   > 上記のコマンドを実行することで,
   > カレントディレクトリに `Doxyfile` が生成される.<br>
-  > ここではカレントディレクトリを `document` とし,
-  > `document/Doxyfile` を生成する.<br>
 
 ## Doxyfile を修正する
 
@@ -38,6 +36,15 @@ PROJECT_NAME           = "fizz-buzz++"
 
   > プロジェクト名を設定する.<br>
 
+
+```
+OUTPUT_DIRECTORY       = document/
+```
+
+  > デフォルトではカレントディレクトリにドキュメントが生成されるため,
+  > `document` ディレクトリの配下にドキュメントを生成するように指定する.<br>
+  > (`HTML` のドキュメントは `document/html` に生成される.)<br>
+
 ```
 CREATE_SUBDIRS         = YES
 ```
@@ -46,15 +53,6 @@ CREATE_SUBDIRS         = YES
   > Doxygen によって生成されたファイルは単一階層に格納される.<br>
   > ここでは `YES` を指定することで,
   > Doxygen によって生成されたファイルが複数階層に分けて格納されるように変更する.<br>
-
-
-```
-INPUT                  = ../
-```
-
-  > デフォルトではカレントディレクトリがドキュメント化の対象となるが,
-  > `Doxyfile` の配置場所を変更しているため,
-  > プロジェクトのルートディレクトリがドキュメント化の対象となるように設定を変更する.<br>
 
 ```
 RECURSIVE              = YES
@@ -75,6 +73,5 @@ GENERATE_LATEX         = NO
 doxygen
 ```
 
-  > `document` ディレクトリ(`Doxyfile`
-  > が配置されたディレクトリ)で上記のコマンドを実行することで,
+  > `Doxyfile` が配置されたディレクトリで上記のコマンドを実行することで,
   > `Doxyfile` の設定内容に従ってドキュメントが生成される.<br>

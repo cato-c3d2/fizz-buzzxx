@@ -1,6 +1,6 @@
 # 開発ドキュメント
 
-## [Doxygen によるドキュメンテーション](./for_doxygen.md)
+## [Doxygen によるドキュメンテーション](./for-doxygen.md)
 
 ## [clang-format によるソースコードのフォーマット](./for-clang-format.md)
 

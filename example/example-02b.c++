@@ -1,13 +1,13 @@
 /*!
- * サンプルコード 02(b)
- *
- * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
- *
- * FizzBuzz 問題の出力の書式について,
- * 要素間の区切りをカンマ(+半角スペース)に変更したもの. @n
- *
  * @file example-02b.c++
- * @see  fizz_buzzxx::FizzBuzzSequence
+ *
+ * @brief FizzBuzz 問題のサンプルコード #02(b)
+ *
+ * FizzBuzz の出力内容を変更したサンプルコード. @n
+ * 出力する書式について,
+ * 要素間の区切りを改行からカンマ(+半角スペース)に変更した. @n
+ *
+ * @see fizz_buzzxx::FizzBuzzSequence
  */
 
 #include <fizz-buzz++.h++>
@@ -17,7 +17,7 @@
 #include <string>
 
 /*!
- * FizzBuzz 問題の結果を標準出力に出力する
+ * @brief FizzBuzz を実行し, その結果を標準出力に出力する
  *
  * @return プログラムのリターンコード @n
  *         常に @c 0 を返却する
@@ -26,10 +26,10 @@ auto main() -> int
 {
     using namespace fizz_buzzxx;
 
-    // FizzBuzz 問題の対象範囲を 1 ～ 100 とする
+    // FizzBuzz の範囲を 1 ～ 100 とする
     const FizzBuzzSequence sequence = { 1, 100 };
 
-    // FizzBuzz 問題の結果を標準出力に出力する
+    // FizzBuzz を繰り返し, その結果を標準出力に出力する
     std::string delimiter = "";
     for (auto && element : sequence) {
         std::cout << delimiter << element;

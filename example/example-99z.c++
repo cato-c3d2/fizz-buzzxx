@@ -1,17 +1,16 @@
 /*!
- * サンプルコード 99
- *
- * FizzBuzz 問題の結果を標準出力に出力するサンプルコード. @n
- *
- * 一般的な方法で FizzBuzz 問題を実装したもの. @n
- *
  * @file example-99z.c++
+ *
+ * @brief FizzBuzz 問題のサンプルコード #99(z)
+ *
+ * 番外編. @n
+ * 当ライブラリを使用せず, 一般的な方法で FizzBuzz 問題を実装したサンプルコード. @n
  */
 
 #include <iostream>
 
 /*!
- * FizzBuzz 問題の結果を標準出力に出力する
+ * @brief FizzBuzz を実行し, その結果を標準出力に出力する
  *
  * @return プログラムのリターンコード @n
  *         常に @c 0 を返却する

@@ -14,8 +14,10 @@ using namespace fizz_buzzxx;
 BOOST_AUTO_TEST_SUITE(class__FizzBuzz)
 
 /*!
- * テストパターン :
- * @c FizzBuzz のオブジェクトがコピー代入可能であることを検証する
+ * @brief テストパターン :
+ *        @c FizzBuzz のオブジェクトがコピー代入可能であることを検証する
+ *
+ * @see fizz_buzzxx::FizzBuzz
  */
 BOOST_AUTO_TEST_CASE(copy_assignable)
 {
@@ -35,9 +37,9 @@ BOOST_AUTO_TEST_CASE(copy_assignable)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c FizzBuzz のオブジェクトを生成し,
- * 正の整数に対して FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c FizzBuzz のオブジェクトを生成し,
+ *        正の整数に対して FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
@@ -72,9 +74,9 @@ BOOST_AUTO_TEST_CASE(default_construction_x_positive_number)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c FizzBuzz のオブジェクトを生成し,
- * @c 0 に対して FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c FizzBuzz のオブジェクトを生成し,
+ *        @c 0 に対して FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
@@ -88,9 +90,9 @@ BOOST_AUTO_TEST_CASE(default_construction_x_zero)
 }
 
 /*!
- * テストパターン :
- * デフォルトの @c FizzBuzz のオブジェクトを生成し,
- * 負の整数に対して FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        デフォルトの @c FizzBuzz のオブジェクトを生成し,
+ *        負の整数に対して FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
@@ -125,16 +127,16 @@ BOOST_AUTO_TEST_CASE(default_construction_x_negative_number)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数を変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_divisor)
 {
-    // Fizz の除数として 4 を指定する
+    // FIZZ 除数として 4 を指定する
     const FizzBuzz fizz_buzz = { Fizz { 4 } };
 
     // clang-format off
@@ -162,16 +164,16 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を @c 1 に変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数を @c 1 に変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_one)
 {
-    // Fizz の除数として 1 を指定する
+    // FIZZ 除数として 1 を指定する
     const FizzBuzz fizz_buzz = { Fizz { 1 } };
 
     // clang-format off
@@ -199,31 +201,31 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_one)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を @c 0 に変更して @c FizzBuzz のオブジェクトを生成する
+ * @brief テストパターン :
+ *        FIZZ 除数を @c 0 に変更して @c FizzBuzz のオブジェクトを生成する
  *
  * @c FizzBuzz のオブジェクトを生成する際に例外が発生するため,
- * FizzBuzz 演算は行わない(行えない).
+ * FIZZBUZZ 演算は行わない(行えない).
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_zero)
 {
-    // Fizz の除数として 0 を指定した場合, 例外が発生すること
+    // FIZZ 除数として 0 を指定した場合, 例外が発生すること
     BOOST_CHECK_THROW(FizzBuzz { Fizz { 0 } }, std::invalid_argument);
 }
 
 /*!
- * テストパターン :
- * Fizz の除数を負の整数に変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数を負の整数に変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_negative_number)
 {
-    // Fizz の除数として -3 を指定する
+    // FIZZ 除数として -3 を指定する
     const FizzBuzz fizz_buzz = { Fizz { -3 } };
 
     // clang-format off
@@ -251,16 +253,16 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_to_negative_number)
 }
 
 /*!
- * テストパターン :
- * Buzz の除数を変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        BUZZ 除数を変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_buzz_divisor)
 {
-    // Buzz の除数として 6 を指定する
+    // BUZZ 除数として 6 を指定する
     const FizzBuzz fizz_buzz = { Buzz { 6 } };
 
     // clang-format off
@@ -288,16 +290,16 @@ BOOST_AUTO_TEST_CASE(change_buzz_divisor)
 }
 
 /*!
- * テストパターン :
- * Buzz の除数を @c 1 に変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        BUZZ 除数を @c 1 に変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_one)
 {
-    // Buzz の除数として 1 を指定する
+    // BUZZ 除数として 1 を指定する
     const FizzBuzz fizz_buzz = { Buzz { 1 } };
 
     // clang-format off
@@ -325,31 +327,31 @@ BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_one)
 }
 
 /*!
- * テストパターン :
- * Buzz の除数を @c 0 に変更して @c FizzBuzz のオブジェクトを生成する
+ * @brief テストパターン :
+ *        BUZZ 除数を @c 0 に変更して @c FizzBuzz のオブジェクトを生成する
  *
  * @c FizzBuzz のオブジェクトを生成する際に例外が発生するため,
- * FizzBuzz 演算は行わない(行えない).
+ * FIZZBUZZ 演算は行わない(行えない).
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  */
 BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_zero)
 {
-    // Buzz の除数として 0 を指定した場合, 例外が発生すること
+    // BUZZ 除数として 0 を指定した場合, 例外が発生すること
     BOOST_CHECK_THROW(FizzBuzz { Buzz { 0 } }, std::invalid_argument);
 }
 
 /*!
- * テストパターン :
- * Buzz の除数を負の整数に変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        BUZZ 除数を負の整数に変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_negative_number)
 {
-    // Buzz の除数として -5 を指定する
+    // BUZZ 除数として -5 を指定する
     const FizzBuzz fizz_buzz = { Buzz { -5 } };
 
     // clang-format off
@@ -377,17 +379,17 @@ BOOST_AUTO_TEST_CASE(change_buzz_divisor_to_negative_number)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数及び Buzz の除数を変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数及び BUZZ 除数を変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_divisor_and_buzz_divisor)
 {
-    // Fizz の除数として 4 を,
-    // Buzz の除数として 6 を指定する
+    // FIZZ 除数として 4 を,
+    // BUZZ 除数として 6 を指定する
     const FizzBuzz fizz_buzz = { Fizz { 4 }, Buzz { 6 } };
 
     // clang-format off
@@ -420,16 +422,16 @@ BOOST_AUTO_TEST_CASE(change_fizz_divisor_and_buzz_divisor)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言を変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 文言を変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_message)
 {
-    // Fizz の文言として "fizz++" を指定する
+    // FIZZ 文言として "fizz++" を指定する
     const FizzBuzz fizz_buzz = { Fizz { "fizz++" } };
 
     // clang-format off
@@ -457,16 +459,16 @@ BOOST_AUTO_TEST_CASE(change_fizz_message)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言を空文字列に変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 文言を空文字列に変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_message_to_empty)
 {
-    // Fizz の文言として空文字列を指定する
+    // FIZZ 文言として空文字列を指定する
     const FizzBuzz fizz_buzz = { Fizz { "" } };
 
     // clang-format off
@@ -494,16 +496,16 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_to_empty)
 }
 
 /*!
- * テストパターン :
- * Buzz の文言を変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        BUZZ 文言を変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_buzz_message)
 {
-    // Buzz の文言として "buzz++" を指定する
+    // BUZZ 文言として "buzz++" を指定する
     const FizzBuzz fizz_buzz = { Buzz { "buzz++" } };
 
     // clang-format off
@@ -531,16 +533,16 @@ BOOST_AUTO_TEST_CASE(change_buzz_message)
 }
 
 /*!
- * テストパターン :
- * Buzz の文言を空文字列に変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        BUZZ 文言を空文字列に変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_buzz_message_to_empty)
 {
-    // Buzz の文言として空文字列を指定する
+    // BUZZ 文言として空文字列を指定する
     const FizzBuzz fizz_buzz = { Buzz { "" } };
 
     // clang-format off
@@ -568,17 +570,17 @@ BOOST_AUTO_TEST_CASE(change_buzz_message_to_empty)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言及び Buzz の文言を変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 文言及び BUZZ 文言を変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message)
 {
-    // Fizz の文言として "fizz++" を,
-    // Buzz の文言として "buzz++" を指定する
+    // FIZZ 文言として "fizz++" を,
+    // BUZZ 文言として "buzz++" を指定する
     const FizzBuzz fizz_buzz = { Fizz { "fizz++" }, Buzz { "buzz++" } };
 
     // clang-format off
@@ -606,16 +608,16 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message)
 }
 
 /*!
- * テストパターン :
- * Fizz の文言及び Buzz の文言を空文字列に変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 文言及び BUZZ 文言を空文字列に変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message_to_empty)
 {
-    // Fizz の文言及び Buzz の文言として空文字列を指定する
+    // FIZZ 文言及び BUZZ 文言として空文字列を指定する
     const FizzBuzz fizz_buzz = { Fizz { "" }, Buzz { "" } };
 
     // clang-format off
@@ -643,19 +645,19 @@ BOOST_AUTO_TEST_CASE(change_fizz_message_and_buzz_message_to_empty)
 }
 
 /*!
- * テストパターン :
- * Fizz の除数, Buzz の除数, Fizz の文言, 及び Buzz の文言を変更して
- * @c FizzBuzz のオブジェクトを生成し, FizzBuzz 演算を行う
+ * @brief テストパターン :
+ *        FIZZ 除数, BUZZ 除数, FIZZ 文言, 及び BUZZ 文言を変更して
+ *        @c FizzBuzz のオブジェクトを生成し, FIZZBUZZ 演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::FizzBuzz()
  * @see fizz_buzzxx::FizzBuzz::operator()()
  */
 BOOST_AUTO_TEST_CASE(change_all)
 {
-    // Fizz の除数として 4 を,
-    // Buzz の除数として 6 を,
-    // Fizz の文言として "fizz++" を,
-    // Buzz の文言として "buzz++" を指定する
+    // FIZZ 除数として 4 を,
+    // BUZZ 除数として 6 を,
+    // FIZZ 文言として "fizz++" を,
+    // BUZZ 文言として "buzz++" を指定する
     const FizzBuzz fizz_buzz = { Fizz { 4, "fizz++" }, Buzz { 6, "buzz++" } };
 
     // clang-format off
@@ -690,8 +692,8 @@ BOOST_AUTO_TEST_CASE(change_all)
 BOOST_AUTO_TEST_SUITE(operator__equals)
 
 /*!
- * テストパターン :
- * @c FizzBuzz のオブジェクト同士で等価比較演算を行う
+ * @brief テストパターン :
+ *        @c FizzBuzz のオブジェクト同士で等価比較演算を行う
  *
  * @see fizz_buzzxx::Zz::operator==()
  */
@@ -710,20 +712,20 @@ BOOST_AUTO_TEST_CASE(compare_with_same_class_instances)
 
     // データメンバの値が異なるオブジェクトと比較した場合
     // いずれも等価ではないこと
-    // - f1  ... Fizz の除数が異なる
-    // - f2  ... Fizz の文言が異なる
-    // - f3  ... Fizz の除数と文言が異なる
-    // - b1  ... Buzz の除数が異なる
-    // - b2  ... Buzz の文言が異なる
-    // - b3  ... Fizz の除数と文言が異なる
-    // - fb1 ... Fizz の除数, Buzz の除数が異なる
-    // - fb2 ... Fizz の除数, Buzz の文言が異なる
-    // - fb3 ... Fizz の文言, Buzz の除数が異なる
-    // - fb4 ... Fizz の文言, Buzz の文言が異なる
-    // - fb5 ... Fizz の除数, Buzz の除数, Buzz の文言が異なる
-    // - fb6 ... Fizz の文言, Buzz の除数, Buzz の文言が異なる
-    // - fb7 ... Fizz の除数, Fizz の文言, Buzz の除数が異なる
-    // - fb8 ... Fizz の除数, Fizz の文言, Buzz の文言が異なる
+    // - f1  ... FIZZ 除数が異なる
+    // - f2  ... FIZZ 文言が異なる
+    // - f3  ... FIZZ 除数と文言が異なる
+    // - b1  ... BUZZ 除数が異なる
+    // - b2  ... BUZZ 文言が異なる
+    // - b3  ... FIZZ 除数と文言が異なる
+    // - fb1 ... FIZZ 除数, BUZZ 除数が異なる
+    // - fb2 ... FIZZ 除数, BUZZ 文言が異なる
+    // - fb3 ... FIZZ 文言, BUZZ 除数が異なる
+    // - fb4 ... FIZZ 文言, BUZZ 文言が異なる
+    // - fb5 ... FIZZ 除数, BUZZ 除数, BUZZ 文言が異なる
+    // - fb6 ... FIZZ 文言, BUZZ 除数, BUZZ 文言が異なる
+    // - fb7 ... FIZZ 除数, FIZZ 文言, BUZZ 除数が異なる
+    // - fb8 ... FIZZ 除数, FIZZ 文言, BUZZ 文言が異なる
     // - fb9 ... すべてのデータメンバの値が異なる
     // clang-format off
     const FizzBuzz fizz_buzz_f1 = { Fizz { -3         } };
@@ -762,9 +764,9 @@ BOOST_AUTO_TEST_CASE(compare_with_same_class_instances)
 }
 
 /*!
- * テストパターン :
- * @c FizzBuzz のオブジェクトと
- * 同オブジェクトの参照またはポインタで等価比較演算を行う
+ * @brief テストパターン :
+ *        @c FizzBuzz のオブジェクトと
+ *        同オブジェクトの参照またはポインタで等価比較演算を行う
  *
  * @see fizz_buzzxx::FizzBuzz::operator==()
  */
